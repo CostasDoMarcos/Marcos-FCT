@@ -36,3 +36,13 @@ Organización y programación.<br>
 Valorar tu tiempo.<br>
 Establecer objetivos.<br>
 Establecer un horario de estudio.<br>
+## 1.8 Una buena entrevista de trabajo
+Buscar información de la empresa y interesarse por ella.<br>
+Ajustar tu currículum a la empresa.
+Mostrar interés y preocupación por el puesto.
+## 1.9 Trabajar en equipo
+Compartir tu opinión y escuchar las de los demás.<br>
+Ser alguien confiable.<br>
+Ser flexible.<br>
+## 1.10 Perfil atractivo
+Cuidar las redes sociales para que reflejen lo que te representa.
