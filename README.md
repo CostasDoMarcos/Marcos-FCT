@@ -55,3 +55,8 @@ Para programar juegos como hobby.<br>
 En caso de querer entrar en la industria del videojuego es muy fácil usar Construct para diseñar juegos y utilizarlos en el portfolio.<br>
 Hacer prototipos de proyectos más grandes y testearlos.<br>
 ## 2.1 Ventajas de construct
+Da muchas facilidades a la hora de diseñar un juego, y es mas fácil alcanzar metas.<br>
+Ideal para equipos pequeños.<br>
+Acostumbrarse a programación visual que se usa en motores mas potentes como Unreal Engine o Unity.<br>
+Tiene pocas limitaciones.<br>
+## 2.1 Desventajas de construct
