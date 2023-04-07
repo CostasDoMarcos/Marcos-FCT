@@ -46,7 +46,7 @@ Ser alguien confiable.<br>
 Ser flexible.<br>
 ## 1.10 Perfil atractivo
 Cuidar las redes sociales para que reflejen lo que te representa.
-# 2.Construct 2 
+# 2.Construct 2 07/04/2023
 ## 2.1 Introducción a construct
 Construct es un motor de juegos en 2 dimensiónes que esta pensando principalmente para relizar diseños de juegos web, aunque permite exportar los mismos a otras plataformas diferentes.<br>
 Se utiliza para programar de forma visual y es muy fácil hacer prototipos en el.<br>
