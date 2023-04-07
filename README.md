@@ -60,3 +60,6 @@ Ideal para equipos pequeños.<br>
 Acostumbrarse a programación visual que se usa en motores mas potentes como Unreal Engine o Unity.<br>
 Tiene pocas limitaciones.<br>
 ## 2.1 Desventajas de construct
+Exportar a algo que no sea web es posible pero más dificil que con otros motores.<br>
+Se pueden usar modelos 3D pero no muy bien.<br>
+Versión gratuita limitada.<br>
