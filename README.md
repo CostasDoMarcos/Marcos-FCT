@@ -69,12 +69,12 @@ Se trabaja sobre layouts (como se trabajaría en photoshop, Gimp...) lo que esta
 ##2.2.2 Properties
 Son las propiedades del objeto, y muestra toda la informacion de la misma, se le puede añadir lógica a los objetos desde aqui.<br>
 ##2.2.3 Layout
-Donde se colocaran todos los objetos/fondos de pantalla etc.
+Donde se colocaran todos los objetos/fondos de pantalla etc.<br>
 ##2.2.4 Editor
-Se utiliza para hacer animaciónes y dibujar.
+Se utiliza para hacer animaciónes y dibujar.<br>
 ##2.2.5 Event sheet
-Explica a Construct como manejar los objetos del layout.
+Explica a Construct como manejar los objetos del layout.<br>
 ##2.2.6 Play
-Permite probar el juego al momento o hacer una preview(se puede compartir de forma remota al móvil).
+Permite probar el juego al momento o hacer una preview(se puede compartir de forma remota al móvil).<br>
 ##2.2.7 Debug layout
-Permite inspeccionar los objetos del juego mientras el propio juego esta funcionando
+Permite inspeccionar los objetos del juego mientras el propio juego esta funcionando.<br>
