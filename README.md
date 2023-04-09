@@ -66,15 +66,16 @@ Versión gratuita limitada.<br>
 ## 2.2 Interfaz de Construct 08/04/2023
 ##2.2.1 Vistazo general
 Se trabaja sobre layouts (como se trabajaría en photoshop, Gimp...) lo que esta mas adelante es lo que tiene mas prioridad y es lo que se va a ver(sistema de capas).<br>
-##2.2.2 Properties
+Coordenada 0.0 esquina superior izquierda.<br>
+## 2.2.2 Properties
 Son las propiedades del objeto, y muestra toda la informacion de la misma, se le puede añadir lógica a los objetos desde aqui.<br>
-##2.2.3 Layout
+## 2.2.3 Layout
 Donde se colocaran todos los objetos/fondos de pantalla etc.<br>
-##2.2.4 Editor
+## 2.2.4 Editor
 Se utiliza para hacer animaciónes y dibujar.<br>
-##2.2.5 Event sheet
+## 2.2.5 Event sheet
 Explica a Construct como manejar los objetos del layout.<br>
-##2.2.6 Play
+## 2.2.6 Play
 Permite probar el juego al momento o hacer una preview(se puede compartir de forma remota al móvil).<br>
-##2.2.7 Debug layout
+## 2.2.7 Debug layout
 Permite inspeccionar los objetos del juego mientras el propio juego esta funcionando.<br>
