@@ -76,5 +76,5 @@ Se utiliza para hacer animaciónes y dibujar.
 Explica a Construct como manejar los objetos del layout.
 ##2.2.6 Play
 Permite probar el juego al momento o hacer una preview(se puede compartir de forma remota al móvil).
-##2.2.7 Inspector
-Permite 
+##2.2.7 Debug layout
+Permite inspeccionar los objetos del juego mientras el propio juego esta funcionando
