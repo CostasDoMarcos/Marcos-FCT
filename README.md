@@ -50,17 +50,31 @@ Cuidar las redes sociales para que reflejen lo que te representa.
 ## 2.1 Introducción a construct
 Construct es un motor de juegos en 2 dimensiónes que esta pensando principalmente para relizar diseños de juegos web, aunque permite exportar los mismos a otras plataformas diferentes.<br>
 Se utiliza para programar de forma visual y es muy fácil hacer prototipos en el.<br>
-## 2.1 Utilizar construct
+## 2.1.1 Utilizar construct
 Para programar juegos como hobby.<br>
 En caso de querer entrar en la industria del videojuego es muy fácil usar Construct para diseñar juegos y utilizarlos en el portfolio.<br>
 Hacer prototipos de proyectos más grandes y testearlos.<br>
-## 2.1 Ventajas de construct
+## 2.1.2 Ventajas de construct
 Da muchas facilidades a la hora de diseñar un juego, y es mas fácil alcanzar metas.<br>
 Ideal para equipos pequeños.<br>
 Acostumbrarse a programación visual que se usa en motores mas potentes como Unreal Engine o Unity.<br>
 Tiene pocas limitaciones.<br>
-## 2.1 Desventajas de construct
+## 2.1.3 Desventajas de construct
 Exportar a algo que no sea web es posible pero más dificil que con otros motores.<br>
 Se pueden usar modelos 3D pero no muy bien.<br>
 Versión gratuita limitada.<br>
-## 2.2 Interfaz de Construct
+## 2.2 Interfaz de Construct 08/04/2023
+##2.2.1 Vistazo general
+Se trabaja sobre layouts (como se trabajaría en photoshop, Gimp...) lo que esta mas adelante es lo que tiene mas prioridad y es lo que se va a ver(sistema de capas).<br>
+##2.2.2 Properties
+Son las propiedades del objeto, y muestra toda la informacion de la misma, se le puede añadir lógica a los objetos desde aqui.<br>
+##2.2.3 Layout
+Donde se colocaran todos los objetos/fondos de pantalla etc.
+##2.2.4 Editor
+Se utiliza para hacer animaciónes y dibujar.
+##2.2.5 Event sheet
+Explica a Construct como manejar los objetos del layout.
+##2.2.6 Play
+Permite probar el juego al momento o hacer una preview(se puede compartir de forma remota al móvil).
+##2.2.7 Inspector
+Permite 
