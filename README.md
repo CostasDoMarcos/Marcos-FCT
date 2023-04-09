@@ -63,3 +63,4 @@ Tiene pocas limitaciones.<br>
 Exportar a algo que no sea web es posible pero más dificil que con otros motores.<br>
 Se pueden usar modelos 3D pero no muy bien.<br>
 Versión gratuita limitada.<br>
+## 2.2 Interfaz de Construct
