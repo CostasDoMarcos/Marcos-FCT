@@ -91,4 +91,4 @@ Las acciones se pueden invertir directamente.
 ## 2.3.2 Comportamientos
 Lógicas que construct le da a los objetos.<br>
 Las lógicas tienen menús editables muy fáciles de usar en los que se puede cambiar la funcionalidad de la misma casi por completo.
-## 3 Prototipo 11/04/2023
+## 3 Prototipo
