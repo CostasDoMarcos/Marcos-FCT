@@ -80,3 +80,6 @@ Permite probar el juego al momento o hacer una preview(se puede compartir de for
 ## 2.2.7 Debug layout
 Permite inspeccionar los objetos del juego mientras el propio juego esta funcionando.<br>
 ## 2.3 Lógica de Construct 10/04/2023
+## 2.3.1 Funcionamiento
+El funcionamiento de construct es simple, los eventos vienen dados por lo siguiente.<br>
+Cada evento tiene dos partes, una condición y una acción, cuando se activa la norma y que hago cuando la norma se activa.<br>
