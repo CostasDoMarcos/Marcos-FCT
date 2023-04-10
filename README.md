@@ -79,3 +79,4 @@ Explica a Construct como manejar los objetos del layout.<br>
 Permite probar el juego al momento o hacer una preview(se puede compartir de forma remota al móvil).<br>
 ## 2.2.7 Debug layout
 Permite inspeccionar los objetos del juego mientras el propio juego esta funcionando.<br>
+## 2.3 Lógica de Construct 10/04/2023
