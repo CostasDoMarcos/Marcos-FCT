@@ -83,3 +83,11 @@ Permite inspeccionar los objetos del juego mientras el propio juego esta funcion
 ## 2.3.1 Funcionamiento
 El funcionamiento de construct es simple, los eventos vienen dados por lo siguiente.<br>
 Cada evento tiene dos partes, una condición y una acción, cuando se activa la norma y que hago cuando la norma se activa.<br>
+Interfaz bastante simple con menú de ayuda.<br>
+## 2.3.2 Objetos
+Se crean desde el menú de proyectos, se pueden añadir objetos teclado/raton que son básicamente on key downs etc. <br>
+Aunque no se sepa programar, saber imaginariamente lo que puede hacer la accion.<br>
+Las acciones se pueden invertir directamente.
+## 2.3.2 Comportamientos
+Lógicas que construct le da a los objetos.<br>
+Las lógicas tienen menús editables muy fáciles de usar en los que se puede cambiar la funcionalidad de la misma casi por completo.
