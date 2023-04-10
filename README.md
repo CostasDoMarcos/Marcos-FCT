@@ -64,7 +64,7 @@ Exportar a algo que no sea web es posible pero más dificil que con otros motore
 Se pueden usar modelos 3D pero no muy bien.<br>
 Versión gratuita limitada.<br>
 ## 2.2 Interfaz de Construct 08/04/2023
-##2.2.1 Vistazo general
+## 2.2.1 Vistazo general
 Se trabaja sobre layouts (como se trabajaría en photoshop, Gimp...) lo que esta mas adelante es lo que tiene mas prioridad y es lo que se va a ver(sistema de capas).<br>
 Coordenada 0.0 esquina superior izquierda.<br>
 ## 2.2.2 Properties
