@@ -98,3 +98,4 @@ Es como hacer un "esqueleto" de lo que va a ser el juego y/o los o el niveles y 
 Tener una idea básica aunque no este muy definida pero si saber lo que se pretende.<br>
 Partiendo de esta idea básica estructurar el juego como por ejemplo : el Jugador, que va a hacer el jugador, disparar una bala, que va a hacer la bala..etc.<br>
 Estructurar las capas: Escenario con las plataformas, Escenario de fondo, Escenario con el personaje y los enemigos y un Escenario como capa por si en un futuro se quieren añadir monedas o algun tipo de puntuación.<br>
+## 3.1.2 Planificación
