@@ -92,10 +92,13 @@ Las acciones se pueden invertir directamente.
 Lógicas que construct le da a los objetos.<br>
 Las lógicas tienen menús editables muy fáciles de usar en los que se puede cambiar la funcionalidad de la misma casi por completo.
 ## 3 Prototipo
-## 3.1.1 Preparar el proyecto
+MUY RECOMENDABLE TRABAJAR CON CUADRICULAS SIEMPRE (multiplos de 32 en este caso)<br>
+## 3.1 Preparar el proyecto
 Empezar a preparar un proyecto de juego tipo sidescroller como el mario por ejemplo con enemigos que le atacaran.<br>
 Es como hacer un "esqueleto" de lo que va a ser el juego y/o los o el niveles y lo que se pretende que hagan los enemigos respecto al jugador teniendo en cuenta las iteraciones y que no sea muy complejo.<br>
 Tener una idea básica aunque no este muy definida pero si saber lo que se pretende.<br>
 Partiendo de esta idea básica estructurar el juego como por ejemplo : el Jugador, que va a hacer el jugador, disparar una bala, que va a hacer la bala..etc.<br>
 Estructurar las capas: Escenario con las plataformas, Escenario de fondo, Escenario con el personaje y los enemigos y un Escenario como capa por si en un futuro se quieren añadir monedas o algun tipo de puntuación.<br>
-## 3.1.2 Planificación
+## 3.2 Planificación
+### 3.2.1 Preparar el proyecto
+Hacer que sea menos precario y añadir a los enemigos poco a poco cambiar controles del personaje mediante las properties( construct por default se maneja con las flechas del teclado, cambiarlo a WASD).<br>
