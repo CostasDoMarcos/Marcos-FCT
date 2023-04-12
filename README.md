@@ -102,3 +102,4 @@ Estructurar las capas: Escenario con las plataformas, Escenario de fondo, Escena
 ## 3.2 Planificación
 ### 3.2.1 Preparar el proyecto
 Hacer que sea menos precario y añadir a los enemigos poco a poco cambiar controles del personaje mediante las properties( construct por default se maneja con las flechas del teclado, cambiarlo a WASD).<br>
+Añadirle "IA" al enemigo( el enemigo sigue al jugador.<br>
