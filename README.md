@@ -115,8 +115,15 @@ Añadiremos una nueva variable booleana.<br>
 La variable booleana se guarda y seleccionando el enemigo podremos ir a las instance variables y ver como nuestra variable esta en "false", desactivada<br>
 ![image](https://user-images.githubusercontent.com/55932083/232136001-366086c5-6d7c-46da-b1c0-c85f029c6353.png)
 Ahora iremos a nuestros eventos y añadiremos nuevas condiciones para que el enemigo se desplace hacia el jugador
-![image](https://user-images.githubusercontent.com/55932083/232136365-1282faba-f6ac-460c-8471-268bafc3d6f0.png)
-![image](https://user-images.githubusercontent.com/55932083/232136447-4d90a0c6-4892-4d6e-b827-aa9ca02b8608.png)
+![image](https://user-images.githubusercontent.com/55932083/232136365-1282faba-f6ac-460c-8471-268bafc3d6f0.png)<br>
+![image](https://user-images.githubusercontent.com/55932083/232136447-4d90a0c6-4892-4d6e-b827-aa9ca02b8608.png)<br>
+Añadiremos un evento que controlara la distancia a la que se activara el enemigo para comenzar a seguir al jugador.<br>
+![image](https://user-images.githubusercontent.com/55932083/232136949-74591c70-da00-4c70-a51c-393ef970fc13.png)
+Crearemos un nuevo evento de tipo "System" que comaprara la distancia entre los puntos XY del jugador y los puntos XY del enemigo para indicarle a este si debe moverse o no<br>
+![image](https://user-images.githubusercontent.com/55932083/232137188-6c970e07-d71d-441b-ae4a-21acb9c4df2e.png)
+![image](https://user-images.githubusercontent.com/55932083/232137871-47fa1d75-e2f9-4209-9399-03cee6b374ab.png)
+
+
 
 
 
