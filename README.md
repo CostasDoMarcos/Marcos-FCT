@@ -106,3 +106,15 @@ Hacer que sea menos precario y añadir a los enemigos poco a poco cambiar contro
 Añadirle "IA" al enemigo( el enemigo sigue al jugador).<br>
 ![Construct events](https://user-images.githubusercontent.com/55932083/232007843-a9165b4e-00e4-45b0-8b22-d36067ef1e73.png)
 https://user-images.githubusercontent.com/55932083/232009146-bce1d8c1-95bb-4c8c-aed0-bf94b67ce60f.mp4
+## 3.3 Crear un personaje
+### 3.3.1 Adición de variables.
+En este caso queremos que el enemigo no comience a perseguir al jugador nada mas empiece el juego, si no cuadno esté a una distancia prudencial.<br>
+![image](https://user-images.githubusercontent.com/55932083/232135361-4d82c30e-bf94-4317-9efd-cc227bc0408c.png)<br>
+Añadiremos una nueva variable booleana.<br>
+![image](https://user-images.githubusercontent.com/55932083/232135622-b1c70d16-2a9e-40a3-b28e-b8031da6fc1f.png)<br>
+La variable booleana se guarda y seleccionando el enemigo podremos ir a las instance variables y ver como nuestra variable esta en "false", desactivada<br>
+![image](https://user-images.githubusercontent.com/55932083/232136001-366086c5-6d7c-46da-b1c0-c85f029c6353.png)
+
+
+
+
