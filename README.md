@@ -131,7 +131,7 @@ Simulamos el control de salto como una acción a realizar cuando el enemigo esta
 ![image](https://user-images.githubusercontent.com/55932083/232141187-2425d656-2b19-449d-abf8-0bf5387f94df.png)
 Convertimos el bloque del evento en un bloque OR. (para darle dos posibilidades de acción , una obstáculo a la izquierda y otro a la derecha)<br>
 ![image](https://user-images.githubusercontent.com/55932083/232140936-d86759e9-3453-4704-ae7a-0ca374612599.png)<br>
-
+El bloque OR nos facilita el trabajo a la hora de que si hay algun problema, falla algo en la programación solo habría que corregirlo una vez y no varias, siendo mas eficiente.<br>
 
 
 
