@@ -128,7 +128,7 @@ Al evento que acabamos de crear le añadimos una acción, en este caso la acció
 Como así seria muy aburrido ya que el enemigo se quedaria parado cuando se encontrase un obstaculo, lo arreglaremos añadiendo un evento nuevo que haga una simulación de salto.<br>
 ![image](https://user-images.githubusercontent.com/55932083/232140359-24bd9145-9781-4414-8818-d28350ee1c7d.png)<br>
 Simulamos el control de salto como una acción a realizar cuando el enemigo esta bloqueado por un obstaculo.<br>
-![image](https://user-images.githubusercontent.com/55932083/232141187-2425d656-2b19-449d-abf8-0bf5387f94df.png)
+![image](https://user-images.githubusercontent.com/55932083/232141187-2425d656-2b19-449d-abf8-0bf5387f94df.png)<br>
 Convertimos el bloque del evento en un bloque OR. (para darle dos posibilidades de acción , una obstáculo a la izquierda y otro a la derecha)<br>
 ![image](https://user-images.githubusercontent.com/55932083/232140936-d86759e9-3453-4704-ae7a-0ca374612599.png)<br>
 El bloque OR nos facilita el trabajo a la hora de que si hay algun problema, falla algo en la programación solo habría que corregirlo una vez y no varias, siendo mas eficiente.<br>
