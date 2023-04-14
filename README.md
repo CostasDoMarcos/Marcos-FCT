@@ -46,7 +46,7 @@ Ser alguien confiable.<br>
 Ser flexible.<br>
 ## 1.10 Perfil atractivo
 Cuidar las redes sociales para que reflejen lo que te representa.
-# 2.Construct 2 07/04/2023
+# 2.Construct 2
 ## 2.1 Introducción a construct
 Construct es un motor de juegos en 2 dimensiónes que esta pensando principalmente para relizar diseños de juegos web, aunque permite exportar los mismos a otras plataformas diferentes.<br>
 Se utiliza para programar de forma visual y es muy fácil hacer prototipos en el.<br>
@@ -79,7 +79,7 @@ Explica a Construct como manejar los objetos del layout.<br>
 Permite probar el juego al momento o hacer una preview(se puede compartir de forma remota al móvil).<br>
 ## 2.2.7 Debug layout
 Permite inspeccionar los objetos del juego mientras el propio juego esta funcionando.<br>
-## 2.3 Lógica de Construct 10/04/2023
+## 2.3 Lógica de Construct 
 ## 2.3.1 Funcionamiento
 El funcionamiento de construct es simple, los eventos vienen dados por lo siguiente.<br>
 Cada evento tiene dos partes, una condición y una acción, cuando se activa la norma y que hago cuando la norma se activa.<br>
@@ -93,6 +93,7 @@ Lógicas que construct le da a los objetos.<br>
 Las lógicas tienen menús editables muy fáciles de usar en los que se puede cambiar la funcionalidad de la misma casi por completo.
 ## 3 Prototipo
 MUY RECOMENDABLE TRABAJAR CON CUADRICULAS SIEMPRE (multiplos de 32 en este caso)<br>
+
 ## 3.1 Preparar el proyecto
 Empezar a preparar un proyecto de juego tipo sidescroller como el mario por ejemplo con enemigos que le atacaran.<br>
 Es como hacer un "esqueleto" de lo que va a ser el juego y/o los o el niveles y lo que se pretende que hagan los enemigos respecto al jugador teniendo en cuenta las iteraciones y que no sea muy complejo.<br>
@@ -102,4 +103,5 @@ Estructurar las capas: Escenario con las plataformas, Escenario de fondo, Escena
 ## 3.2 Planificación
 ### 3.2.1 Preparar el proyecto
 Hacer que sea menos precario y añadir a los enemigos poco a poco cambiar controles del personaje mediante las properties( construct por default se maneja con las flechas del teclado, cambiarlo a WASD).<br>
-Añadirle "IA" al enemigo( el enemigo sigue al jugador.<br>
+Añadirle "IA" al enemigo( el enemigo sigue al jugador).<br>
+![Construct events](https://user-images.githubusercontent.com/55932083/232007843-a9165b4e-00e4-45b0-8b22-d36067ef1e73.png)
