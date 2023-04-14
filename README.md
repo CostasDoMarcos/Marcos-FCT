@@ -105,3 +105,4 @@ Estructurar las capas: Escenario con las plataformas, Escenario de fondo, Escena
 Hacer que sea menos precario y añadir a los enemigos poco a poco cambiar controles del personaje mediante las properties( construct por default se maneja con las flechas del teclado, cambiarlo a WASD).<br>
 Añadirle "IA" al enemigo( el enemigo sigue al jugador).<br>
 ![Construct events](https://user-images.githubusercontent.com/55932083/232007843-a9165b4e-00e4-45b0-8b22-d36067ef1e73.png)
+https://user-images.githubusercontent.com/55932083/232009146-bce1d8c1-95bb-4c8c-aed0-bf94b67ce60f.mp4
