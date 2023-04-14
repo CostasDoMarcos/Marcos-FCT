@@ -104,8 +104,8 @@ Estructurar las capas: Escenario con las plataformas, Escenario de fondo, Escena
 ### 3.2.1 Preparar el proyecto
 Hacer que sea menos precario y añadir a los enemigos poco a poco cambiar controles del personaje mediante las properties( construct por default se maneja con las flechas del teclado, cambiarlo a WASD).<br>
 Añadirle "IA" al enemigo( el enemigo sigue al jugador).<br>
-![Construct events](https://user-images.githubusercontent.com/55932083/232007843-a9165b4e-00e4-45b0-8b22-d36067ef1e73.png)
-https://user-images.githubusercontent.com/55932083/232009146-bce1d8c1-95bb-4c8c-aed0-bf94b67ce60f.mp4
+![Construct events](https://user-images.githubusercontent.com/55932083/232007843-a9165b4e-00e4-45b0-8b22-d36067ef1e73.png)<br>
+https://user-images.githubusercontent.com/55932083/232009146-bce1d8c1-95bb-4c8c-aed0-bf94b67ce60f.mp4<br>
 ## 3.3 Crear un personaje
 ### 3.3.1 Adición de variables.
 En este caso queremos que el enemigo no comience a perseguir al jugador nada mas empiece el juego, si no cuadno esté a una distancia prudencial.<br>
@@ -113,15 +113,15 @@ En este caso queremos que el enemigo no comience a perseguir al jugador nada mas
 Añadiremos una nueva variable booleana.<br>
 ![image](https://user-images.githubusercontent.com/55932083/232135622-b1c70d16-2a9e-40a3-b28e-b8031da6fc1f.png)<br>
 La variable booleana se guarda y seleccionando el enemigo podremos ir a las instance variables y ver como nuestra variable esta en "false", desactivada<br>
-![image](https://user-images.githubusercontent.com/55932083/232136001-366086c5-6d7c-46da-b1c0-c85f029c6353.png)
-Ahora iremos a nuestros eventos y añadiremos nuevas condiciones para que el enemigo se desplace hacia el jugador
+![image](https://user-images.githubusercontent.com/55932083/232136001-366086c5-6d7c-46da-b1c0-c85f029c6353.png)<br>
+Ahora iremos a nuestros eventos y añadiremos nuevas condiciones para que el enemigo se desplace hacia el jugador<br>
 ![image](https://user-images.githubusercontent.com/55932083/232136365-1282faba-f6ac-460c-8471-268bafc3d6f0.png)<br>
 ![image](https://user-images.githubusercontent.com/55932083/232136447-4d90a0c6-4892-4d6e-b827-aa9ca02b8608.png)<br>
 Añadiremos un evento que controlara la distancia a la que se activara el enemigo para comenzar a seguir al jugador.<br>
-![image](https://user-images.githubusercontent.com/55932083/232136949-74591c70-da00-4c70-a51c-393ef970fc13.png)
-Crearemos un nuevo evento de tipo "System" que comaprara la distancia entre los puntos XY del jugador y los puntos XY del enemigo para indicarle a este si debe moverse o no<br>
-![image](https://user-images.githubusercontent.com/55932083/232137188-6c970e07-d71d-441b-ae4a-21acb9c4df2e.png)
-![image](https://user-images.githubusercontent.com/55932083/232137871-47fa1d75-e2f9-4209-9399-03cee6b374ab.png)
+![image](https://user-images.githubusercontent.com/55932083/232136949-74591c70-da00-4c70-a51c-393ef970fc13.png)<br>
+Crearemos un nuevo evento de tipo "System" que comparará la distancia entre los puntos XY del jugador y los puntos XY del enemigo para indicarle a este si debe moverse o no<br>
+![image](https://user-images.githubusercontent.com/55932083/232137188-6c970e07-d71d-441b-ae4a-21acb9c4df2e.png)<br>
+![image](https://user-images.githubusercontent.com/55932083/232137871-47fa1d75-e2f9-4209-9399-03cee6b374ab.png)<br>
 
 
 
