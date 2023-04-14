@@ -114,6 +114,11 @@ Añadiremos una nueva variable booleana.<br>
 ![image](https://user-images.githubusercontent.com/55932083/232135622-b1c70d16-2a9e-40a3-b28e-b8031da6fc1f.png)<br>
 La variable booleana se guarda y seleccionando el enemigo podremos ir a las instance variables y ver como nuestra variable esta en "false", desactivada<br>
 ![image](https://user-images.githubusercontent.com/55932083/232136001-366086c5-6d7c-46da-b1c0-c85f029c6353.png)
+Ahora iremos a nuestros eventos y añadiremos nuevas condiciones para que el enemigo se desplace hacia el jugador
+![image](https://user-images.githubusercontent.com/55932083/232136365-1282faba-f6ac-460c-8471-268bafc3d6f0.png)
+![image](https://user-images.githubusercontent.com/55932083/232136447-4d90a0c6-4892-4d6e-b827-aa9ca02b8608.png)
+
+
 
 
 
