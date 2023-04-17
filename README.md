@@ -196,6 +196,20 @@ Para ganar el juego tendremos que llegar a una bandera que hay al otro lado, una
 ![image](https://user-images.githubusercontent.com/55932083/232574107-40566fbe-dfcd-48da-8b68-b6f7167675f6.png)<br>
 ## 4 Puliendo el juego
 ### 4.1 El game feel
+El game feel es básicamente que un juego sea bonito o divertido, que sea atractivo y den ganas de jugar.<br>
+El púlido final del juego 2D, hacerlo bonito y atractivo al final es lo que mas tiempo lleva, incluso puede llegar a llevar mas tiempo que la programación del mismo.<br>
+Para hacer un movimiento de camara en Construct primero tendremos que crear un sprite y usaremos la funcion Scroll to.<br>
+![image](https://user-images.githubusercontent.com/55932083/232577779-88bcc17c-c1c2-4fa5-af43-14c75a9876f6.png)<br>
+Esto hará que la cámara se vaya desplazando conforme a este nuevo sprite.<br>
+Como queremos que la cámara se mueva con el jugador haremos que la cámara se ancle a una posición del jugador y que cuando este se mueva en una dirección o la otra la cámara se mueva acorde.<br>
+![image](https://user-images.githubusercontent.com/55932083/232579927-db7acdb5-c57a-41a8-b2aa-432960d53bd1.png)<br>
+Como tal cual esta la cámara se desplaza de forma instantánea y "afea" el feel del juego utilizamos uan funcion lerp para que la camara dé la sensación de desplazamiento.<br>
+![image](https://user-images.githubusercontent.com/55932083/232581557-fba4c0d3-4e51-4670-8665-924eb9407ad8.png)<br>
+En la funcion lerp se indican la posicion del objeto, la posición a la que se quiere mover y la velocidad a la que se va a hacer el desplazamiento.<br>
+![image](https://user-images.githubusercontent.com/55932083/232581691-4fb28086-d000-496c-b2ac-614b8a206a75.png)<br>
+Creamos y asignamos una variable global para no tener que cambiar uno a uno el valor de la distancia de la cámara<br>
+![image](https://user-images.githubusercontent.com/55932083/232582162-6b169b12-2a96-4d3b-af78-0f5d4ef68f5e.png)<br>
+
 ### 4.2 Aplicar efectos al juego
 ### 4.3 Añadir assets de arte
 ### 4.4 Añadir audio
