@@ -209,6 +209,10 @@ En la funcion lerp se indican la posicion del objeto, la posición a la que se q
 ![image](https://user-images.githubusercontent.com/55932083/232581691-4fb28086-d000-496c-b2ac-614b8a206a75.png)<br>
 Creamos y asignamos una variable global para no tener que cambiar uno a uno el valor de la distancia de la cámara<br>
 ![image](https://user-images.githubusercontent.com/55932083/232582162-6b169b12-2a96-4d3b-af78-0f5d4ef68f5e.png)<br>
+Por último hacemos que la cámara sea invisible.<br>
+Para ello iremos a properties y en initial visibility pondremos invisible<br>
+![image](https://user-images.githubusercontent.com/55932083/232583136-387619d9-97f1-4c4a-bfff-f233bc8bcdf8.png)<br>
+
 
 ### 4.2 Aplicar efectos al juego
 ### 4.3 Añadir assets de arte
