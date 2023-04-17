@@ -132,6 +132,18 @@ Simulamos el control de salto como una acción a realizar cuando el enemigo esta
 Convertimos el bloque del evento en un bloque OR. (para darle dos posibilidades de acción , una obstáculo a la izquierda y otro a la derecha)<br>
 ![image](https://user-images.githubusercontent.com/55932083/232140936-d86759e9-3453-4704-ae7a-0ca374612599.png)<br>
 El bloque OR nos facilita el trabajo a la hora de que si hay algun problema, falla algo en la programación solo habría que corregirlo una vez y no varias, siendo mas eficiente.<br>
+## 3.4 Añadir disparos
+Sera la mecánica principal, primeros debemos pensar ¿Qué es una bala? un objeto que sale de nuestro personaje y avanza en linea recta.<br>
+### 3.4.1 Creación de la bala.
+Crear un objeto que sea una bala a partir de un sprite.<br>
+![image](https://user-images.githubusercontent.com/55932083/232529962-83a8609e-5bf3-4e4f-852b-0cc0b96a94f5.png)<br>
+Construct tiene un comportamiento predefinido para balas por lo cual sera mas sencillo programarlo, habrá que ir a "behaviors" y añadir un comportamiento de tipo "Bullet".<br>
+![image](https://user-images.githubusercontent.com/55932083/232530770-8fc129b5-585d-430e-bdf1-48e31b3fd7cc.png)<br>
+Añadimos una función para reiniciar el juego con un atajo de teclado para que sea mas fácil testear nuestro juego.<br>
+![image](https://user-images.githubusercontent.com/55932083/232532003-2f2d8ac6-26cf-4d9a-87eb-d8ee9155ed37.png)<br>
+Hacemos un grupo nuevo haciendo clic derecho en el event sheet  para añadir la codificacion de la bala<br>
+![image](https://user-images.githubusercontent.com/55932083/232533107-44d3fd3e-d5fc-4e02-b345-17f0346c8534.png)
+
 
 
 
