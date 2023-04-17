@@ -153,8 +153,8 @@ Layer: sera la capa en la que esta<br>
 X y Y: en este caso seran de donde sale la bala, es decir el jugador<br>
 y haremos que la bala se destruya al salirse de la pantalla ya que si no consumirá muchos recursos porque se generarán balas infinitas y son objetos que se desplazan y consumen recurso<br>
 ![image](https://user-images.githubusercontent.com/55932083/232561914-d10fed43-a6cd-4c49-a597-e97e18d0e4b2.png)<br>
-## 3.5 Añadir enemigos
-### 3.5.1 Añadir enemigo.
+## 3.5 Añadir puntuación
+### 3.5.1 Añadir colisión con el enemigo.
 Primero empezaros por poder elegir la dirección en la que dispara el personaje.<br>
 Para ello añadiremos una variable a nuestro objeto Player.<br>
 ![image](https://user-images.githubusercontent.com/55932083/232565635-1f0a4592-01b1-4147-848a-383e88ad78cb.png)<br>
@@ -162,6 +162,31 @@ Esta variable nos permitira controlar si una booleana se pone a true o se pone a
 ![image](https://user-images.githubusercontent.com/55932083/232565734-75ab5ebd-7bde-4236-9a36-3d93e9e13bf4.png)<br>
 Dependiendo de lo que nos marque esta booleana haremos un sub evento en la funcion de disparar la cual indica la dirección de la bala, indicandole que si la booleana es falsa, la bala se disparara en la otra dirección<br>
 ![image](https://user-images.githubusercontent.com/55932083/232565896-48f2c435-8406-4c71-bf14-176281ddf3f1.png)<br>
+Ahora haremos que el enemigo se destruya cuando una bala lo golpee, para ello crearemos un evento on collision.<br>
+![image](https://user-images.githubusercontent.com/55932083/232566968-920806cf-317f-405b-a80b-0e1dac1ac399.png)<br>
+![image](https://user-images.githubusercontent.com/55932083/232566988-5453bd3e-b040-435f-9b9d-2f707fad14e5.png)<br>
+Haremos que su acción sea destruir al enemigo si lo golpea.<br>
+![image](https://user-images.githubusercontent.com/55932083/232567085-4c64da18-4092-41ac-8668-ec82e36f9118.png)<br>
+### 3.5.2 Añadir texto.
+Añadiremos un objeto texto para saber la puntuación que tenemos(número de enemigos con los que hemos acabado)<br>
+![image](https://user-images.githubusercontent.com/55932083/232567720-3391c25e-a09e-4812-925c-8cb42e763625.png)<br>
+Creamos una variable de tipo puntuacion en el jugador.<br>
+Mediante un evento en la bala hacemos que cada vez que golpee a un enemigo el contador aumente en 1 y asimismo vinculamos esta puntuacion con otro evento para que se modifique el texto de puntiación.<br>
+![image](https://user-images.githubusercontent.com/55932083/232568705-bb114e43-43e6-4a21-abd2-55c149e9b228.png)<br>
+## 3.6 Añadir puntuación
+### 3.6.1 Añadir IA a todos los enemigos
+Construct maneja las copias de los objetos como instancias y las maneja de maneras diferentes ya que por ejemplo en este caso si añadimos un enemigo uno el enemigo copia no se movería, solo lo haría el original y lo que queremos es que la comprobación de la distancia del enemigo con el jugador la haga cada una de las instancias, para ello utilizaros un foreach sobre la comprobación de la distancia<br>
+![image](https://user-images.githubusercontent.com/55932083/232570640-3b0c8f53-0540-48e5-9b79-fc8901e7e2b1.png)<br>
+Tendríamos que añadir el foreach también al controlador del desplazamiento ya que si no lso enemigos extra se quedarían "pillados" yendose en la dirección que predeterminaria el enemigo original.<br>
+![image](https://user-images.githubusercontent.com/55932083/232570985-86a4fb7e-1017-4f2a-9fe2-af5fca3e3148.png)<br>
+
+
+
+
+
+
+
+
 
 
 
