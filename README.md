@@ -151,6 +151,8 @@ Añadimos una acción de sistema el cual será crear un objeto al pulsar el espa
 ![image](https://user-images.githubusercontent.com/55932083/232560467-468b8cd9-d6f3-401c-84b6-a36bbc1741f7.png)<br>
 Layer: sera la capa en la que esta<br>
 X y Y: en este caso seran de donde sale la bala, es decir el jugador<br>
+y haremos que la bala se destruya al salirse de la pantalla ya que si no consumirá muchos recursos porque se generarán balas infinitas y son objetos que se desplazan y consumen recurso<br>
+![image](https://user-images.githubusercontent.com/55932083/232561914-d10fed43-a6cd-4c49-a597-e97e18d0e4b2.png)<br>
 
 
 
