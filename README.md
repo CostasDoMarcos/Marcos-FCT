@@ -142,7 +142,14 @@ Construct tiene un comportamiento predefinido para balas por lo cual sera mas se
 Añadimos una función para reiniciar el juego con un atajo de teclado para que sea mas fácil testear nuestro juego.<br>
 ![image](https://user-images.githubusercontent.com/55932083/232532003-2f2d8ac6-26cf-4d9a-87eb-d8ee9155ed37.png)<br>
 Hacemos un grupo nuevo haciendo clic derecho en el event sheet  para añadir la codificacion de la bala<br>
-![image](https://user-images.githubusercontent.com/55932083/232533107-44d3fd3e-d5fc-4e02-b345-17f0346c8534.png)
+![image](https://user-images.githubusercontent.com/55932083/232533107-44d3fd3e-d5fc-4e02-b345-17f0346c8534.png)<br>
+Dentro del grupo comenzamos a hacer nuestro evento de disparar balas<br>
+![image](https://user-images.githubusercontent.com/55932083/232537597-78d9a5c5-efb3-44b6-989f-a8851747706f.png)
+![image](https://user-images.githubusercontent.com/55932083/232537614-d4bfc959-d9cd-480e-8354-9d1c2a208f90.png)
+Añadimos una acción de sistema el cual será crear un objeto al pulsar el espacio<br>
+![image](https://user-images.githubusercontent.com/55932083/232537835-69339482-be27-4b04-8a8b-288f16f07274.png)<br>
+
+
 
 
 
