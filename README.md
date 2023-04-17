@@ -194,8 +194,13 @@ Para ganar el juego tendremos que llegar a una bandera que hay al otro lado, una
 -Darle los eventos correspondientes para que al tocar la bandera el juego se termine y en este caso se reinicie el juego automáticamente.<br>
 -Los enemigos se destruyan al tocar la bandera.<br>
 ![image](https://user-images.githubusercontent.com/55932083/232574107-40566fbe-dfcd-48da-8b68-b6f7167675f6.png)<br>
-
-
+## 4 Puliendo el juego
+### 4.1 El game feel
+### 4.2 Aplicar efectos al juego
+### 4.3 Añadir assets de arte
+### 4.4 Añadir audio
+### 4.5 Crear niveles
+### 4.6 Progresión entre niveles
 
 
 
