@@ -179,6 +179,28 @@ Construct maneja las copias de los objetos como instancias y las maneja de maner
 ![image](https://user-images.githubusercontent.com/55932083/232570640-3b0c8f53-0540-48e5-9b79-fc8901e7e2b1.png)<br>
 Tendríamos que añadir el foreach también al controlador del desplazamiento ya que si no lso enemigos extra se quedarían "pillados" yendose en la dirección que predeterminaria el enemigo original.<br>
 ![image](https://user-images.githubusercontent.com/55932083/232570985-86a4fb7e-1017-4f2a-9fe2-af5fca3e3148.png)<br>
+### 3.6.2 Hacer que el juego se "termine"
+Para hacer que el juego se termine simplemente haremos en este caso que, cuando un enemigo choque con nosotros el jugador, simplemente el jugador desaparezca.<br>
+![image](https://user-images.githubusercontent.com/55932083/232571586-b37818fe-e2d5-4a49-a1b3-e3ac07b2dbbb.png)<br>
+Como queremos que al morir haya algun indicativo en pantalla de que hemos muerto haremos lo siguiente.<br>
+En este caso como es un protipo crearemos un sprite y escribiremos por ejemplo "MAL" para que salte en mitad de la pantalla al morir.<br>
+Una vez creado este sprite haremos que inicialmente no sea visible y que se muestre cuando un enemigo nos toca añadiendo la acción.<br>
+![image](https://user-images.githubusercontent.com/55932083/232572395-17d65234-ddcd-4d6e-900c-0ee8cdf1274f.png)<br>
+Añadiremos 2 eventos mas, uno para que espere 2 segundos y otro para que una vez pasen esos 2 segundos el juego se reinicie automáticamente <br>
+![image](https://user-images.githubusercontent.com/55932083/232572718-f4d44072-0070-4b85-802f-e5c44074e4f3.png)<br>
+### 3.6.3 Hacer que el juego se "gane"
+Para ganar el juego tendremos que llegar a una bandera que hay al otro lado, una vez la tocamos los enemigos se destruiran si es que todavía queda alguno vivo y saltara un mensaje en pantalla de victoria, para ello tendremos que:<br>
+-Crear un Sprite bandera dibujado para prototipo y programarlo.<br>
+-Darle los eventos correspondientes para que al tocar la bandera el juego se termine y en este caso se reinicie el juego automáticamente.<br>
+-Los enemigos se destruyan al tocar la bandera.<br>
+![image](https://user-images.githubusercontent.com/55932083/232574107-40566fbe-dfcd-48da-8b68-b6f7167675f6.png)<br>
+
+
+
+
+
+
+
 
 
 
