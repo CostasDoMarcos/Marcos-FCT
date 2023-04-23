@@ -223,10 +223,23 @@ En el submenú scroll to escogeremos "Shake".<br>
 ![image](https://user-images.githubusercontent.com/55932083/233857067-4384f440-ed8d-444a-9351-764ece222dfc.png)<br>
 Y ahora le daremos una pequeña aleatoriedad a la salida de las balas, para ello iremos al grupo de disparo y cambiaremos el ángulo de disparo por ejemplo por 170* y random(20).<br>
 ![image](https://user-images.githubusercontent.com/55932083/233857287-0530bf38-59cd-473e-a671-95d85a67b57a.png)<br>
-
-
-
 ### 4.3 Añadir assets de arte
+Crearemos un nuevo objeto Sprite como siempre y despues de descargarnos un packj gratuito de assets haremos que ese sprite sea la imagen de fondo de nuestro juego.<br>
+![image](https://user-images.githubusercontent.com/55932083/233857816-55df103e-2ab7-42ae-9950-1df4af236bd7.png)<br>
+Para este caso, simplemente pondremos imagenes encima de las paredes y el suelo ya que son imágenes de tamaños dispares y lo haremos a base de crear sprites.<br>
+![image](https://user-images.githubusercontent.com/55932083/233858157-e21a72b4-392f-4763-823e-86c1d1b66f26.png)<br>
+Para el personaje y que tenga animaciónes haremos lo mismo, crearemos un sprite y se lo pegaremos encima y luego ocultaremos el cuadrado azul feo.<br>
+Para hacer la animación con construct en el apartado de Animations crearemos varias imágenes dentro del propio sprite que iran ciclando automáticamente.<br>
+![image](https://user-images.githubusercontent.com/55932083/233858359-acf4f5de-7ab7-4117-9bcc-cef20c3b0b2b.png)<br>
+Para que la imágen y la animación se peguen al jugador añadiremos un behaviour Pin al sprite.<br>
+![image](https://user-images.githubusercontent.com/55932083/233858668-22c72cde-2508-4a16-9e25-f1f24cb3df98.png)<br>
+Y añadiremos en un on start layout que la imágen se pege al jugador.<br>
+![image](https://user-images.githubusercontent.com/55932083/233858856-43ae4467-08ac-4e5e-a76f-ea15e5f12e25.png)<br>
+Y añadiremos una serie de acciónes para que construct sepa cuando tiene que mover las imágenes con cada acción y nos faltaría hacer que se gire al ir hacia la izquierda.<br>
+![image](https://user-images.githubusercontent.com/55932083/233859024-3e0a0c41-ab8f-40e9-9c83-449c662bac62.png)<br>
+Para que la imágen se gire solo habría que ir al control de personaje y decirle que cuando se pulse la tecla , el sprite de movimiento se quede "mirrored" o "Not mirrored".<br>
+![image](https://user-images.githubusercontent.com/55932083/233859090-30fec32a-2f5c-4d4e-b556-4cb012c506d8.png)<br>
+
 
 ### 4.4 Añadir audio
 
