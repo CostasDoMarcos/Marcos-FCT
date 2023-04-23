@@ -212,12 +212,26 @@ Creamos y asignamos una variable global para no tener que cambiar uno a uno el v
 Por último hacemos que la cámara sea invisible.<br>
 Para ello iremos a properties y en initial visibility pondremos invisible<br>
 ![image](https://user-images.githubusercontent.com/55932083/232583136-387619d9-97f1-4c4a-bfff-f233bc8bcdf8.png)<br>
-
-
 ### 4.2 Aplicar efectos al juego
+ANtes de nada haremos que al puntuación se mueva con el personaje y no se quede anclada, pàra ellos selecionaremos la capa interfaz y en el menú de la izquierda iremos a "Parallax" y lo pondremos a 0,0<br>
+![image](https://user-images.githubusercontent.com/55932083/233856689-7f8e138c-cc92-414b-b2e1-791326035959.png)<br>
+Ahora si añadiremos algun efecto al juego, en este caso añadiremos un screen shake al disparar.<br>
+Para ello itemos al evento de disparar y añadiremos una acción al objeto cámara.<br>
+![image](https://user-images.githubusercontent.com/55932083/233856812-bed763a6-3525-47fe-9f89-2aa141d1db8c.png)<br>
+En el submenú scroll to escogeremos "Shake".<br>
+![image](https://user-images.githubusercontent.com/55932083/233856842-b173ea5c-d17b-48fb-88da-706fdf9e85ce.png)<br>
+![image](https://user-images.githubusercontent.com/55932083/233857067-4384f440-ed8d-444a-9351-764ece222dfc.png)<br>
+Y ahora le daremos una pequeña aleatoriedad a la salida de las balas, para ello iremos al grupo de disparo y cambiaremos el ángulo de disparo por ejemplo por 170* y random(20).<br>
+![image](https://user-images.githubusercontent.com/55932083/233857287-0530bf38-59cd-473e-a671-95d85a67b57a.png)<br>
+
+
+
 ### 4.3 Añadir assets de arte
+
 ### 4.4 Añadir audio
+
 ### 4.5 Crear niveles
+
 ### 4.6 Progresión entre niveles
 
 
