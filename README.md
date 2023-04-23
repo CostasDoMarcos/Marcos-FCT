@@ -239,6 +239,10 @@ Y añadiremos una serie de acciónes para que construct sepa cuando tiene que mo
 ![image](https://user-images.githubusercontent.com/55932083/233859024-3e0a0c41-ab8f-40e9-9c83-449c662bac62.png)<br>
 Para que la imágen se gire solo habría que ir al control de personaje y decirle que cuando se pulse la tecla , el sprite de movimiento se quede "mirrored" o "Not mirrored".<br>
 ![image](https://user-images.githubusercontent.com/55932083/233859090-30fec32a-2f5c-4d4e-b556-4cb012c506d8.png)<br>
+Haremos que el cuadrado de la hitbox sea invisible y el sprite se destruya al morir, y ya estaría el jugador con un personaje.<br>
+![image](https://user-images.githubusercontent.com/55932083/233860022-700efb28-359a-4409-b132-93bbf1da79c0.png)<br>
+![image](https://user-images.githubusercontent.com/55932083/233860053-5949869b-63b7-4039-b2ad-f31d78f866dd.png)<br>
+
 
 
 ### 4.4 Añadir audio
