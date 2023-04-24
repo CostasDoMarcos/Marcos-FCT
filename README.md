@@ -268,11 +268,11 @@ Para que tambien se hicese el fade al terminar un nivel, para que no quede tan b
 ![image](https://user-images.githubusercontent.com/55932083/234066986-8e8fdebc-83e0-48c1-a44c-89089099b936.png)<br>
 
 ## 5 Terminar y publicar
-###5.1 Crear un menú
+### 5.1 Crear un menú
 Para crear el menú crearemos un layout nuevo y un event sheet asociado a el, en el que simplemente le pondremos 2 bloques de texto y un botón para  hacer la funccion de jugar.<br>
 Para poder usar la funcionalidad del raton en Construct tendremos que añadir el objeto mouse a nuestro proyecto.<br>
 ![image](https://user-images.githubusercontent.com/55932083/234069042-529d998b-a148-438c-862f-4bbb272b4cc7.png)<br>
-###5.1 Compilar y publicar
+### 5.1 Compilar y publicar
 Para ello tendremos que ir al menú de exportar.<br>
 ![image](https://user-images.githubusercontent.com/55932083/234075102-21e672ce-de4e-4a86-95d2-c6b2a1a22745.png)<br>
 Seleccionaremos HTML5<br>
