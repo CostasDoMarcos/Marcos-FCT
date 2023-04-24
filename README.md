@@ -257,7 +257,6 @@ Iremos a nuestro evento de colision con la bandera y en vez de decirle que reini
 ![image](https://user-images.githubusercontent.com/55932083/234061542-80977145-c8ed-4cba-8e59-89967f4fb9ce.png)<br>
 Nuevamente, esto nso causaría un problema, en caso de haber por ejemplo 3 niveles , al tocal a bandera solo llegaríamos al nivel dos, para arreglar esto debemos crear una variable global que se incremente cada vez que tocamos la bandera para ir avanzando por los distintos niveles<br>
 ![image](https://user-images.githubusercontent.com/55932083/234063226-f6d2783b-8991-40ed-ac1f-fab3094caeb2.png)<br>
-
 ### 4.6 Progresión entre niveles
 Para que al terminar el juego nos salga una ventana de victorai por ejemplo, debemos crear un nuevo Event sheet  y un último layout en el que pondremos los mensajes de victoria y de como se reiniciará el juego, solo hay que crear un nuevo layout, un nuevo event sheet y en el propio event sheet decir con que boton queremos que se reinicie el juego haciendo que las variables globales se reinicien, ya que si no al reiniciar el juego y tocar una bandera Construct seguiría asociando mal y buscando un nivel que no existiria.<br>
 ![image](https://user-images.githubusercontent.com/55932083/234065664-cdce336d-4895-44fd-aeee-3f15da8a6382.png)<br>
@@ -267,6 +266,24 @@ Así cada vez que se empezase un nivel se vería la pantalla en negro al iniciar
 Para que tambien se hicese el fade al terminar un nivel, para que no quede tan brusco en el cambio de niveles habría que añadir una variable a por ejemplo la cámara y hacer el siguiente evento.<br>
 ![image](https://user-images.githubusercontent.com/55932083/234066792-e392720a-1955-4a7e-8796-c1dab4205228.png)<br>
 ![image](https://user-images.githubusercontent.com/55932083/234066986-8e8fdebc-83e0-48c1-a44c-89089099b936.png)<br>
+
+## 5 Terminar y publicar
+###5.1 Crear un menú
+Para crear el menú crearemos un layout nuevo y un event sheet asociado a el, en el que simplemente le pondremos 2 bloques de texto y un botón para  hacer la funccion de jugar.<br>
+Para poder usar la funcionalidad del raton en Construct tendremos que añadir el objeto mouse a nuestro proyecto.<br>
+![image](https://user-images.githubusercontent.com/55932083/234069042-529d998b-a148-438c-862f-4bbb272b4cc7.png)<br>
+###5.1 Compilar y publicar
+Para ello tendremos que ir al menú de exportar.<br>
+![image](https://user-images.githubusercontent.com/55932083/234075102-21e672ce-de4e-4a86-95d2-c6b2a1a22745.png)<br>
+Seleccionaremos HTML5<br>
+![image](https://user-images.githubusercontent.com/55932083/234075289-293da1ba-7f99-4c99-9516-b866eac82ef3.png)<br>
+Nos creamos una cuenta en la página itc.io y en nuestro perfil pulsaremos sobre subir nuevo proyecto<br>
+![image](https://user-images.githubusercontent.com/55932083/234075847-24cc0136-7d43-488d-8e9c-b681bc2d0029.png)<br>
+//TODO Tengo que ver porque tal cual lo explican en openwebinars al exportar les crea directametne un zip(yo tengo otra versión, la gratuita obviamente) y a mi al exportar html 5 no me crea el zip, me crea una carpeta, pero al comprimirla y subirla a Itch.io el juego no funciona, dejo el link igualmente por si acaso<br>
+https://costasdomarcos.itch.io/juegopractica <br>
+
+
+
 
 
 
