@@ -242,12 +242,24 @@ Para que la imágen se gire solo habría que ir al control de personaje y decirl
 Haremos que el cuadrado de la hitbox sea invisible y el sprite se destruya al morir, y ya estaría el jugador con un personaje.<br>
 ![image](https://user-images.githubusercontent.com/55932083/233860022-700efb28-359a-4409-b132-93bbf1da79c0.png)<br>
 ![image](https://user-images.githubusercontent.com/55932083/233860053-5949869b-63b7-4039-b2ad-f31d78f866dd.png)<br>
-
-
-
 ### 4.4 Añadir audio
-
+Primero de todo para poder añadir Audio habria que añadir el Objeto audio en los object types apra que en el event sheet empiecen a aparecer eventos de audio.<br>
+![image](https://user-images.githubusercontent.com/55932083/234056313-675683b9-98fe-4116-a8ff-7645ab71ece7.png)<br>
+Y asi quedaria despues de "Programar la reproducción de la música".<br>
+![image](https://user-images.githubusercontent.com/55932083/234058312-f3a6990d-bd9c-4d08-945b-ef3b1e7a67ef.png)<br>
+Así lo que conseguiremos es que la música solo funcione si la música no esta sonando, ya que si no cada vez que se reiniciase el juego al música volveria a sonar haciendose un bucle de audio.<br>
+![image](https://user-images.githubusercontent.com/55932083/234058917-a99ac59f-066c-4030-8a19-f4cd19833a56.png)<br>
+Así conseguiremos que se reproduzca un efecto de sonido de muerte cuando nso impacte un enemigo.<br>
 ### 4.5 Crear niveles
+para Crear un nivel simplemente hab´ra que crear un nuevo layout y en el hacer el diseño del mundo y poner los enemigos como nosotros los queramos (esto no se suele hacer a mano como en este caso)<br>
+lo que si vamos a hacer es vincular el nivel 1 con el nivel 2, ya que construct no sabe que tiene que hacer al terminar el nivel 1 y lo que haría sería repetirlo en bucle, para ello haremos lo siguiente.<br>
+Iremos a nuestro evento de colision con la bandera y en vez de decirle que reinicie le diremos que vaya al layout 2 <br>
+![image](https://user-images.githubusercontent.com/55932083/234061542-80977145-c8ed-4cba-8e59-89967f4fb9ce.png)<br>
+Nuevamente, esto nso causaría un problema, en caso de haber por ejemplo 3 niveles , al tocal a bandera solo llegaríamos al nivel dos, para arreglar esto debemos crear una variable global que se incremente cada vez que tocamos la bandera para ir avanzando por los distintos niveles<br>
+![image](https://user-images.githubusercontent.com/55932083/234063226-f6d2783b-8991-40ed-ac1f-fab3094caeb2.png)<br>
+
+
+
 
 ### 4.6 Progresión entre niveles
 
