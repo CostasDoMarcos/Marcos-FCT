@@ -258,10 +258,19 @@ Iremos a nuestro evento de colision con la bandera y en vez de decirle que reini
 Nuevamente, esto nso causaría un problema, en caso de haber por ejemplo 3 niveles , al tocal a bandera solo llegaríamos al nivel dos, para arreglar esto debemos crear una variable global que se incremente cada vez que tocamos la bandera para ir avanzando por los distintos niveles<br>
 ![image](https://user-images.githubusercontent.com/55932083/234063226-f6d2783b-8991-40ed-ac1f-fab3094caeb2.png)<br>
 
-
-
-
 ### 4.6 Progresión entre niveles
+Para que al terminar el juego nos salga una ventana de victorai por ejemplo, debemos crear un nuevo Event sheet  y un último layout en el que pondremos los mensajes de victoria y de como se reiniciará el juego, solo hay que crear un nuevo layout, un nuevo event sheet y en el propio event sheet decir con que boton queremos que se reinicie el juego haciendo que las variables globales se reinicien, ya que si no al reiniciar el juego y tocar una bandera Construct seguiría asociando mal y buscando un nivel que no existiria.<br>
+![image](https://user-images.githubusercontent.com/55932083/234065664-cdce336d-4895-44fd-aeee-3f15da8a6382.png)<br>
+en OpenWebinars explican como hacer un fade transición al final de cada nivel, pero no puedo hacerlo porque el construct gratuito esta limitado y no puedo crear mas capas asi que esta sacado directametne del video de como se haría.<br>
+![image](https://user-images.githubusercontent.com/55932083/234066413-314135b9-f9c7-4568-b53e-32e31637563a.png)<br>
+Así cada vez que se empezase un nivel se vería la pantalla en negro al iniciar un nivel.<br>
+Para que tambien se hicese el fade al terminar un nivel, para que no quede tan brusco en el cambio de niveles habría que añadir una variable a por ejemplo la cámara y hacer el siguiente evento.<br>
+![image](https://user-images.githubusercontent.com/55932083/234066792-e392720a-1955-4a7e-8796-c1dab4205228.png)<br>
+![image](https://user-images.githubusercontent.com/55932083/234066986-8e8fdebc-83e0-48c1-a44c-89089099b936.png)<br>
+
+
+
+
 
 
 
