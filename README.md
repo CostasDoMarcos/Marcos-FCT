@@ -279,8 +279,11 @@ Seleccionaremos HTML5<br>
 ![image](https://user-images.githubusercontent.com/55932083/234075289-293da1ba-7f99-4c99-9516-b866eac82ef3.png)<br>
 Nos creamos una cuenta en la página itc.io y en nuestro perfil pulsaremos sobre subir nuevo proyecto<br>
 ![image](https://user-images.githubusercontent.com/55932083/234075847-24cc0136-7d43-488d-8e9c-b681bc2d0029.png)<br>
+# 3.Phaser
+Phaser es un Framework de libre distribución y Open Source (se puede modificar a gusto) que trabaja sobre JavaScript Y TypeScript.<br>
 
-
+Agrego archivo del progreso con phaser porque literalmente el curso de openwebinars básico es copiando y pegando códigos predefinidos de Phaser.<br>
+El curso de Phaser personalmente no me ha gustado porque es poco teórico  por asi decirlo y se hace difícil hacer anotaciónes<br>
 
 
 
