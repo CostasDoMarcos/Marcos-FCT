@@ -279,8 +279,7 @@ Seleccionaremos HTML5<br>
 ![image](https://user-images.githubusercontent.com/55932083/234075289-293da1ba-7f99-4c99-9516-b866eac82ef3.png)<br>
 Nos creamos una cuenta en la página itc.io y en nuestro perfil pulsaremos sobre subir nuevo proyecto<br>
 ![image](https://user-images.githubusercontent.com/55932083/234075847-24cc0136-7d43-488d-8e9c-b681bc2d0029.png)<br>
-//TODO Tengo que ver porque tal cual lo explican en openwebinars al exportar les crea directametne un zip(yo tengo otra versión, la gratuita obviamente) y a mi al exportar html 5 no me crea el zip, me crea una carpeta, pero al comprimirla y subirla a Itch.io el juego no funciona, dejo el link igualmente por si acaso<br>
-https://costasdomarcos.itch.io/juegopractica <br>
+
 
 
 
