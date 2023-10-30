@@ -623,7 +623,7 @@ Es una herramienta que incluye Unity para ahorrar tiempo cuando se cambia entre 
 Unity no utiliza el formato original de los assets, los convierte a un formato para la plataforma sobre la que está trabajando.<br>
 Básicamente guarda una copia de los recursos ya convertidos para que cuando sea necesario volver a usarlos no tengan que volver a codificarse por completo.<br>
 
-### <u>7.2 Servidor Local vs Remoto</u>
+### 7.2 Servidor Local vs Remoto
 Se puede trabajar con él en modo Local, Remoto o simplemente desactivado<br>
 -Deshabilitado: no es recomendable, los recursos tendrán que importarse cada vez que se cambie de plataforma.<br>
 -Local: Si no es necesario compartir la caché porque solo trabajamos nosotros.<br>
