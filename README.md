@@ -577,9 +577,9 @@ Para añadir un prefab a nuestro juego simplemente lo tendremos que arrastrar a 
 
 ### 6.3 Prefab Mode
 
-Los prefabs se pueden modificar para que afecten a todas las instancias<br>
-Para entrar en el modo de edición con hacer doble click sobre el prefab ya se podría editar<br>
-Esto abre una escena nueva en la que estará nuestro prefab (plantilla) y todo lo que editemos en esta escena afectará al prefab.<br>
+-Los prefabs se pueden modificar para que afecten a todas las instancias<br>
+-Para entrar en el modo de edición con hacer doble click sobre el prefab ya se podría editar<br>
+-Esto abre una escena nueva en la que estará nuestro prefab (plantilla) y todo lo que editemos en esta escena afectará al prefab.<br>
 
 ### 6.4 Instance Override
 
@@ -623,7 +623,7 @@ Es una herramienta que incluye Unity para ahorrar tiempo cuando se cambia entre 
 Unity no utiliza el formato original de los assets, los convierte a un formato para la plataforma sobre la que está trabajando.<br>
 Básicamente guarda una copia de los recursos ya convertidos para que cuando sea necesario volver a usarlos no tengan que volver a codificarse por completo.<br>
 
-### 7.2 Servidor Local vs Remoto
+### <u>7.2 Servidor Local vs Remoto</u>
 Se puede trabajar con él en modo Local, Remoto o simplemente desactivado<br>
 -Deshabilitado: no es recomendable, los recursos tendrán que importarse cada vez que se cambie de plataforma.<br>
 -Local: Si no es necesario compartir la caché porque solo trabajamos nosotros.<br>
