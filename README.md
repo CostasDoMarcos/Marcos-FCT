@@ -628,6 +628,217 @@ Se puede trabajar con él en modo Local, Remoto o simplemente desactivado<br>
 -Deshabilitado: no es recomendable, los recursos tendrán que importarse cada vez que se cambie de plataforma.<br>
 -Local: Si no es necesario compartir la caché porque solo trabajamos nosotros.<br>
 -Remoto: En un servidor externo, para trabajar en un equipo.<br>
+#5. Componentes y API de Unity
+## 1.Introducción  a la programación de componentes
+### 1.1 GameObject y componentes.
+Recordatorio:
+GameObject: Objeto elemental de Unity, Contenedor de componentes.
+Componente:Código que realiza funciones muy concretas(sobre el GameObject).
+### 1.2 Creación de componentes.
+En Unity los Componentes no son más que clases que heredan de otra clase llamada MonoBehaviour.
+Los componentes se crean en la ventana de proyecto simplemente haciendo clic derecho->Create->C# script
+Nuestro componente creado hereda de MonoBehaviour que a su vez hereda de Behaviour que hereda de Component y este hereda de Object.
+nuestroComponente->MonoBehaviour->Behaviour->Component->Object.
+(Son todo clases de Unity y Object es un objeto propio de UnityEngine).
+Es muy sencillo crear componentes, al pulsar crear componente se abre directamente el IDE que nosotros tengamos predefinido.
+### 1.3 Atributos públicos de un componente
+Los atributos de un componente son los valores de los atributos del mismo.
+Al crear atributos públicos aparecen directamente en el propio componente para modificar sus valores.
+Los datos se muestran siempre y cuando se puedan serializar.
+Puede haber atributos que no interese que se vea en el propio inspector, para ocultarlo con poner antes del atributo[HideInInspector] lo ocultara en el inspector.
+Con un atributo privado se puede hacer lo mismo, solo que de por sí el inspector no lo muestra, pero poniendo antes del atributo [SerializeField] forzaríamos al inspector a que lo muestre.
+También se pueden crear estructuras(struct) que vendrían siendo objetos, que contienen valores, los cuales se pueden añadir también a los componentes pero de por sí no se pueden serializar, si se quiere que se serialice un struct habría que indicarselo a Unity con [System.Serializable].
+### 1.4 Componente Transform.
+Transform guarda la información sobre la posición rotación y escala de un objeto, este componente no se puede eliminar y todos los GameObject tienen uno.
+Si esta contenido dentro de un padre, su información es siempre relativa al padre aunque en código se pueden cambiar sus valores sobre el plano global o sobre el plano local.
+
+### 1.5 Transform vs transform.
+Transform-> es una Clase.
+transform-> es una instancia de la clase Transform.
+transform hace referencia al Transform del objeto que lo contiene.
+Siempre tiene una referencia, ya que Transform es el único componente que no se puede borrar
+
+### 1.6 Atributos principales de Transform (Parte I).
+Atributos Up,right y Forward: Son los vectores que apuntan en esas direcciónes en el  espacio global.
+Position,Rotation,LossyScale; Indican la posición, rotación y escala en el plano global
+localPosition,localRotation,localScale:Indican la posición, rotación y escala en el plano local.
+childCount:Número de hijos del objeto.
+Algunos de los métodos mas utilizados:
+Translate:Mueve el objeto la distancia que se le indique.
+Rotate: Rota el objeto
+GetChild():Devuelve una referencia al transform del hijo número que se le pase.
+LookAt: Sirve para rotar un objeto y que este apunte a la posición indicada.
+SetParent: Sirve para modificar lo padres de un objeto,con null se eliminan todos los padres
+[Inverse]Transform: Convierte los valores del transform local al global y viceversa.
+### 1.7 Atributos principales de Transform (Parte II).
+Vector3:
+Estructura con 3 atributos principales: x,y,z
+Tiene Métodos propios de manipulación:
+Distance,Angle,Lerp…
+Tiene campos estáticos auxiliares:
+Son por así decirlo como accesos directos a posiciones predefinidas.
+Unity utiliza cuaterniones para rotar objetos (Algo complicado de matemáticas, pero no hace falta saber cómo funcionan para saber utilizarlos).
+los cuaterniones son Compactos y rápidos de interpolación sencilla y no sufren Gimbal Lock.
+
+## 2.El ciclo de vida de un componente
+Son las fases de un componente desde que nace( se crea ) hasta que muere ( se destruye ).
+### 2.1 Awake.
+Forma parte del bloque de inicialización de un componente.
+Se ejecuta siempre que se cree el objeto o el componente.
+### 2.2 OnEnable.
+Se ejecuta siempre que se activa el objeto que lo contiene
+Así como Awake solo se activa una vez ( al creador del objeto ) y OnEnable se puede activar varias veces.
+### 2.3 Start.
+Solo se ejecutará en el primer frame en el que el frame está activo.
+Los Start no se ejecutan hasta que no se ejecuten todos los Awake y todos los OnEnable.
+Componente que crea el recurso debería hacerlo en Awaken o en OnEnable y el que lo consume en Start, para así asegurarse de que el componente que va a utilizar ya se ha creado.
+### 2.4 OnDisable.
+Se ejecuta cuando se desactiva un componente o un objeto completo
+Así mismo OnDestroy se utiliza para limpiar recursos y se activa al cerrar la escena o destruir un objeto.
+### 2.5 Update.
+El método Update es uno de los pilares centrales de la lógica del juego, es el primero que se ejecuta y está ejecutándose constantemente cada frame, marca en gran medida los FPS del juego.
+Se actualiza mediante:
+Movimientos.
+Animaciónes.
+Posiciones..
+
+### 2.6 FixedUpdate.
+Tiene una frecuencia fija y se puede modificar en preferencias.
+Se ejecuta antes de cálculos de física y si se aplican fuerzas se hace desde aquí.
+
+
+### 2.7 LateUpdate.
+En unity no se puede saber el orden de ejecución de los scripts, puede incluso variar entre simulación y simulación
+Se lleva a cabo cuando han terminado todos los updates de todos los objetos de la escena.
+Ideal para llevar acciones que requieren que todos los objetos se hayan actualizado.
+Por ejemplo: Una cámara que sigue a un objeto o a un jugador.
+
+### 2.8 OnGUI.
+Se utilizaba para crear interfaces de usuario.
+Se puede usar para crear herramientas personalizadas.
+Usa GUI y GUILayout.
+GUI: hay que añadir elementos a mano y posicionarlos y darles tamaño
+GUILayout: Permite hacer interfaces de usuario más rápido y de forma más sencilla.
+Se ejecuta después de los renderizados, por ello se pinta encima de todos los demas componentes del juego.
+Básicamente es crear una interfaz mediante código.
+
+### 2.9 OnDrawGizmos.
+Permite dibujar gizmos en la ventana de escena de Unity.
+Gizmo: Gráfico asociado al componente o objeto
+Visualiza información del objeto:
+Valores
+Rangos
+Distancias
+Gizmos.color:Cambiar color
+Gizmos.DrawLine dibuja una línea.
+
+### 2.10 Uso de OnDrawGizmos.
+Visualizar el rango de percepción de un objeto o enemigo
+para hacer un círculo visualizable alrededor del enemigo para saber su campo de visión se utilizaría por ejemplo DrawWireSphere y se pintara una esfera alrededor del objeto
+OnDrawGizmosSelected hace lo mismo que le OnDrawGizmos normal solo que en vez de estar siempre encendidas solamente se encenderán las esferas al seleccionarlas.
+
+### 2.11 Precauciones al ejecutar.
+En los scripts en Unity no hay un orden de ejecución por defecto.
+Se puede forzar en las opciones la ejecución prioritaria de algún script (Project Setting/Script Execution Order), pero es mejor no hacerlo y que sea el último recurso.
+Conocer el ciclo de vida de los componentes para no tener que recurrir a forzar los scripts.
+## 3 Acceso a componentes
+### 3.1 Acceso a componentes de otros objetos
+La forma más sencilla es usar propiedades públicas, se pueden asignar directamente las referencias adecuadas desde Unity, básicamente sería como usar los  valores de otros objetos en programación normal  para acceder a sus diversos valores y manipularlos como  componentes.
+Permite especificar sólo  una referencia o un array de ellas.
+### 3.2FindObjectsOfType
+Enemy anEnemy =(Enemy)FindObjectOfType(TypeOf(Enemy))
+Básicamente sirve para buscar en la lista de objetos en la escena un objeto 
+Enemy[] enemyList=FindObjectsOfType<Enemy>()
+Guarda todos los objetos enemy en una lista de objetos Enemy 
+
+El primer código devuelve un total de enemigos
+El segundo código devuelve CADA UNO de  los enemigos
+### 3.3 Acceso a componentes propios
+Tener que acceder a componentes del propio GameObject suele ser bastante común y para ello se pueden usar atributos públicos
+
+Acceder a los componentes es como acceder a los componentes en un programa normal del propio C#:
+enemy=GetComponent<Enemy>();
+Se utiliza GetComponent(s): el cual nos devolvería todos los componentes del objeto que tengan el nombre especificado 
+Tambien se puede acceder a componentes que esten por debajo o por encima en la jerarquia:
+GetComponent(s)InChildren: Para coger los componentes buscados por debajo de la jerarquía(hijos).
+GetComponent(s)InParent: Para coger los componentes buscados por encima de la jerarquía(padres)
+
+### 3.4 Añadir componentes en tiempo de ejecución
+
+Se utiliza por ejemplo para simular el agarrar un objeto, se crearía un componente 
+Component GameObject.AddComponent(System.type);
+T GameObject.AddComponent\<T>();
+RigidBody que se añadiría al objeto para poder simular el agarre, y a la hora de soltarlo simplemente se destruiría el componente y ya se soltaría.
+T es un objeto genérico.
+
+## 4 Introducción a la API de Unity
+### 4.1  Clase Debug
+Print es un envoltorio para Debug.Log
+Hay varios tipos de Debuglogs:
+Debug.Log: Información
+Debug.LogWarning: Advertencia
+Debug.LogError: Errores
+Es una clase útil para depuración y detectar errores.
+Cuando se necesita pausar la ejecución del juego se utiliza Debug.Break.
+Tambien se puede formatear el mensaje con:
+Debug.LogFormat
+Debug.LogWaningFormat
+Debug.LogErrorFormat
+### 4.2 Clases Input
+Teclado:
+Input.GetKey: estado de la tecla
+Input.GetKeyDown: tecla acaba de pulsarse
+Input.GetKeyUp: tecla acaba de soltarse
+Keycode-> Es un enumerado que contiene todos los valores de teclas de teclado
+No tiene ningun metodo para saber que tecla esta pulsada en ese momento.
+Para ello habría que usar un foreach para recorrer el enumerado, como este:
+
+foreach (KeyCode k in typeof(KeyCode).GetEnumValues()){ Debug.Log("Se ha pulsado la tecla " + k); }
+
+Ejes y botones virtuales:
+Están definidos en ProjectSettings/Input
+Funciona igual que Input.GetKey
+Simula los ejes de un mando
+Input.GetButton: estado de la tecla
+Input.GetButtonDown: tecla acaba de pulsarse
+Input.GetButtonUp: tecla acaba de soltarse
+Los Buttons no están enumerados, habría que saber el nombre que tiene cada uno.
+Ratón:Obtiene la posición del ratón en píxeles.
+Se puede saber si se ha pulsado alguno de los botones del ratón
+Input.GetMouseButtonDown
+Input.GetMouseButtonUp
+OJO-> Botón 0 es el botón principal, no tiene porque ser el click izquierdo, piensa en los zurdos
+Dispositivos móviles:
+Para probar Unity Remote.
+Es necesario tener el SDK de Android para poder usarlo y configurarlo en  ProjectSettings/Editor 
+Puede recoger datos de funciones del móvil como el GPS,acelerómetro…
+### 4.3 Clase Screen
+Nos da información sobre la ventana/pantalla en la que se esté ejecutando el juego.
+Podremos conseguir:
+Resolución actual.
+Resoluciones soportadas(recorriendo un array)
+Establecer modo pantalla completa(No se puede comprobar en Unity per se, hay que crear un ejecutable).
+Rotar(para móviles)
+Puntos por pulgada(PPP)
+### 4.4 Clase Camera
+
+Sirve para acceder a las funcionalidades de la cámara (cámara principal del juego) Camera.main(etiqueta MainCamera).
+
+World Space: Sistema de coordenadas donde están los objetos de nuestra escena
+Screen Space: sistema de coordenadas de la pantalla desde (0,0) hasta el ancho y alto de la pantalla
+Viewport: Sistema de coordenadas que va desde (0,0) hasta (1,1)
+
+Conversión de coordenadas
+WorldTo[Screen, Viewport]Point: Convierte una posición del mundo en un punto en la pantalla o Viewport
+ScreenTo[World, Viewport]Point: Convierte un punto de la pantalla en una posición en el mundo o Viewport
+ViewportTo[World,Screen]Point: Convierte un punto del viewport a un punto del mundo la pantalla.
+
+### 4.5 Clase Time
+### 4.6 Transforms
+### 4.7 Activacion y desactivacion de objetos y componentes
+### 4.8
+### 4.9
+
 
 
 
