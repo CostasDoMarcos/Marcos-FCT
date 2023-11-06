@@ -747,96 +747,104 @@ En los scripts en Unity no hay un orden de ejecución por defecto.<br>
 Se puede forzar en las opciones la ejecución prioritaria de algún script (Project Setting/Script Execution Order), pero es mejor no hacerlo y que sea el último recurso.<br>
 Conocer el ciclo de vida de los componentes para no tener que recurrir a forzar los scripts.<br>
 ## 3 Acceso a componentes
-### 3.1 Acceso a componentes de otros objetos
-La forma más sencilla es usar propiedades públicas, se pueden asignar directamente las referencias adecuadas desde Unity, básicamente sería como usar los  valores de otros objetos en programación normal  para acceder a sus diversos valores y manipularlos como  componentes.
-Permite especificar sólo  una referencia o un array de ellas.
+### 3.1 Acceso a componentes de otros objetos<br>
+La forma más sencilla es usar propiedades públicas, se pueden asignar directamente las referencias adecuadas desde Unity, básicamente sería como usar los  valores de otros objetos en programación normal  para acceder a sus diversos valores y manipularlos como  componentes.<br>
+Permite especificar sólo una referencia o un array de ellas.<br>
 ### 3.2FindObjectsOfType
-Enemy anEnemy =(Enemy)FindObjectOfType(TypeOf(Enemy))
-Básicamente sirve para buscar en la lista de objetos en la escena un objeto 
-Enemy[] enemyList=FindObjectsOfType<Enemy>()
-Guarda todos los objetos enemy en una lista de objetos Enemy 
-
-El primer código devuelve un total de enemigos
-El segundo código devuelve CADA UNO de  los enemigos
+Enemy anEnemy =(Enemy)FindObjectOfType(TypeOf(Enemy)).<br>
+Básicamente sirve para buscar en la lista de objetos en la escena un objeto.<br> 
+Enemy[] enemyList=FindObjectsOfType<Enemy>().<br>
+Guarda todos los objetos enemy en una lista de objetos Enemy .<br>
+El primer código devuelve un total de enemigos.<br>
+El segundo código devuelve CADA UNO de  los enemigos.<br>
 ### 3.3 Acceso a componentes propios
-Tener que acceder a componentes del propio GameObject suele ser bastante común y para ello se pueden usar atributos públicos
+Tener que acceder a componentes del propio GameObject suele ser bastante común y para ello se pueden usar atributos públicos.<br>
 
-Acceder a los componentes es como acceder a los componentes en un programa normal del propio C#:
-enemy=GetComponent<Enemy>();
-Se utiliza GetComponent(s): el cual nos devolvería todos los componentes del objeto que tengan el nombre especificado 
-Tambien se puede acceder a componentes que esten por debajo o por encima en la jerarquia:
-GetComponent(s)InChildren: Para coger los componentes buscados por debajo de la jerarquía(hijos).
-GetComponent(s)InParent: Para coger los componentes buscados por encima de la jerarquía(padres)
+Acceder a los componentes es como acceder a los componentes en un programa normal del propio C#:<br>
+enemy=GetComponent<Enemy>();<br>
+-Se utiliza GetComponent(s): el cual nos devolvería todos los componentes del objeto que tengan el nombre especificado.<br>
+Tambien se puede acceder a componentes que esten por debajo o por encima en la jerarquia:<br>
+GetComponent(s)InChildren: Para coger los componentes buscados por debajo de la jerarquía(hijos).<br>
+GetComponent(s)InParent: Para coger los componentes buscados por encima de la jerarquía(padres).<br>
 
 ### 3.4 Añadir componentes en tiempo de ejecución
 
-Se utiliza por ejemplo para simular el agarrar un objeto, se crearía un componente 
-Component GameObject.AddComponent(System.type);
-T GameObject.AddComponent\<T>();
-RigidBody que se añadiría al objeto para poder simular el agarre, y a la hora de soltarlo simplemente se destruiría el componente y ya se soltaría.
-T es un objeto genérico.
+Se utiliza por ejemplo para simular el agarrar un objeto, se crearía un componente.<br>
+Component GameObject.AddComponent(System.type);<br>
+T GameObject.AddComponent\<T>();<br>
+RigidBody que se añadiría al objeto para poder simular el agarre, y a la hora de soltarlo simplemente se destruiría el componente y ya se soltaría.<br>
+T es un objeto genérico.<br>
 
 ## 4 Introducción a la API de Unity
 ### 4.1  Clase Debug
-Print es un envoltorio para Debug.Log
-Hay varios tipos de Debuglogs:
-Debug.Log: Información
-Debug.LogWarning: Advertencia
-Debug.LogError: Errores
-Es una clase útil para depuración y detectar errores.
-Cuando se necesita pausar la ejecución del juego se utiliza Debug.Break.
-Tambien se puede formatear el mensaje con:
-Debug.LogFormat
-Debug.LogWaningFormat
-Debug.LogErrorFormat
+Print es un envoltorio para Debug.Log<br>
+Hay varios tipos de Debuglogs:<br>
+-Debug.Log: Información.<br>
+-Debug.LogWarning: Advertencia.<br>
+-Debug.LogError: Errores.<br>
+Es una clase útil para depuración y detectar errores.<br>
+Cuando se necesita pausar la ejecución del juego se utiliza Debug.Break.<br>
+Tambien se puede formatear el mensaje con:<br>
+-Debug.LogFormat.<br>
+-Debug.LogWaningFormat.<br>
+-Debug.LogErrorFormat.<br>
 ### 4.2 Clases Input
-Teclado:
-Input.GetKey: estado de la tecla
-Input.GetKeyDown: tecla acaba de pulsarse
-Input.GetKeyUp: tecla acaba de soltarse
-Keycode-> Es un enumerado que contiene todos los valores de teclas de teclado
-No tiene ningun metodo para saber que tecla esta pulsada en ese momento.
-Para ello habría que usar un foreach para recorrer el enumerado, como este:
 
-foreach (KeyCode k in typeof(KeyCode).GetEnumValues()){ Debug.Log("Se ha pulsado la tecla " + k); }
+Teclado:<br>
 
-Ejes y botones virtuales:
-Están definidos en ProjectSettings/Input
-Funciona igual que Input.GetKey
-Simula los ejes de un mando
-Input.GetButton: estado de la tecla
-Input.GetButtonDown: tecla acaba de pulsarse
-Input.GetButtonUp: tecla acaba de soltarse
+-Input.GetKey: estado de la tecla.<br>
+-Input.GetKeyDown: tecla acaba de pulsarse.<br>
+-Input.GetKeyUp: tecla acaba de soltarse.<br>
+-Keycode-> Es un enumerado que contiene todos los valores de teclas de teclado.<br>
+No tiene ningun metodo para saber que tecla esta pulsada en ese momento.<br>
+Para ello habría que usar un foreach para recorrer el enumerado, como este:<br>
+
+foreach (KeyCode k in typeof(KeyCode).GetEnumValues()){ Debug.Log("Se ha pulsado la tecla " + k); }<br>
+
+-Ejes y botones virtuales:
+
+Están definidos en ProjectSettings/Input.<br>
+Funciona igual que Input.GetKey.<br>
+Simula los ejes de un mando.<br>
+-Input.GetButton: Estado de la tecla.<br>
+-Input.GetButtonDown: Tecla acaba de pulsarse.<br>
+-Input.GetButtonUp: Tecla acaba de soltarse.<br>
 Los Buttons no están enumerados, habría que saber el nombre que tiene cada uno.
-Ratón:Obtiene la posición del ratón en píxeles.
-Se puede saber si se ha pulsado alguno de los botones del ratón
-Input.GetMouseButtonDown
-Input.GetMouseButtonUp
-OJO-> Botón 0 es el botón principal, no tiene porque ser el click izquierdo, piensa en los zurdos
-Dispositivos móviles:
-Para probar Unity Remote.
-Es necesario tener el SDK de Android para poder usarlo y configurarlo en  ProjectSettings/Editor 
-Puede recoger datos de funciones del móvil como el GPS,acelerómetro…
+-Ratón: Obtiene la posición del ratón en píxeles.<br>
+Se puede saber si se ha pulsado alguno de los botones del ratón con:<br>
+-Input.GetMouseButtonDown.<br>
+-Input.GetMouseButtonUp.<br>
+OJO-> Botón 0 es el botón principal, no tiene porque ser el click izquierdo, piensa en los zurdos.<br>
+
+Dispositivos móviles:<br>
+
+-Para probar Unity Remote.
+Es necesario tener el SDK de Android para poder usarlo y configurarlo en  ProjectSettings/Editor.<br>
+Puede recoger datos de funciones del móvil como el GPS,acelerómetro…<br>
+
 ### 4.3 Clase Screen
-Nos da información sobre la ventana/pantalla en la que se esté ejecutando el juego.
-Podremos conseguir:
-Resolución actual.
-Resoluciones soportadas(recorriendo un array)
-Establecer modo pantalla completa(No se puede comprobar en Unity per se, hay que crear un ejecutable).
-Rotar(para móviles)
-Puntos por pulgada(PPP)
+
+Nos da información sobre la ventana/pantalla en la que se esté ejecutando el juego.<br>
+Podremos conseguir:<br>
+-Resolución actual.<br>
+-Resoluciones soportadas(recorriendo un array).<br>
+-Establecer modo pantalla completa(No se puede comprobar en Unity per se, hay que crear un ejecutable).<br>
+-Rotar(para móviles).<br>
+-Puntos por pulgada(PPP).<br>
+
 ### 4.4 Clase Camera
 
-Sirve para acceder a las funcionalidades de la cámara (cámara principal del juego) Camera.main(etiqueta MainCamera).
+Sirve para acceder a las funcionalidades de la cámara (cámara principal del juego) Camera.main(etiqueta MainCamera).<br>
 
-World Space: Sistema de coordenadas donde están los objetos de nuestra escena
-Screen Space: sistema de coordenadas de la pantalla desde (0,0) hasta el ancho y alto de la pantalla
-Viewport: Sistema de coordenadas que va desde (0,0) hasta (1,1)
+-World Space: Sistema de coordenadas donde están los objetos de nuestra escena.<br>
+-Screen Space: sistema de coordenadas de la pantalla desde (0,0) hasta el ancho y alto de la pantalla.<br>
+-Viewport: Sistema de coordenadas que va desde (0,0) hasta (1,1).<br>
 
-Conversión de coordenadas
-WorldTo[Screen, Viewport]Point: Convierte una posición del mundo en un punto en la pantalla o Viewport
-ScreenTo[World, Viewport]Point: Convierte un punto de la pantalla en una posición en el mundo o Viewport
-ViewportTo[World,Screen]Point: Convierte un punto del viewport a un punto del mundo la pantalla.
+Conversión de coordenadas<br>
+
+-WorldTo[Screen, Viewport]Point: Convierte una posición del mundo en un punto en la pantalla o Viewport.<br>
+-ScreenTo[World, Viewport]Point: Convierte un punto de la pantalla en una posición en el mundo o Viewport.<br>
+-ViewportTo[World,Screen]Point: Convierte un punto del viewport a un punto del mundo la pantalla.<br>
 
 ### 4.5 Clase Time
 ### 4.6 Transforms
