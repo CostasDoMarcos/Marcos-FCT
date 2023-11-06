@@ -629,118 +629,123 @@ Se puede trabajar con él en modo Local, Remoto o simplemente desactivado<br>
 -Local: Si no es necesario compartir la caché porque solo trabajamos nosotros.<br>
 -Remoto: En un servidor externo, para trabajar en un equipo.<br>
 #5. Componentes y API de Unity
+
 ## 1.Introducción  a la programación de componentes
+
 ### 1.1 GameObject y componentes.
-Recordatorio:
-GameObject: Objeto elemental de Unity, Contenedor de componentes.
-Componente:Código que realiza funciones muy concretas(sobre el GameObject).
+
+Recordatorio:<br>
+-GameObject: Objeto elemental de Unity, Contenedor de componentes.<br>
+-Componente:Código que realiza funciones muy concretas(sobre el GameObject).<br>
+
 ### 1.2 Creación de componentes.
-En Unity los Componentes no son más que clases que heredan de otra clase llamada MonoBehaviour.
-Los componentes se crean en la ventana de proyecto simplemente haciendo clic derecho->Create->C# script
-Nuestro componente creado hereda de MonoBehaviour que a su vez hereda de Behaviour que hereda de Component y este hereda de Object.
-nuestroComponente->MonoBehaviour->Behaviour->Component->Object.
-(Son todo clases de Unity y Object es un objeto propio de UnityEngine).
-Es muy sencillo crear componentes, al pulsar crear componente se abre directamente el IDE que nosotros tengamos predefinido.
+
+En Unity los Componentes no son más que clases que heredan de otra clase llamada MonoBehaviour.<br>
+Los componentes se crean en la ventana de proyecto simplemente haciendo clic derecho->Create->C# script<br>
+Nuestro componente creado hereda de MonoBehaviour que a su vez hereda de Behaviour que hereda de Component y este hereda de Object.<br>
+nuestroComponente->MonoBehaviour->Behaviour->Component->Object.<br>
+(Son todo clases de Unity y Object es un objeto propio de UnityEngine).<br>
+Es muy sencillo crear componentes, al pulsar crear componente se abre directamente el IDE que nosotros tengamos predefinido.<br>
 ### 1.3 Atributos públicos de un componente
-Los atributos de un componente son los valores de los atributos del mismo.
-Al crear atributos públicos aparecen directamente en el propio componente para modificar sus valores.
-Los datos se muestran siempre y cuando se puedan serializar.
-Puede haber atributos que no interese que se vea en el propio inspector, para ocultarlo con poner antes del atributo[HideInInspector] lo ocultara en el inspector.
-Con un atributo privado se puede hacer lo mismo, solo que de por sí el inspector no lo muestra, pero poniendo antes del atributo [SerializeField] forzaríamos al inspector a que lo muestre.
-También se pueden crear estructuras(struct) que vendrían siendo objetos, que contienen valores, los cuales se pueden añadir también a los componentes pero de por sí no se pueden serializar, si se quiere que se serialice un struct habría que indicarselo a Unity con [System.Serializable].
+Los atributos de un componente son los valores de los atributos del mismo.<br>
+Al crear atributos públicos aparecen directamente en el propio componente para modificar sus valores.<br>
+Los datos se muestran siempre y cuando se puedan serializar.<br>
+Puede haber atributos que no interese que se vea en el propio inspector, para ocultarlo con poner antes del atributo[HideInInspector] lo ocultara en el inspector.<br>
+Con un atributo privado se puede hacer lo mismo, solo que de por sí el inspector no lo muestra, pero poniendo antes del atributo [SerializeField] forzaríamos al inspector a que lo muestre.<br>
+También se pueden crear estructuras(struct) que vendrían siendo objetos, que contienen valores, los cuales se pueden añadir también a los componentes pero de por sí no se pueden serializar, si se quiere que se serialice un struct habría que indicarselo a Unity con [System.Serializable].<br>
 ### 1.4 Componente Transform.
-Transform guarda la información sobre la posición rotación y escala de un objeto, este componente no se puede eliminar y todos los GameObject tienen uno.
-Si esta contenido dentro de un padre, su información es siempre relativa al padre aunque en código se pueden cambiar sus valores sobre el plano global o sobre el plano local.
+Transform guarda la información sobre la posición rotación y escala de un objeto, este componente no se puede eliminar y todos los GameObject tienen uno.<br>
+Si esta contenido dentro de un padre, su información es siempre relativa al padre aunque en código se pueden cambiar sus valores sobre el plano global o sobre el plano local.<br>
 
 ### 1.5 Transform vs transform.
-Transform-> es una Clase.
-transform-> es una instancia de la clase Transform.
-transform hace referencia al Transform del objeto que lo contiene.
-Siempre tiene una referencia, ya que Transform es el único componente que no se puede borrar
+-Transform-> es una Clase.<br>
+-transform-> es una instancia de la clase Transform.<br>
+transform hace referencia al Transform del objeto que lo contiene.<br>
+Siempre tiene una referencia, ya que Transform es el único componente que no se puede borrar<br>
 
 ### 1.6 Atributos principales de Transform (Parte I).
-Atributos Up,right y Forward: Son los vectores que apuntan en esas direcciónes en el  espacio global.
-Position,Rotation,LossyScale; Indican la posición, rotación y escala en el plano global
-localPosition,localRotation,localScale:Indican la posición, rotación y escala en el plano local.
-childCount:Número de hijos del objeto.
-Algunos de los métodos mas utilizados:
-Translate:Mueve el objeto la distancia que se le indique.
-Rotate: Rota el objeto
-GetChild():Devuelve una referencia al transform del hijo número que se le pase.
-LookAt: Sirve para rotar un objeto y que este apunte a la posición indicada.
-SetParent: Sirve para modificar lo padres de un objeto,con null se eliminan todos los padres
-[Inverse]Transform: Convierte los valores del transform local al global y viceversa.
+-Atributos Up,right y Forward: Son los vectores que apuntan en esas direcciónes en el  espacio global.<br>
+-Position,Rotation,LossyScale; Indican la posición, rotación y escala en el plano global.<br>
+-localPosition,localRotation,localScale:Indican la posición, rotación y escala en el plano local.<br>
+-childCount:Número de hijos del objeto.<br>
+Algunos de los métodos mas utilizados:<br>
+-Translate:Mueve el objeto la distancia que se le indique.<br>
+-Rotate: Rota el objeto.<br>
+-GetChild():Devuelve una referencia al transform del hijo número que se le pase.<br>
+-LookAt: Sirve para rotar un objeto y que este apunte a la posición indicada.<br>
+-SetParent: Sirve para modificar lo padres de un objeto,con null se eliminan todos los padres.<br>
+-[Inverse]Transform: Convierte los valores del transform local al global y viceversa.<br>
 ### 1.7 Atributos principales de Transform (Parte II).
-Vector3:
-Estructura con 3 atributos principales: x,y,z
-Tiene Métodos propios de manipulación:
-Distance,Angle,Lerp…
-Tiene campos estáticos auxiliares:
-Son por así decirlo como accesos directos a posiciones predefinidas.
-Unity utiliza cuaterniones para rotar objetos (Algo complicado de matemáticas, pero no hace falta saber cómo funcionan para saber utilizarlos).
-los cuaterniones son Compactos y rápidos de interpolación sencilla y no sufren Gimbal Lock.
+-Vector3:
+Estructura con 3 atributos principales: x,y,z<br>
+Tiene Métodos propios de manipulación:<br>
+Distance,Angle,Lerp…<br>
+-Tiene campos estáticos auxiliares:<br>
+Son por así decirlo como accesos directos a posiciones predefinidas.<br>
+Unity utiliza cuaterniones para rotar objetos (Algo complicado de matemáticas, pero no hace falta saber cómo funcionan para saber utilizarlos)<br>
+los cuaterniones son Compactos y rápidos de interpolación sencilla y no sufren Gimbal Lock<br>
 
 ## 2.El ciclo de vida de un componente
-Son las fases de un componente desde que nace( se crea ) hasta que muere ( se destruye ).
+Son las fases de un componente desde que nace( se crea ) hasta que muere ( se destruye ).<br>
 ### 2.1 Awake.
-Forma parte del bloque de inicialización de un componente.
-Se ejecuta siempre que se cree el objeto o el componente.
+Forma parte del bloque de inicialización de un componente.<br>
+Se ejecuta siempre que se cree el objeto o el componente.<br>
 ### 2.2 OnEnable.
-Se ejecuta siempre que se activa el objeto que lo contiene
-Así como Awake solo se activa una vez ( al creador del objeto ) y OnEnable se puede activar varias veces.
+Se ejecuta siempre que se activa el objeto que lo contiene.<br>
+Así como Awake solo se activa una vez ( al creador del objeto ) y OnEnable se puede activar varias veces.<br>
 ### 2.3 Start.
-Solo se ejecutará en el primer frame en el que el frame está activo.
-Los Start no se ejecutan hasta que no se ejecuten todos los Awake y todos los OnEnable.
-Componente que crea el recurso debería hacerlo en Awaken o en OnEnable y el que lo consume en Start, para así asegurarse de que el componente que va a utilizar ya se ha creado.
+Solo se ejecutará en el primer frame en el que el frame está activo.<br>
+Los Start no se ejecutan hasta que no se ejecuten todos los Awake y todos los OnEnable.<br>
+Componente que crea el recurso debería hacerlo en Awaken o en OnEnable y el que lo consume en Start, para así asegurarse de que el componente que va a utilizar ya se ha creado.<br>
 ### 2.4 OnDisable.
-Se ejecuta cuando se desactiva un componente o un objeto completo
-Así mismo OnDestroy se utiliza para limpiar recursos y se activa al cerrar la escena o destruir un objeto.
+Se ejecuta cuando se desactiva un componente o un objeto completo.<br>
+Así mismo OnDestroy se utiliza para limpiar recursos y se activa al cerrar la escena o destruir un objeto.<br>
 ### 2.5 Update.
-El método Update es uno de los pilares centrales de la lógica del juego, es el primero que se ejecuta y está ejecutándose constantemente cada frame, marca en gran medida los FPS del juego.
+El método Update es uno de los pilares centrales de la lógica del juego, es el primero que se ejecuta y está ejecutándose constantemente cada frame, marca en gran medida los FPS del juego.<br>
 Se actualiza mediante:
-Movimientos.
-Animaciónes.
-Posiciones..
+-Movimientos.<br>
+-Animaciónes.<br>
+-Posiciones..<br>
 
 ### 2.6 FixedUpdate.
-Tiene una frecuencia fija y se puede modificar en preferencias.
-Se ejecuta antes de cálculos de física y si se aplican fuerzas se hace desde aquí.
+Tiene una frecuencia fija y se puede modificar en preferencias.<br>
+Se ejecuta antes de cálculos de física y si se aplican fuerzas se hace desde aquí.<br>
 
 
 ### 2.7 LateUpdate.
-En unity no se puede saber el orden de ejecución de los scripts, puede incluso variar entre simulación y simulación
-Se lleva a cabo cuando han terminado todos los updates de todos los objetos de la escena.
-Ideal para llevar acciones que requieren que todos los objetos se hayan actualizado.
-Por ejemplo: Una cámara que sigue a un objeto o a un jugador.
+En unity no se puede saber el orden de ejecución de los scripts, puede incluso variar entre simulación y simulación.<br>
+Se lleva a cabo cuando han terminado todos los updates de todos los objetos de la escena.<br>
+Ideal para llevar acciones que requieren que todos los objetos se hayan actualizado.<br>
+Por ejemplo: Una cámara que sigue a un objeto o a un jugador.<br>
 
 ### 2.8 OnGUI.
-Se utilizaba para crear interfaces de usuario.
-Se puede usar para crear herramientas personalizadas.
-Usa GUI y GUILayout.
-GUI: hay que añadir elementos a mano y posicionarlos y darles tamaño
-GUILayout: Permite hacer interfaces de usuario más rápido y de forma más sencilla.
-Se ejecuta después de los renderizados, por ello se pinta encima de todos los demas componentes del juego.
-Básicamente es crear una interfaz mediante código.
+Se utilizaba para crear interfaces de usuario.<br>
+Se puede usar para crear herramientas personalizadas.<br>
+Usa GUI y GUILayout.<br>
+-GUI: hay que añadir elementos a mano y posicionarlos y darles tamaño.<br>
+-GUILayout: Permite hacer interfaces de usuario más rápido y de forma más sencilla.<br>
+Se ejecuta después de los renderizados, por ello se pinta encima de todos los demas componentes del juego.<br>
+Básicamente es crear una interfaz mediante código.<br>
 
 ### 2.9 OnDrawGizmos.
-Permite dibujar gizmos en la ventana de escena de Unity.
-Gizmo: Gráfico asociado al componente o objeto
+Permite dibujar gizmos en la ventana de escena de Unity.<br>
+-Gizmo: Gráfico asociado al componente o objeto<br>
 Visualiza información del objeto:
-Valores
-Rangos
-Distancias
-Gizmos.color:Cambiar color
-Gizmos.DrawLine dibuja una línea.
+-Valores.<br>
+-Rangos.<br>
+-Distancias.<br>
+Gizmos.color: Cambiar color.<br>
+Gizmos.DrawLine: Dibuja una línea.<br>
 
 ### 2.10 Uso de OnDrawGizmos.
-Visualizar el rango de percepción de un objeto o enemigo
-para hacer un círculo visualizable alrededor del enemigo para saber su campo de visión se utilizaría por ejemplo DrawWireSphere y se pintara una esfera alrededor del objeto
-OnDrawGizmosSelected hace lo mismo que le OnDrawGizmos normal solo que en vez de estar siempre encendidas solamente se encenderán las esferas al seleccionarlas.
+Visualizar el rango de percepción de un objeto o enemigo.<br>
+Para hacer un círculo visualizable alrededor del enemigo para saber su campo de visión se utilizaría por ejemplo DrawWireSphere y se pintara una esfera alrededor del objeto.<br>
+OnDrawGizmosSelected hace lo mismo que el OnDrawGizmos normal solo que en vez de estar siempre encendidas solamente se encenderán las esferas al seleccionarlas.<br>
 
 ### 2.11 Precauciones al ejecutar.
-En los scripts en Unity no hay un orden de ejecución por defecto.
-Se puede forzar en las opciones la ejecución prioritaria de algún script (Project Setting/Script Execution Order), pero es mejor no hacerlo y que sea el último recurso.
-Conocer el ciclo de vida de los componentes para no tener que recurrir a forzar los scripts.
+En los scripts en Unity no hay un orden de ejecución por defecto.<br>
+Se puede forzar en las opciones la ejecución prioritaria de algún script (Project Setting/Script Execution Order), pero es mejor no hacerlo y que sea el último recurso.<br>
+Conocer el ciclo de vida de los componentes para no tener que recurrir a forzar los scripts.<br>
 ## 3 Acceso a componentes
 ### 3.1 Acceso a componentes de otros objetos
 La forma más sencilla es usar propiedades públicas, se pueden asignar directamente las referencias adecuadas desde Unity, básicamente sería como usar los  valores de otros objetos en programación normal  para acceder a sus diversos valores y manipularlos como  componentes.
