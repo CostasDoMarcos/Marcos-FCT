@@ -847,316 +847,316 @@ Conversión de coordenadas<br>
 -ViewportTo[World,Screen]Point: Convierte un punto del viewport a un punto del mundo la pantalla.<br>
 
 ### 4.5 Clase Time
-La clase time nos permite conocer el tiempo  de nuestro juego:
--Tiempo  que lleva la escena en  funcionamiento.
--Tiempo que tardan en procesarse los frames.
--Intervalos de ejecución.
--Consultar y modificar escalas de tiempo.
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/18d4f261-5203-4a94-97fc-22118bda5c5d)
+La clase time nos permite conocer el tiempo  de nuestro juego:<br>
+-Tiempo  que lleva la escena en  funcionamiento.<br>
+-Tiempo que tardan en procesarse los frames.<br>
+-Intervalos de ejecución.<br>
+-Consultar y modificar escalas de tiempo.<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/18d4f261-5203-4a94-97fc-22118bda5c5d)<br>
 
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/dc80f22a-2d4e-4d34-af73-0e0116b42fc0)
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/dc80f22a-2d4e-4d34-af73-0e0116b42fc0)<br>
 
-Time.time: Tiempo en segundos desde el inicio del juego.
-Time.unscaledTime: Tiempo en segundos desde el inicio del juego sin contar con  la escala de tiempo.
-Time.realtimeSinceStartup: Tiempo transcurrido desde el inicio del juego
-Time.timeSinceLevelLoad: Tiempo desde que se ha iniciado el nivel actual
-Time.deltaTime: Tiempo que ha pasado desde el último frame..
-Time.fixedDeltaTime: Tiempo que transcurre entre cada actualización del sistema de físicas. 
-Time.timeScale: Escala del tiempo.
-Usos:
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/a6275b17-800b-46a2-9e6a-be5e5b24a19f)
+Time.time: Tiempo en segundos desde el inicio del juego.<br>
+Time.unscaledTime: Tiempo en segundos desde el inicio del juego sin contar con  la escala de tiempo.<br>
+Time.realtimeSinceStartup: Tiempo transcurrido desde el inicio del juego.<br>
+Time.timeSinceLevelLoad: Tiempo desde que se ha iniciado el nivel actual.<br>
+Time.deltaTime: Tiempo que ha pasado desde el último frame..<br>
+Time.fixedDeltaTime: Tiempo que transcurre entre cada actualización del sistema de físicas. <br>
+Time.timeScale: Escala del tiempo.<br>
+Usos:<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/a6275b17-800b-46a2-9e6a-be5e5b24a19f)<br>
 
-Añadimos unos botones para cambiar  la escala de tiempo
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/5ad08b8e-ec79-43d5-b668-d500d82a4ea5)
+Añadimos unos botones para cambiar la escala de tiempo<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/5ad08b8e-ec79-43d5-b668-d500d82a4ea5)<br>
 
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/af03357b-8fc9-48c9-a4d2-ae5a73f2387d)
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/af03357b-8fc9-48c9-a4d2-ae5a73f2387d)<br>
 
-Al cambiar las escalas de tiempo el tiempo avanzaría más rápido o más despacio, y si tuviésemos una escena  en movimiento ocurriría lo misma, el movimiento ocurriría más lento o más rápido
+Al cambiar las escalas de tiempo el tiempo avanzaría más rápido o más despacio, y si tuviésemos una escena en movimiento ocurriría lo misma, el movimiento ocurriría más lento o más rápido.<br>
 
 ### 4.6 Transforms
-Gestiona posición rotación y escala:
-Translate:
--Desplaza un objeto cierta cantidad.:
-	-Vector3..
-	-Desplazamiento por ejes individuales.
-Espacio Local.
--Espacio Mundo.
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/555d86ee-8354-45bf-8c2b-568cef83c6fe)
+Gestiona posición rotación y escala:<br>
+Translate:<br>
+-Desplaza un objeto cierta cantidad:<br>
+	-Vector3..<br>
+	-Desplazamiento por ejes individuales.<br>
+-Espacio Local.<br>
+-Espacio Mundo.<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/555d86ee-8354-45bf-8c2b-568cef83c6fe)<br>
 
 
-los valores de los x y y z están entre -1  y 1, dependiendo si se mueve para izquierda o derecha arriba o abajo, en este caso el movimiento “no sería válido”, porque? porque estaríamos realizando un desplazamiento por cada actualización de  los fps, que quiere decir esto?  que si nuestro juego va a 60 fps en 1 segundo estaríamos desplazándonos 60 veces.
-Para que el juego tuviese un desplazamiento normal  habría que hacer lo siguiente:
-Distancia=velocidad*tiempo.
-Distancia=velocidad*Time.deltaTime.
-Indicaremos que la  velocidad depende del tiempo que ha pasado desde la actualización del último frame.
+los valores de los x y y z están entre -1  y 1, dependiendo si se mueve para izquierda o derecha arriba o abajo, en este caso el movimiento “no sería válido”, porque? porque estaríamos realizando un desplazamiento por cada actualización de  los fps, que quiere decir esto?  que si nuestro juego va a 60 fps en 1 segundo estaríamos desplazándonos 60 veces.<br>
+Para que el juego tuviese un desplazamiento normal  habría que hacer lo siguiente:<br>
+Distancia=velocidad*tiempo.<br>
+Distancia=velocidad*Time.deltaTime.<br>
+Indicaremos que la  velocidad depende del tiempo que ha pasado desde la actualización del último frame.<br>
 
--Rotate:
-Permite rotar un objeto:
--Alrededor de un eje concreto.
-	-Vector3.
-	-Ángulos independientes.
-	-Eje+ángulo
--Indicar los grados que se quiere rotar por cada eje.
-En un incremento de la rotación se utiliza también deltaTime para controlar la rotación del objeto.
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/1463f31b-9b16-4392-bdbf-329c7578d0de)
+-Rotate:<br>
+Permite rotar un objeto:<br>
+-Alrededor de un eje concreto.<br>
+	-Vector3.<br>
+	-Ángulos independientes.<br>
+	-Eje+ángulo.<br>
+-Indicar los grados que se quiere rotar por cada eje.<br>
+En un incremento de la rotación se utiliza también deltaTime para controlar la rotación del objeto.<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/1463f31b-9b16-4392-bdbf-329c7578d0de)<br>
 
-Aprovechando el código del translate, podemos hacer el rotate.
-Cuál es el principal problema? en el caso del transform.Rotate .
+Aprovechando el código del translate, podemos hacer el rotate.<br>
+Cuál es el principal problema? en el caso del transform.Rotate.<br>
 
-Al indicarle el ángulo de rotación, si no especificamos en el translate que el espacio del translate es el mundo (World) al estar rotando cada  segundo que pasa, al intentar desplazar el personaje se desplazaría sobre su propio eje, es decir en vez de desplazarse de izquierda a derecha se desplazaría como en una especie de orbita haciendo un circulo, porque su rotación cambiaría el eje local de desplazamiento.
-LookAt.
--Básicamente es hacer que el objeto mire a una dirección o objeto concreto
-Se puede modificar mediante:
--Vector3.
--Transform.
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/e0a2cc9b-2be1-45c0-8ace-2d56a4da7f5a)
+Al indicarle el ángulo de rotación, si no especificamos en el translate que el espacio del translate es el mundo (World) al estar rotando cada  segundo que pasa, al intentar desplazar el personaje se desplazaría sobre su propio eje, es decir en vez de desplazarse de izquierda a derecha se desplazaría como en una especie de orbita haciendo un circulo, porque su rotación cambiaría el eje local de desplazamiento.<br>
+LookAt:<br>
+-Básicamente es hacer que el objeto mire a una dirección o objeto concreto.<br>
+Se puede modificar mediante:<br>
+-Vector3.<br>
+-Transform.<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/e0a2cc9b-2be1-45c0-8ace-2d56a4da7f5a)<br>
 
-Haríamos que el personaje este observando siempre al punto 0.
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/ea1304b7-42d1-414c-8774-6a9acd407379)
+Haríamos que el personaje este observando siempre al punto 0.<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/ea1304b7-42d1-414c-8774-6a9acd407379)<br>
 
-Haríamos que el personaje esté siempre observándonos a nosotros(cámara principal, bastante inquietante).
+Haríamos que el personaje esté siempre observándonos a nosotros(cámara principal, bastante inquietante).<br>
 
 
-### 4.7 Activación y desactivación de objetos y componentes.
+### 4.7 Activación y desactivación de objetos y componentes.<br>
 
-A  veces es necesario desactivar objetos y componentes para activarlos posteriormente o hacer que estén iniciados o desactivados.
+A  veces es necesario desactivar objetos y componentes para activarlos posteriormente o hacer que estén iniciados o desactivados.<br>
 
-Desactivar:
--Objetos completos: GameObject.SetActive(boolean).
--Componentes individuales: Cambiar la propiedad bool “enabled” a true o false.
-Desactivar un objeto detiene la ejecución de los métodos Update y Start.
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/7f7dec2c-50c8-452f-b7e9-793385bbaef2)
+Desactivar:<br>
+-Objetos completos: GameObject.SetActive(boolean).<br>
+-Componentes individuales: Cambiar la propiedad bool “enabled” a true o false.<br>
+Desactivar un objeto detiene la ejecución de los métodos Update y Start.<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/7f7dec2c-50c8-452f-b7e9-793385bbaef2)<br>
 
-Al pulsar la tecla D se desactivará el GameObject y al pulsar la E no se vuelve a activar, porque se desactiva la ejecución de su Update.
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/bf9aa0bf-2c49-42c0-b3c2-74aef0f177f2)
+Al pulsar la tecla D se desactivará el GameObject y al pulsar la E no se vuelve a activar, porque se desactiva la ejecución de su Update.<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/bf9aa0bf-2c49-42c0-b3c2-74aef0f177f2)<br>
 
-Para que lo anterior no ocurra tendremos que usar otro objeto como controlador, para poder activar y desactivar el gameobject que usamos
+Para que lo anterior no ocurra tendremos que usar otro objeto como controlador, para poder activar y desactivar el gameobject que usamos<br>
 
 ### 4.8  Instanciación de objetos
-Instanciar -> Crear un objeto:
--Prefabs.
--Objetos de la escena.
-Los objetos se instancian mediante Instantiate/GameObject).
-	-Instantiate(GameObject,Vector3,Quaternion), instanciarlo en una posición
-Si se abusa mucho de él nuestro rendimiento del videojuego  puede desplomarse.
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/d33a1eab-2bb8-4d91-b149-e3fe8a445913)
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/37c7e4b6-8e86-452f-a43c-4aa23f821b39)
+Instanciar -> Crear un objeto:<br>
+-Prefabs.<br>
+-Objetos de la escena.<br>
+Los objetos se instancian mediante Instantiate/GameObject).<br>
+	-Instantiate(GameObject,Vector3,Quaternion), instanciarlo en una posición.<br>
+Si se abusa mucho de él nuestro rendimiento del videojuego  puede desplomarse.<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/d33a1eab-2bb8-4d91-b149-e3fe8a445913)<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/37c7e4b6-8e86-452f-a43c-4aa23f821b39)<br>
 
 
-Cada vez que se pulsa la tecla 1, se crea un clon, el problema es que al volver a instanciarlo, cada copia crearía una copia, por eso hay una Sphere(Clone)(Clone).
-Para evitar esto, crearemos un objeto instanciador y utilizaremos un prefab.
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/dee8c77e-91bb-4cc7-ba7b-54b75335e8a0)
+Cada vez que se pulsa la tecla 1, se crea un clon, el problema es que al volver a instanciarlo, cada copia crearía una copia, por eso hay una Sphere(Clone)(Clone).<br>
+Para evitar esto, crearemos un objeto instanciador y utilizaremos un prefab.<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/dee8c77e-91bb-4cc7-ba7b-54b75335e8a0)<br>
 
-El Ejemplo 2 estaría instanciando siempre el objeto en la posición designada en la instantiationPosition, y el Quaternion.Identity hara que el objeto NO se rote.
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/85676f66-d2dc-4e29-aca5-7f6a078efd69)
+El Ejemplo 2 estaría instanciando siempre el objeto en la posición designada en la instantiationPosition, y el Quaternion.Identity hara que el objeto NO se rote.<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/85676f66-d2dc-4e29-aca5-7f6a078efd69)<br>
 
-Así nos estaríamos asegurando que al pulsar la tecla 1 para instanciar un nuevo objeto, solo se crearía uno cada vez.
+Así nos estaríamos asegurando que al pulsar la tecla 1 para instanciar un nuevo objeto, solo se crearía uno cada vez.<br>
 ### 4.9  Destruir objetos.
-Se utiliza el Método Destroy(object).
-	-Funciona con GameObjects.
-	-Funciona con componentes de los GameObjects.
-	-Se puede retrasar la destrucción de los objetos con Destroy(Object,float delay).
+Se utiliza el Método Destroy(object).<br>
+	-Funciona con GameObjects.<br>
+	-Funciona con componentes de los GameObjects.<br>
+	-Se puede retrasar la destrucción de los objetos con Destroy(Object,float delay).<br>
 
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/9fa2457b-1b68-4c21-8173-bb2235d2c4f9)
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/9fa2457b-1b68-4c21-8173-bb2235d2c4f9)<br>
 
-Al pulsar la tecla M llevaríamos a cabo un suicidio(Se destruiría el objeto propio)
-Al pulsar la tecla D se destruiría el objeto que le estemos pasando por inspector.
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/707b9084-b007-4170-8970-84882e160c2f)
+Al pulsar la tecla M llevaríamos a cabo un suicidio(Se destruiría el objeto propio).<br>
+Al pulsar la tecla D se destruiría el objeto que le estemos pasando por inspector.<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/707b9084-b007-4170-8970-84882e160c2f)<br>
 
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/0a7cae1a-e011-43d1-b66d-a15a6e9fe915)
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/0a7cae1a-e011-43d1-b66d-a15a6e9fe915)<br>
 
-En este caso concreto, Rigidbody es un componente( hace que el objeto  tenga físicas por ejemplo de gravedad).
-Al pulsar la R se destruiría el componente Rigidbody del objeto  que se le pase por inspector al objeto Destructor.
+En este caso concreto, Rigidbody es un componente( hace que el objeto  tenga físicas por ejemplo de gravedad).<br>
+Al pulsar la R se destruiría el componente Rigidbody del objeto  que se le pase por inspector al objeto Destructor.<br>
 
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/c12daa2f-1552-46cf-ba3c-9ce64eabaa6b)
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/c12daa2f-1552-46cf-ba3c-9ce64eabaa6b)<br>
 
-Destrucción de un objeto cuando transcurren los 5 segundos.
+Destrucción de un objeto cuando transcurren los 5 segundos.<br>
 
 ### 4.10  Clase Random
-Permite añadir aleatoriedad a nuestro juego.
--Números.
--Colores.
--Vectores.
--Valores.
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/9aaf9a73-d836-43fa-95bd-f4ea0e685d3d)
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/07881afc-b6db-4c49-a9c0-3ad3d2af72f8)
+Permite añadir aleatoriedad a nuestro juego.<br>
+-Números.<br>
+-Colores.<br>
+-Vectores.<br>
+-Valores.<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/9aaf9a73-d836-43fa-95bd-f4ea0e685d3d)<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/07881afc-b6db-4c49-a9c0-3ad3d2af72f8)<br>
 
 
-En este caso práctico Unity estaría cogiendo un punto aleatorio dentro de una esfera de radio 10(en este caso) y crearía un objeto en esa posición aleatoria.
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/92445c66-924f-461d-8aa9-0f0efcc3a45c)
+En este caso práctico Unity estaría cogiendo un punto aleatorio dentro de una esfera de radio 10(en este caso) y crearía un objeto en esa posición aleatoria.<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/92445c66-924f-461d-8aa9-0f0efcc3a45c)<br>
 
 ## 5 Co-rutinas
 
 ### 5.1  Ejecución retrasada con Invoke
-Invoke permite retrasar  la ejecución de un método específico el tiempo indicado.
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/b3bef805-d4df-4d25-9e9d-2bfe38e2cbfe)
+Invoke permite retrasar  la ejecución de un método específico el tiempo indicado.<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/b3bef805-d4df-4d25-9e9d-2bfe38e2cbfe)<br>
 
-En este caso por ejemplo, se  llama a  Invoke, Invoke busca el método SayHi y lo invoca 3 segundos más tarde de su invocación.
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/aa72184f-b66f-4cea-9901-e36d384fcfc9)
+En este caso por ejemplo, se  llama a  Invoke, Invoke busca el método SayHi y lo invoca 3 segundos más tarde de su invocación.<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/aa72184f-b66f-4cea-9901-e36d384fcfc9)<br>
 
-InvokeRepeating:
-En esencia hace lo mismo que el Invoke normal, solo que invokeRepeating permite hacer que el código se ejecute con un retraso y luego se ejecute cada x segundos.
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/13ec4114-b892-4580-981f-054d59bb7908)
+InvokeRepeating:<br>
+En esencia hace lo mismo que el Invoke normal, solo que invokeRepeating permite hacer que el código se ejecute con un retraso y luego se ejecute cada x segundos.<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/13ec4114-b892-4580-981f-054d59bb7908)<br>
 
-Es propenso a fallos y no es muy flexible porque detecta el nombre del método y no permite pasar datos al mismo.
+Es propenso a fallos y no es muy flexible porque detecta el nombre del método y no permite pasar datos al mismo.<br>
 
 ## 5.2 Qué son las co rutinas
-Una co-rutina es un método que puede detener su ejecución, devolver el  control al programa y continuar su ejecución más adelante.
-Código sin co-rutina:
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/c3b015e5-62ae-4d23-a2d4-1f7238c6d49a)
+Una co-rutina es un método que puede detener su ejecución, devolver el  control al programa y continuar su ejecución más adelante.<br>
+Código sin co-rutina:<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/c3b015e5-62ae-4d23-a2d4-1f7238c6d49a)<br>
 
-Código para Iniciar la Co-rutina:
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/87d5875a-3fe1-4894-86c2-152f7a95bdca)
+Código para Iniciar la Co-rutina:<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/87d5875a-3fe1-4894-86c2-152f7a95bdca)<br>
 
-Cómo se puede apreciar el código de la co-rutina es más simple y compacto, en este caso lo que estaría haciendo la co-rutina seria:
--Activar el while.
--El bucle suma 0,1 al contador.
--Imprime el valor en pantalla.
--El Yield hace que el bucle devuelva el control al programa principal y no se ejecute otra vez hasta que haya pasado 1 segundo.
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/b11de022-b1c4-44b3-94c1-70fb5dfc07d4)
+Cómo se puede apreciar el código de la co-rutina es más simple y compacto, en este caso lo que estaría haciendo la co-rutina seria:<br>
+-Activar el while.<br>
+-El bucle suma 0,1 al contador.<br>
+-Imprime el valor en pantalla.<br>
+-El Yield hace que el bucle devuelva el control al programa principal y no se ejecute otra vez hasta que haya pasado 1 segundo.<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/b11de022-b1c4-44b3-94c1-70fb5dfc07d4)<br>
 
 
 ### 5.3 Instrucción YIELD
-Las co-rutinas son iteradores.
-Se utiliza YIELD para devolver un valor
-Se puede utilizar de dos formas:
--YIELD break.
--YIELD return y la expresión a devolver(como en el  ejemplo anterior  que le indicamos que esperase 1 segundo).
-Expresiones que puede devolver YIELD:
--WaitForSeconds(float).
--WaitForSecondsRealtime(float)
--WaitForFixedUpdate()
--WaitUntil(predicado)
--WaitWhile(predicado)
--AsyncOperation(operaciones asíncronas como  cargas de escenas o cargas de assets).
+Las co-rutinas son iteradores.<br>
+Se utiliza YIELD para devolver un valor.<br>
+Se puede utilizar de dos formas:<br>
+-YIELD break.<br>
+-YIELD return y la expresión a devolver(como en el  ejemplo anterior  que le indicamos que esperase 1 segundo).<br>
+Expresiones que puede devolver YIELD:<br>
+-WaitForSeconds(float).<br>
+-WaitForSecondsRealtime(float).<br>
+-WaitForFixedUpdate().<br>
+-WaitUntil(predicado).<br>
+-WaitWhile(predicado).<br>
+-AsyncOperation(operaciones asíncronas como  cargas de escenas o cargas de assets).<br>
 ### 5.4 Creación de co-rutinas
--Son métodos que devuelven un IEnumerator.
--Contienen una instrucción YIELD aunque no se use nunca.
--Algunos métodos de Unity se pueden utilizar como co-rutinas como por ejemplo Start.
--En vez de declarar start como Void habría  simplemente  que declararlo como IEnumerator
--A las co-rutinas si que se le pueden pasar números como parámetro.
+-Son métodos que devuelven un IEnumerator.<br>
+-Contienen una instrucción YIELD aunque no se use nunca.<br>
+-Algunos métodos de Unity se pueden utilizar como co-rutinas como por ejemplo Start.<br>
+-En vez de declarar start como Void habría  simplemente  que declararlo como IEnumerator.<br>
+-A las co-rutinas si que se le pueden pasar números como parámetro.<br>
 
-IEnumerator SampleCoroutine(float p1) {
-    Debug.Log("Starting coroutine");
-    yield return new WaitForSeconds(p1)
-    Debug.Log("Coroutine finished");
-}
+IEnumerator SampleCoroutine(float p1) {<br>
+    Debug.Log("Starting coroutine");<br>
+    yield return new WaitForSeconds(p1)<br>
+    Debug.Log("Coroutine finished");<br>
+}<br>
 
 ### 5.5 Ejemplos de uso
-Ejemplo break:
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/1994c5ee-0548-4964-8303-da2ba91c44a9)
+Ejemplo break:<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/1994c5ee-0548-4964-8303-da2ba91c44a9)<br>
 
-El código después del break se puede apreciar que lo esta marcando como inaccesible, ya que el break detendría la co-rutina y no llegaría nunca a ejecutar ese código.
-Ejemplo null:
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/04922716-867f-4451-9c60-04907b5f340f)
+El código después del break se puede apreciar que lo esta marcando como inaccesible, ya que el break detendría la co-rutina y no llegaría nunca a ejecutar ese código.<br>
+Ejemplo null:<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/04922716-867f-4451-9c60-04907b5f340f)<br>
 
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/7cf6f6cc-5367-4975-b058-babf70ada7aa)
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/7cf6f6cc-5367-4975-b058-babf70ada7aa)<br>
 
-Con el null se detendría durante un frame.
-Ejemplo WaitForSeconds:
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/9cfaa671-63a0-4b98-8fec-2cbb84e2144a)
+Con el null se detendría durante un frame.<br>
+Ejemplo WaitForSeconds:<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/9cfaa671-63a0-4b98-8fec-2cbb84e2144a)<br>
 
-La principal diferencia con WaitForSeconds y WaitForSecondsRealtime es que al WaitForSeconds normal le afectaría la modificación de la escala de tiempo principal (Time.timescale=0,2f) y al Realtime el cambio en la escala de tiempo no le afectaría.
-WaitForSeconds:
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/60ef9705-9d9b-4432-b7a8-62c5570ed417)
+La principal diferencia con WaitForSeconds y WaitForSecondsRealtime es que al WaitForSeconds normal le afectaría la modificación de la escala de tiempo principal (Time.timescale=0,2f) y al Realtime el cambio en la escala de tiempo no le afectaría.<br>
+WaitForSeconds:<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/60ef9705-9d9b-4432-b7a8-62c5570ed417)<br>
 
-WaitForSecondsRealtime:
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/ebff35a4-544f-47b4-a93a-8856d4a7987c)
+WaitForSecondsRealtime:<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/ebff35a4-544f-47b4-a93a-8856d4a7987c)<br>
 
-Ejemplo WaitForFixedUpdate:
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/412e2521-5b68-458c-a851-28e9998c7fb4)
+Ejemplo WaitForFixedUpdate:<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/412e2521-5b68-458c-a851-28e9998c7fb4)<br>
 
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/946cd361-8276-4c4e-a82b-28673a710b02)
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/946cd361-8276-4c4e-a82b-28673a710b02)<br>
 
-Con el FixedUpdate se mantiene  en el mismo frame por eso el frame actual no cambia.
-Ejemplo WaitUntil:
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/280896a0-82ae-4ead-993d-b5e048d03e82)
+Con el FixedUpdate se mantiene  en el mismo frame por eso el frame actual no cambia.<br>
+Ejemplo WaitUntil:<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/280896a0-82ae-4ead-993d-b5e048d03e82)<br>
 
-Se  ejecuta  la primera vez y luego no vuelve a ejecutarse hasta que el contador de frames llega  a 100, por lo que se imprime el 101.
-Ejemplo WaitWhile:
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/dbc3a44b-5a5a-483e-a2fc-653a23135c13)
+Se  ejecuta  la primera vez y luego no vuelve a ejecutarse hasta que el contador de frames llega  a 100, por lo que se imprime el 101.<br>
+Ejemplo WaitWhile:<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/dbc3a44b-5a5a-483e-a2fc-653a23135c13)<br>
 
 
-Es el mismo caso  que el WaitUntil solo que a la inversa, en este caso mientras el  frameCount es inferior a 100 no realiza la siguiente  acción.
+Es el mismo caso  que el WaitUntil solo que a la inversa, en este caso mientras el  frameCount es inferior a 100 no realiza la siguiente acción.<br>
 ### 5.6 Ejecución de co-rutinas
-Las co-rutinas se ejecutan mediante el método StartCoroutine.
-Los  parámetros son :
--La cadena con el nombre de  la co-rutina.
--Máximo un parámetro.
-StartCoroutine(String,[param]).
-O también pasandole un IEnumerator:
-StartCoroutine(IEnumerator)..
-Inicialización buscando el IEnumerator con un string:
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/2bbd18a3-3a93-4ca1-9e88-ed5c82f21a3c)
+Las co-rutinas se ejecutan mediante el método StartCoroutine.<br>
+Los  parámetros son:<br>
+-La cadena con el nombre de  la co-rutina.<br>
+-Máximo un parámetro.<br>
+StartCoroutine(String,[param]).<br>
+O también pasandole un IEnumerator:<br>
+StartCoroutine(IEnumerator)..<br>
+Inicialización buscando el IEnumerator con un string:<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/2bbd18a3-3a93-4ca1-9e88-ed5c82f21a3c)<br>
 
-Inicialización usando IEnumerator directamente:
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/c1389e43-1ff5-48d9-a14c-1dd677de0357)
+Inicialización usando IEnumerator directamente:<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/c1389e43-1ff5-48d9-a14c-1dd677de0357)<br>
 
-En este caso se realiza una llamada directa al IEnumerator.
-Usar la llamada  directa  al IEnumerator tiene varias ventajas :
--No  hay posibilidad de equivocarse al escribir el string del nombre ya que es una  invocación directa al método.
--Al ser una invocación al método acepta más de un parámetro,cosa que la invocación con el string no permite.
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/03d6f112-5e75-47d4-934d-490ffcc08627)
+En este caso se realiza una llamada directa al IEnumerator.<br>
+Usar la llamada  directa  al IEnumerator tiene varias ventajas:<br>
+-No  hay posibilidad de equivocarse al escribir el string del nombre ya que es una  invocación directa al método.<br>
+-Al ser una invocación al método acepta más de un parámetro,cosa que la invocación con el string no permite.<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/03d6f112-5e75-47d4-934d-490ffcc08627)<br>
 
 ### 5.7 Detener co-rutinas
-Hay varias maneras de detener una co-rutina:
--StopCoroutine(String).
--StopCoroutine(IEnumerator).
--StopCoroutine(Coroutine)
--StopAllCoroutines(detiene todas las co-rutinas que están siendo ejecutadas por un GameObject).
+Hay varias maneras de detener una co-rutina:<br>
+-StopCoroutine(String).<br>
+-StopCoroutine(IEnumerator).<br>
+-StopCoroutine(Coroutine).<br>
+-StopAllCoroutines(detiene todas las co-rutinas que están siendo ejecutadas por un GameObject).<br>
 
 
 
 
-Ejemplo usando el string:
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/305ea4cc-8a55-4599-8a73-8de87fca5c42)
+Ejemplo usando el string:<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/305ea4cc-8a55-4599-8a73-8de87fca5c42)<br>
 
-Ejemplo usando el IEnumerator:
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/19ca73af-15bd-4e5f-9272-6410140a96ad)
+Ejemplo usando el IEnumerator:<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/19ca73af-15bd-4e5f-9272-6410140a96ad)<br>
 
-En este caso habría que declarar el IEnumerator Cr, darle el valor de la co-rutina que se esta ejecutando y usarlo para detenerla.
+En este caso habría que declarar el IEnumerator Cr, darle el valor de la co-rutina que se esta ejecutando y usarlo para detenerla.<br>
 
-Ejemplo usando Coroutine:
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/f9917db7-f422-4be3-b060-4ea0dc3ba95e)
+Ejemplo usando Coroutine:<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/f9917db7-f422-4be3-b060-4ea0dc3ba95e)<br>
 
-Es prácticamente igual a IEnumerator solo que en vez de declarar un IEnumerator cr se declara una Coroutine cr y se guarda directamente el valor de StartCoroutine.
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/4ff7df08-3b54-4bc2-8dc6-ab345d12968f)
+Es prácticamente igual a IEnumerator solo que en vez de declarar un IEnumerator cr se declara una Coroutine cr y se guarda directamente el valor de StartCoroutine.<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/4ff7df08-3b54-4bc2-8dc6-ab345d12968f)<br>
 
-Ejemplo StopAllCoroutines:
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/258c7849-230b-4a36-9319-e15e407ea6de)
+Ejemplo StopAllCoroutines:<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/258c7849-230b-4a36-9319-e15e407ea6de)<br>
 
 ### 5.8 Encadenar co-rutinas
-Las co-rutinas pueden esperar la finalización de otra co-rutina o pueden ejecutarse en paralelo tanto de forma  síncrona como de forma asíncrona.
-Esperando la finalización de otra:
--yield return StartCoroutine(IEnumerator)
-Al terminar la co-rutina llamara a la siguiente co-rutina a ejecutarse.
--Coroutine b=startCoroutine(IEnumerator);
-Yield return b;
+Las co-rutinas pueden esperar la finalización de otra co-rutina o pueden ejecutarse en paralelo tanto de forma  síncrona como de forma asíncrona.<br>
+Esperando la finalización de otra:<br>
+-yield return StartCoroutine(IEnumerator)<br>
+Al terminar la co-rutina llamara a la siguiente co-rutina a ejecutarse.<br>
+-Coroutine b=startCoroutine(IEnumerator);<br>
+-Yield return b;<br>
 
-Inicio de una co-rutina mediante otra co-rutina:
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/7fb93d7e-0aff-46aa-8fd4-fdbbbfd400f2)
+Inicio de una co-rutina mediante otra co-rutina:<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/7fb93d7e-0aff-46aa-8fd4-fdbbbfd400f2)<br>
 
-Básicamente se lanza una co-rutina desde dentro de otra co-rutina, y la primera no termina hasta que termina la segunda.
+Básicamente se lanza una co-rutina desde dentro de otra co-rutina, y la primera no termina hasta que termina la segunda.<br>
 
-Lanzamiento en paralelo:
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/77ed6d61-3b84-4809-80f1-1dafe67a88f7)
+Lanzamiento en paralelo:<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/77ed6d61-3b84-4809-80f1-1dafe67a88f7)<br>
 
-Se guarda una referencia a la co-rutina que se lanza en paralelo para que la primera espere el tiempo de ejecución de la segunda.
+Se guarda una referencia a la co-rutina que se lanza en paralelo para que la primera espere el tiempo de ejecución de la segunda.<br>
 
-Ejecutar co-rutinas en paralelo no es lo mismo que ejecutar varios hilos a la vez, se siguen lanzando unas después de otras pero lo hacen dentro del mismo frame.
+Ejecutar co-rutinas en paralelo no es lo mismo que ejecutar varios hilos a la vez, se siguen lanzando unas después de otras pero lo hacen dentro del mismo frame.<br>
 
 
 ### 5.9 Ejemplos de co-rutinas
-Cambio de material:
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/41983abd-c09d-4045-9a8c-95b5ff59ddd9)
+Cambio de material:<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/41983abd-c09d-4045-9a8c-95b5ff59ddd9)<br>
 
 
-Camera shake:
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/97ae9fb4-3d63-4cc9-b3a7-2b7f393012eb)
+Camera shake:<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/97ae9fb4-3d63-4cc9-b3a7-2b7f393012eb)<br>
 
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/de4d364b-5b31-424e-a93d-e104450810b3)
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/de4d364b-5b31-424e-a93d-e104450810b3)<br>
 
-Video de cameraShake y CambioColor añadidos en carpeta VideoUnity(abrir con volúmen bajo,hay un pitido que no fui capaz de eliminar)
+Video de cameraShake y CambioColor añadidos en carpeta VideoUnity(abrir con volúmen bajo,hay un pitido que no fui capaz de eliminar).<br>
 
 
 
