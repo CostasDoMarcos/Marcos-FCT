@@ -846,7 +846,7 @@ Conversión de coordenadas<br>
 -ScreenTo[World, Viewport]Point: Convierte un punto de la pantalla en una posición en el mundo o Viewport.<br>
 -ViewportTo[World,Screen]Point: Convierte un punto del viewport a un punto del mundo la pantalla.<br>
 
-4.5 Clase Time
+### 4.5 Clase Time
 La clase time nos permite conocer el tiempo  de nuestro juego:
 -Tiempo  que lleva la escena en  funcionamiento.
 -Tiempo que tardan en procesarse los frames.
@@ -868,7 +868,7 @@ Añadimos unos botones para cambiar  la escala de tiempo
 
 Al cambiar las escalas de tiempo el tiempo avanzaría más rápido o más despacio, y si tuviésemos una escena  en movimiento ocurriría lo misma, el movimiento ocurriría mas lento o más rápido
 
-4.6 Transforms
+### 4.6 Transforms
 Gestiona posición rotación y escala:
 Translate:
 -Desplaza un objeto cierta cantidad.:
@@ -908,7 +908,7 @@ Haríamos que el personaje este observando siempre al punto 0.
 Haríamos que el personaje esté siempre observándonos a nosotros(cámara principal, bastante inquietante).
 
 
-4.7 Activación y desactivación de objetos y componentes.
+### 4.7 Activación y desactivación de objetos y componentes.
 
 A  veces es necesario desactivar objetos y componentes para activarlos posteriormente o hacer que estén iniciados o desactivados.
 
@@ -921,7 +921,7 @@ Al pulsar la tecla D se desactivará el GameObject y al pulsar la E no se vuelve
 
 Para que lo anterior no ocurra tendremos que usar otro objeto como controlador, para poder activar y desactivar el gameobject que usamos
 
-4.8  Instanciación de objetos
+### 4.8  Instanciación de objetos
 Instanciar -> Crear un objeto:
 -Prefabs.
 -Objetos de la escena.
@@ -936,7 +936,7 @@ Para evitar esto, crearemos un objeto instanciador y utilizaremos un prefab.
 El Ejemplo 2 estaría instanciando siempre el objeto en la posición designada en la instantiationPosition, y el Quaternion.Identity hara que el objeto NO se rote.
 
 Así nos estaríamos asegurando que al pulsar la tecla 1 para instanciar un nuevo objeto, solo se crearía uno cada vez.
-4.9  Destruir objetos.
+### 4.9  Destruir objetos.
 Se utiliza el Método Destroy(object).
 	-Funciona con GameObjects.
 	-Funciona con componentes de los GameObjects.
@@ -953,7 +953,7 @@ Al pulsar la R se destruiría el componente Rigidbody del objeto  que se le pase
 
 Destrucción de un objeto cuando transcurren los 5 segundos.
 
-4.10  Clase Random
+### 4.10  Clase Random
 Permite añadir aleatoriedad a nuestro juego.
 -Números.
 -Colores.
@@ -964,9 +964,9 @@ Permite añadir aleatoriedad a nuestro juego.
 En este caso práctico Unity estaría  cogiendo un punto aleatorio dentro de una esfera de radio 10(en este casi) y crearía un objeto en esa posición aleatoria.
 
 
-5.0 Co-rutinas
+## 5 Co-rutinas
 
-5.1  Ejecución retrasada con Invoke
+### 5.1  Ejecución retrasada con Invoke
  Invoke permite retrasar  la ejecución de un método específico el tiempo indicado.
 
 En este caso por ejemplo, se  llama a  Invoke, Invoke busca el método SayHi y lo invoca 3 segundos más tarde de su invocación.
@@ -976,7 +976,7 @@ En esencia hace lo mismo que el Invoke normal, solo que invokeRepeating permite 
 
 Es propenso a fallos y no es muy flexible porque detecta el nombre del método y no permite pasar datos al mismo.
 
-5.2 Qué son las co rutinas
+## 5.2 Qué son las co rutinas
 Una co-rutina es un método que puede detener su ejecución, devolver el  control al programa y continuar su ejecución más adelante.
 
 Código para repetir un bucle con  un contador sin una co-rutina deteniendo el counter.
@@ -989,7 +989,7 @@ Cómo se puede apreciar el código de la co rutina es mas simple y compacto, en 
 -El Yield hace que el bucle devuelva el control al programa principal y no se ejecute otra vez hasta que haya pasado 1 segundo.
 
 
-5.3 Instrucción YIELD
+### 5.3 Instrucción YIELD
 Las co-rutinas son iteradores.
 Se utiliza YIELD para devolver un valor
 Se puede utilizar de dos formas:
@@ -1002,7 +1002,7 @@ Expresiones que puede devolver YIELD:
 -WaitUntil(predicado)
 -WaitWhile(predicado)
 -AsyncOperation(operaciones asíncronas como  cargas de escenas o cargas de assets).
-5.4 Creación de co-rutinas
+### 5.4 Creación de co-rutinas
 -Son métodos que devuelven un IEnumerator.
 -Contienen una instrucción YIELD aunque no se use nunca.
 -Algunos métodos de Unity se pueden utilizar como co-rutinas como por ejemplo Start.
@@ -1015,7 +1015,7 @@ IEnumerator SampleCoroutine(float p1) {
     Debug.Log("Coroutine finished");
 }
 
-5.5 Ejemplos de uso
+### 5.5 Ejemplos de uso
 Ejemplo break:
 
 El código después del break se puede apreciar que lo esta  marcando como inaccesible, ya que el break detendría la co-rutina y no legaría nunca a ejecutar ese código.
@@ -1040,7 +1040,7 @@ Se  ejecuta  la primera  vez y luego no vuelve a ejecutarse hasta que el contado
 Ejemplo WaitWhile
 
 Es el mismo caso  que el WaitUntil solo que a la inversa, en este caso mientras el  frameCount es inferior a 100 no realiza la siguiente  acción.
-5.6 Ejecución de co-rutinas
+### 5.6 Ejecución de co-rutinas
 Las co-rutinas se ejecutan mediante el método StartCoroutine.
 Los  parámetros son :
 -La cadena con el nombre de  la co-rutina.
@@ -1057,7 +1057,7 @@ Usar la llamada  directa  al IEnumerator tiene varias ventajas :
 -No  hay posibilidad de equivocarse al escribir el string del nombre ya que es una  invocación directa al método.
 -Al ser una invocación al método acepta más de un parámetro,cosa que la invocación con el string no permite.
 
-5.7 Detener co-rutinas
+### 5.7 Detener co-rutinas
 Hay varias maneras de detener una co-rutina:
 -StopCoroutine(String).
 -StopCoroutine(IEnumerator).
@@ -1079,7 +1079,7 @@ Es prácticamente igual a IEnumerator solo que en vez de declarar un IEnumerator
 
 Ejemplo StopAllCoroutines:
 
-5.8 Encadenar co-rutinas
+### 5.8 Encadenar co-rutinas
 Las co-rutinas pueden esperar la finalización de otra co-rutina o pueden ejecutarse en paralelo tanto de forma  síncrona como de forma asíncrona.
 Esperando la finalización de otra:
 -yield return StartCoroutine(IEnumerator)
@@ -1098,7 +1098,7 @@ Se guarda una referencia a la co-rutina que se lanza en paralelo para que la pri
 Ejecutar co-rutinas en paralelo no es lo mismo que ejecutar varios hilos a la vez, se siguen lanzando unas después de otras pero lo hacen dentro del mismo frame.
 
 
-5.9 Ejemplos de co-rutinas
+### 5.9 Ejemplos de co-rutinas
 Cambio de material:
 
 
