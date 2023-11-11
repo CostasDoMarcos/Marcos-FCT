@@ -852,7 +852,9 @@ La clase time nos permite conocer el tiempo  de nuestro juego:
 -Tiempo que tardan en procesarse los frames.
 -Intervalos de ejecución.
 -Consultar y modificar escalas de tiempo.
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/18d4f261-5203-4a94-97fc-22118bda5c5d)
 
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/dc80f22a-2d4e-4d34-af73-0e0116b42fc0)
 
 Time.time: Tiempo en segundos desde el inicio del juego.
 Time.unscaledTime: Tiempo en segundos desde el inicio del juego sin contar con  la escala de tiempo.
@@ -862,11 +864,14 @@ Time.deltaTime: Tiempo que ha pasado desde el último frame..
 Time.fixedDeltaTime: Tiempo que transcurre entre cada actualización del sistema de físicas. 
 Time.timeScale: Escala del tiempo.
 Usos:
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/a6275b17-800b-46a2-9e6a-be5e5b24a19f)
 
 Añadimos unos botones para cambiar  la escala de tiempo
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/5ad08b8e-ec79-43d5-b668-d500d82a4ea5)
 
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/af03357b-8fc9-48c9-a4d2-ae5a73f2387d)
 
-Al cambiar las escalas de tiempo el tiempo avanzaría más rápido o más despacio, y si tuviésemos una escena  en movimiento ocurriría lo misma, el movimiento ocurriría mas lento o más rápido
+Al cambiar las escalas de tiempo el tiempo avanzaría más rápido o más despacio, y si tuviésemos una escena  en movimiento ocurriría lo misma, el movimiento ocurriría más lento o más rápido
 
 ### 4.6 Transforms
 Gestiona posición rotación y escala:
@@ -874,8 +879,9 @@ Translate:
 -Desplaza un objeto cierta cantidad.:
 	-Vector3..
 	-Desplazamiento por ejes individuales.
-- Espacio Local.
+Espacio Local.
 -Espacio Mundo.
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/555d86ee-8354-45bf-8c2b-568cef83c6fe)
 
 
 los valores de los x y y z están entre -1  y 1, dependiendo si se mueve para izquierda o derecha arriba o abajo, en este caso el movimiento “no sería válido”, porque? porque estaríamos realizando un desplazamiento por cada actualización de  los fps, que quiere decir esto?  que si nuestro juego va a 60 fps en 1 segundo estaríamos desplazándonos 60 veces.
@@ -892,6 +898,7 @@ Permite rotar un objeto:
 	-Eje+ángulo
 -Indicar los grados que se quiere rotar por cada eje.
 En un incremento de la rotación se utiliza también deltaTime para controlar la rotación del objeto.
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/1463f31b-9b16-4392-bdbf-329c7578d0de)
 
 Aprovechando el código del translate, podemos hacer el rotate.
 Cuál es el principal problema? en el caso del transform.Rotate .
@@ -902,8 +909,10 @@ LookAt.
 Se puede modificar mediante:
 -Vector3.
 -Transform.
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/e0a2cc9b-2be1-45c0-8ace-2d56a4da7f5a)
 
 Haríamos que el personaje este observando siempre al punto 0.
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/ea1304b7-42d1-414c-8774-6a9acd407379)
 
 Haríamos que el personaje esté siempre observándonos a nosotros(cámara principal, bastante inquietante).
 
@@ -916,8 +925,10 @@ Desactivar:
 -Objetos completos: GameObject.SetActive(boolean).
 -Componentes individuales: Cambiar la propiedad bool “enabled” a true o false.
 Desactivar un objeto detiene la ejecución de los métodos Update y Start.
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/7f7dec2c-50c8-452f-b7e9-793385bbaef2)
 
 Al pulsar la tecla D se desactivará el GameObject y al pulsar la E no se vuelve a activar, porque se desactiva la ejecución de su Update.
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/bf9aa0bf-2c49-42c0-b3c2-74aef0f177f2)
 
 Para que lo anterior no ocurra tendremos que usar otro objeto como controlador, para poder activar y desactivar el gameobject que usamos
 
@@ -928,12 +939,16 @@ Instanciar -> Crear un objeto:
 Los objetos se instancian mediante Instantiate/GameObject).
 	-Instantiate(GameObject,Vector3,Quaternion), instanciarlo en una posición
 Si se abusa mucho de él nuestro rendimiento del videojuego  puede desplomarse.
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/d33a1eab-2bb8-4d91-b149-e3fe8a445913)
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/37c7e4b6-8e86-452f-a43c-4aa23f821b39)
 
 
 Cada vez que se pulsa la tecla 1, se crea un clon, el problema es que al volver a instanciarlo, cada copia crearía una copia, por eso hay una Sphere(Clone)(Clone).
 Para evitar esto, crearemos un objeto instanciador y utilizaremos un prefab.
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/dee8c77e-91bb-4cc7-ba7b-54b75335e8a0)
 
 El Ejemplo 2 estaría instanciando siempre el objeto en la posición designada en la instantiationPosition, y el Quaternion.Identity hara que el objeto NO se rote.
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/85676f66-d2dc-4e29-aca5-7f6a078efd69)
 
 Así nos estaríamos asegurando que al pulsar la tecla 1 para instanciar un nuevo objeto, solo se crearía uno cada vez.
 ### 4.9  Destruir objetos.
@@ -942,14 +957,18 @@ Se utiliza el Método Destroy(object).
 	-Funciona con componentes de los GameObjects.
 	-Se puede retrasar la destrucción de los objetos con Destroy(Object,float delay).
 
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/9fa2457b-1b68-4c21-8173-bb2235d2c4f9)
 
 Al pulsar la tecla M llevaríamos a cabo un suicidio(Se destruiría el objeto propio)
 Al pulsar la tecla D se destruiría el objeto que le estemos pasando por inspector.
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/707b9084-b007-4170-8970-84882e160c2f)
 
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/0a7cae1a-e011-43d1-b66d-a15a6e9fe915)
 
 En este caso concreto, Rigidbody es un componente( hace que el objeto  tenga físicas por ejemplo de gravedad).
 Al pulsar la R se destruiría el componente Rigidbody del objeto  que se le pase por inspector al objeto Destructor.
 
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/c12daa2f-1552-46cf-ba3c-9ce64eabaa6b)
 
 Destrucción de un objeto cuando transcurren los 5 segundos.
 
@@ -959,34 +978,42 @@ Permite añadir aleatoriedad a nuestro juego.
 -Colores.
 -Vectores.
 -Valores.
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/9aaf9a73-d836-43fa-95bd-f4ea0e685d3d)
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/07881afc-b6db-4c49-a9c0-3ad3d2af72f8)
 
 
-En este caso práctico Unity estaría  cogiendo un punto aleatorio dentro de una esfera de radio 10(en este casi) y crearía un objeto en esa posición aleatoria.
-
+En este caso práctico Unity estaría cogiendo un punto aleatorio dentro de una esfera de radio 10(en este caso) y crearía un objeto en esa posición aleatoria.
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/92445c66-924f-461d-8aa9-0f0efcc3a45c)
 
 ## 5 Co-rutinas
 
 ### 5.1  Ejecución retrasada con Invoke
- Invoke permite retrasar  la ejecución de un método específico el tiempo indicado.
+Invoke permite retrasar  la ejecución de un método específico el tiempo indicado.
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/b3bef805-d4df-4d25-9e9d-2bfe38e2cbfe)
 
 En este caso por ejemplo, se  llama a  Invoke, Invoke busca el método SayHi y lo invoca 3 segundos más tarde de su invocación.
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/aa72184f-b66f-4cea-9901-e36d384fcfc9)
 
 InvokeRepeating:
 En esencia hace lo mismo que el Invoke normal, solo que invokeRepeating permite hacer que el código se ejecute con un retraso y luego se ejecute cada x segundos.
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/13ec4114-b892-4580-981f-054d59bb7908)
 
 Es propenso a fallos y no es muy flexible porque detecta el nombre del método y no permite pasar datos al mismo.
 
 ## 5.2 Qué son las co rutinas
 Una co-rutina es un método que puede detener su ejecución, devolver el  control al programa y continuar su ejecución más adelante.
+Código sin co-rutina:
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/c3b015e5-62ae-4d23-a2d4-1f7238c6d49a)
 
-Código para repetir un bucle con  un contador sin una co-rutina deteniendo el counter.
+Código para Iniciar la Co-rutina:
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/87d5875a-3fe1-4894-86c2-152f7a95bdca)
 
-Código para Iniciar la Co-rutina.
-Cómo se puede apreciar el código de la co rutina es mas simple y compacto, en este caso lo que estaría haciendo la co rutina seria:
+Cómo se puede apreciar el código de la co-rutina es más simple y compacto, en este caso lo que estaría haciendo la co-rutina seria:
 -Activar el while.
 -El bucle suma 0,1 al contador.
 -Imprime el valor en pantalla.
 -El Yield hace que el bucle devuelva el control al programa principal y no se ejecute otra vez hasta que haya pasado 1 segundo.
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/b11de022-b1c4-44b3-94c1-70fb5dfc07d4)
 
 
 ### 5.3 Instrucción YIELD
@@ -1007,7 +1034,7 @@ Expresiones que puede devolver YIELD:
 -Contienen una instrucción YIELD aunque no se use nunca.
 -Algunos métodos de Unity se pueden utilizar como co-rutinas como por ejemplo Start.
 -En vez de declarar start como Void habría  simplemente  que declararlo como IEnumerator
--A  las  co-rutinas si que se le pueden pasar números como parámetro.
+-A las co-rutinas si que se le pueden pasar números como parámetro.
 
 IEnumerator SampleCoroutine(float p1) {
     Debug.Log("Starting coroutine");
