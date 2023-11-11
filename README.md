@@ -1017,27 +1017,38 @@ IEnumerator SampleCoroutine(float p1) {
 
 ### 5.5 Ejemplos de uso
 Ejemplo break:
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/1994c5ee-0548-4964-8303-da2ba91c44a9)
 
-El código después del break se puede apreciar que lo esta  marcando como inaccesible, ya que el break detendría la co-rutina y no legaría nunca a ejecutar ese código.
+El código después del break se puede apreciar que lo esta marcando como inaccesible, ya que el break detendría la co-rutina y no llegaría nunca a ejecutar ese código.
 Ejemplo null:
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/04922716-867f-4451-9c60-04907b5f340f)
 
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/7cf6f6cc-5367-4975-b058-babf70ada7aa)
 
 Con el null se detendría durante un frame.
-Ejemplo WaitForSeconds
+Ejemplo WaitForSeconds:
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/9cfaa671-63a0-4b98-8fec-2cbb84e2144a)
 
 La principal diferencia con WaitForSeconds y WaitForSecondsRealtime es que al WaitForSeconds normal le afectaría la modificación de la escala de tiempo principal (Time.timescale=0,2f) y al Realtime el cambio en la escala de tiempo no le afectaría.
 WaitForSeconds:
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/60ef9705-9d9b-4432-b7a8-62c5570ed417)
 
 WaitForSecondsRealtime:
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/ebff35a4-544f-47b4-a93a-8856d4a7987c)
 
-Ejemplo  WaitForFixedUpdate
+Ejemplo WaitForFixedUpdate:
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/412e2521-5b68-458c-a851-28e9998c7fb4)
 
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/946cd361-8276-4c4e-a82b-28673a710b02)
 
 Con el FixedUpdate se mantiene  en el mismo frame por eso el frame actual no cambia.
 Ejemplo WaitUntil:
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/280896a0-82ae-4ead-993d-b5e048d03e82)
 
-Se  ejecuta  la primera  vez y luego no vuelve a ejecutarse hasta que el contador de frames llega  a 100, por lo que se imprime el 101.
-Ejemplo WaitWhile
+Se  ejecuta  la primera vez y luego no vuelve a ejecutarse hasta que el contador de frames llega  a 100, por lo que se imprime el 101.
+Ejemplo WaitWhile:
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/dbc3a44b-5a5a-483e-a2fc-653a23135c13)
+
 
 Es el mismo caso  que el WaitUntil solo que a la inversa, en este caso mientras el  frameCount es inferior a 100 no realiza la siguiente  acción.
 ### 5.6 Ejecución de co-rutinas
@@ -1049,13 +1060,16 @@ StartCoroutine(String,[param]).
 O también pasandole un IEnumerator:
 StartCoroutine(IEnumerator)..
 Inicialización buscando el IEnumerator con un string:
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/2bbd18a3-3a93-4ca1-9e88-ed5c82f21a3c)
 
 Inicialización usando IEnumerator directamente:
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/c1389e43-1ff5-48d9-a14c-1dd677de0357)
 
 En este caso se realiza una llamada directa al IEnumerator.
 Usar la llamada  directa  al IEnumerator tiene varias ventajas :
 -No  hay posibilidad de equivocarse al escribir el string del nombre ya que es una  invocación directa al método.
 -Al ser una invocación al método acepta más de un parámetro,cosa que la invocación con el string no permite.
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/03d6f112-5e75-47d4-934d-490ffcc08627)
 
 ### 5.7 Detener co-rutinas
 Hay varias maneras de detener una co-rutina:
@@ -1068,6 +1082,7 @@ Hay varias maneras de detener una co-rutina:
 
 
 Ejemplo usando el string:
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/305ea4cc-8a55-4599-8a73-8de87fca5c42)
 
 Ejemplo usando el IEnumerator:
 ![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/19ca73af-15bd-4e5f-9272-6410140a96ad)
