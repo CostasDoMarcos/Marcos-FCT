@@ -846,11 +846,267 @@ Conversión de coordenadas<br>
 -ScreenTo[World, Viewport]Point: Convierte un punto de la pantalla en una posición en el mundo o Viewport.<br>
 -ViewportTo[World,Screen]Point: Convierte un punto del viewport a un punto del mundo la pantalla.<br>
 
-### 4.5 Clase Time
-### 4.6 Transforms
-### 4.7 Activacion y desactivacion de objetos y componentes
-### 4.8
-### 4.9
+4.5 Clase Time
+La clase time nos permite conocer el tiempo  de nuestro juego:
+-Tiempo  que lleva la escena en  funcionamiento.
+-Tiempo que tardan en procesarse los frames.
+-Intervalos de ejecución.
+-Consultar y modificar escalas de tiempo.
+
+
+Time.time: Tiempo en segundos desde el inicio del juego.
+Time.unscaledTime: Tiempo en segundos desde el inicio del juego sin contar con  la escala de tiempo.
+Time.realtimeSinceStartup: Tiempo transcurrido desde el inicio del juego
+Time.timeSinceLevelLoad: Tiempo desde que se ha iniciado el nivel actual
+Time.deltaTime: Tiempo que ha pasado desde el último frame..
+Time.fixedDeltaTime: Tiempo que transcurre entre cada actualización del sistema de físicas. 
+Time.timeScale: Escala del tiempo.
+Usos:
+
+Añadimos unos botones para cambiar  la escala de tiempo
+
+
+Al cambiar las escalas de tiempo el tiempo avanzaría más rápido o más despacio, y si tuviésemos una escena  en movimiento ocurriría lo misma, el movimiento ocurriría mas lento o más rápido
+
+4.6 Transforms
+Gestiona posición rotación y escala:
+Translate:
+-Desplaza un objeto cierta cantidad.:
+	-Vector3..
+	-Desplazamiento por ejes individuales.
+- Espacio Local.
+-Espacio Mundo.
+
+
+los valores de los x y y z están entre -1  y 1, dependiendo si se mueve para izquierda o derecha arriba o abajo, en este caso el movimiento “no sería válido”, porque? porque estaríamos realizando un desplazamiento por cada actualización de  los fps, que quiere decir esto?  que si nuestro juego va a 60 fps en 1 segundo estaríamos desplazándonos 60 veces.
+Para que el juego tuviese un desplazamiento normal  habría que hacer lo siguiente:
+Distancia=velocidad*tiempo.
+Distancia=velocidad*Time.deltaTime.
+Indicaremos que la  velocidad depende del tiempo que ha pasado desde la actualización del último frame.
+
+-Rotate:
+Permite rotar un objeto:
+-Alrededor de un eje concreto.
+	-Vector3.
+	-Ángulos independientes.
+	-Eje+ángulo
+-Indicar los grados que se quiere rotar por cada eje.
+En un incremento de la rotación se utiliza también deltaTime para controlar la rotación del objeto.
+
+Aprovechando el código del translate, podemos hacer el rotate.
+Cuál es el principal problema? en el caso del transform.Rotate .
+
+Al indicarle el ángulo de rotación, si no especificamos en el translate que el espacio del translate es el mundo (World) al estar rotando cada  segundo que pasa, al intentar desplazar el personaje se desplazaría sobre su propio eje, es decir en vez de desplazarse de izquierda a derecha se desplazaría como en una especie de orbita haciendo un circulo, porque su rotación cambiaría el eje local de desplazamiento.
+LookAt.
+-Básicamente es hacer que el objeto mire a una dirección o objeto concreto
+Se puede modificar mediante:
+-Vector3.
+-Transform.
+
+Haríamos que el personaje este observando siempre al punto 0.
+
+Haríamos que el personaje esté siempre observándonos a nosotros(cámara principal, bastante inquietante).
+
+
+4.7 Activación y desactivación de objetos y componentes.
+
+A  veces es necesario desactivar objetos y componentes para activarlos posteriormente o hacer que estén iniciados o desactivados.
+
+Desactivar:
+-Objetos completos: GameObject.SetActive(boolean).
+-Componentes individuales: Cambiar la propiedad bool “enabled” a true o false.
+Desactivar un objeto detiene la ejecución de los métodos Update y Start.
+
+Al pulsar la tecla D se desactivará el GameObject y al pulsar la E no se vuelve a activar, porque se desactiva la ejecución de su Update.
+
+Para que lo anterior no ocurra tendremos que usar otro objeto como controlador, para poder activar y desactivar el gameobject que usamos
+
+4.8  Instanciación de objetos
+Instanciar -> Crear un objeto:
+-Prefabs.
+-Objetos de la escena.
+Los objetos se instancian mediante Instantiate/GameObject).
+	-Instantiate(GameObject,Vector3,Quaternion), instanciarlo en una posición
+Si se abusa mucho de él nuestro rendimiento del videojuego  puede desplomarse.
+
+
+Cada vez que se pulsa la tecla 1, se crea un clon, el problema es que al volver a instanciarlo, cada copia crearía una copia, por eso hay una Sphere(Clone)(Clone).
+Para evitar esto, crearemos un objeto instanciador y utilizaremos un prefab.
+
+El Ejemplo 2 estaría instanciando siempre el objeto en la posición designada en la instantiationPosition, y el Quaternion.Identity hara que el objeto NO se rote.
+
+Así nos estaríamos asegurando que al pulsar la tecla 1 para instanciar un nuevo objeto, solo se crearía uno cada vez.
+4.9  Destruir objetos.
+Se utiliza el Método Destroy(object).
+	-Funciona con GameObjects.
+	-Funciona con componentes de los GameObjects.
+	-Se puede retrasar la destrucción de los objetos con Destroy(Object,float delay).
+
+
+Al pulsar la tecla M llevaríamos a cabo un suicidio(Se destruiría el objeto propio)
+Al pulsar la tecla D se destruiría el objeto que le estemos pasando por inspector.
+
+
+En este caso concreto, Rigidbody es un componente( hace que el objeto  tenga físicas por ejemplo de gravedad).
+Al pulsar la R se destruiría el componente Rigidbody del objeto  que se le pase por inspector al objeto Destructor.
+
+
+Destrucción de un objeto cuando transcurren los 5 segundos.
+
+4.10  Clase Random
+Permite añadir aleatoriedad a nuestro juego.
+-Números.
+-Colores.
+-Vectores.
+-Valores.
+
+
+En este caso práctico Unity estaría  cogiendo un punto aleatorio dentro de una esfera de radio 10(en este casi) y crearía un objeto en esa posición aleatoria.
+
+
+5.0 Co-rutinas
+
+5.1  Ejecución retrasada con Invoke
+ Invoke permite retrasar  la ejecución de un método específico el tiempo indicado.
+
+En este caso por ejemplo, se  llama a  Invoke, Invoke busca el método SayHi y lo invoca 3 segundos más tarde de su invocación.
+
+InvokeRepeating:
+En esencia hace lo mismo que el Invoke normal, solo que invokeRepeating permite hacer que el código se ejecute con un retraso y luego se ejecute cada x segundos.
+
+Es propenso a fallos y no es muy flexible porque detecta el nombre del método y no permite pasar datos al mismo.
+
+5.2 Qué son las co rutinas
+Una co-rutina es un método que puede detener su ejecución, devolver el  control al programa y continuar su ejecución más adelante.
+
+Código para repetir un bucle con  un contador sin una co-rutina deteniendo el counter.
+
+Código para Iniciar la Co-rutina.
+Cómo se puede apreciar el código de la co rutina es mas simple y compacto, en este caso lo que estaría haciendo la co rutina seria:
+-Activar el while.
+-El bucle suma 0,1 al contador.
+-Imprime el valor en pantalla.
+-El Yield hace que el bucle devuelva el control al programa principal y no se ejecute otra vez hasta que haya pasado 1 segundo.
+
+
+5.3 Instrucción YIELD
+Las co-rutinas son iteradores.
+Se utiliza YIELD para devolver un valor
+Se puede utilizar de dos formas:
+-YIELD break.
+-YIELD return y la expresión a devolver(como en el  ejemplo anterior  que le indicamos que esperase 1 segundo).
+Expresiones que puede devolver YIELD:
+-WaitForSeconds(float).
+-WaitForSecondsRealtime(float)
+-WaitForFixedUpdate()
+-WaitUntil(predicado)
+-WaitWhile(predicado)
+-AsyncOperation(operaciones asíncronas como  cargas de escenas o cargas de assets).
+5.4 Creación de co-rutinas
+-Son métodos que devuelven un IEnumerator.
+-Contienen una instrucción YIELD aunque no se use nunca.
+-Algunos métodos de Unity se pueden utilizar como co-rutinas como por ejemplo Start.
+-En vez de declarar start como Void habría  simplemente  que declararlo como IEnumerator
+-A  las  co-rutinas si que se le pueden pasar números como parámetro.
+
+IEnumerator SampleCoroutine(float p1) {
+    Debug.Log("Starting coroutine");
+    yield return new WaitForSeconds(p1)
+    Debug.Log("Coroutine finished");
+}
+
+5.5 Ejemplos de uso
+Ejemplo break:
+
+El código después del break se puede apreciar que lo esta  marcando como inaccesible, ya que el break detendría la co-rutina y no legaría nunca a ejecutar ese código.
+Ejemplo null:
+
+
+Con el null se detendría durante un frame.
+Ejemplo WaitForSeconds
+
+La principal diferencia con WaitForSeconds y WaitForSecondsRealtime es que al WaitForSeconds normal le afectaría la modificación de la escala de tiempo principal (Time.timescale=0,2f) y al Realtime el cambio en la escala de tiempo no le afectaría.
+WaitForSeconds:
+
+WaitForSecondsRealtime:
+
+Ejemplo  WaitForFixedUpdate
+
+
+Con el FixedUpdate se mantiene  en el mismo frame por eso el frame actual no cambia.
+Ejemplo WaitUntil:
+
+Se  ejecuta  la primera  vez y luego no vuelve a ejecutarse hasta que el contador de frames llega  a 100, por lo que se imprime el 101.
+Ejemplo WaitWhile
+
+Es el mismo caso  que el WaitUntil solo que a la inversa, en este caso mientras el  frameCount es inferior a 100 no realiza la siguiente  acción.
+5.6 Ejecución de co-rutinas
+Las co-rutinas se ejecutan mediante el método StartCoroutine.
+Los  parámetros son :
+-La cadena con el nombre de  la co-rutina.
+-Máximo un parámetro.
+StartCoroutine(String,[param]).
+O también pasandole un IEnumerator:
+StartCoroutine(IEnumerator)..
+Inicialización buscando el IEnumerator con un string:
+
+Inicialización usando IEnumerator directamente:
+
+En este caso se realiza una llamada directa al IEnumerator.
+Usar la llamada  directa  al IEnumerator tiene varias ventajas :
+-No  hay posibilidad de equivocarse al escribir el string del nombre ya que es una  invocación directa al método.
+-Al ser una invocación al método acepta más de un parámetro,cosa que la invocación con el string no permite.
+
+5.7 Detener co-rutinas
+Hay varias maneras de detener una co-rutina:
+-StopCoroutine(String).
+-StopCoroutine(IEnumerator).
+-StopCoroutine(Coroutine)
+-StopAllCoroutines(detiene todas las co-rutinas que están siendo ejecutadas por un GameObject).
+
+
+
+
+Ejemplo usando el string:
+
+Ejemplo usando el IEnumerator:
+
+En este caso haber ía que declarar el IEnumerator Cr  darle el valor de la co-rutina que se esta ejecutando y usarlo para detenerla.
+
+Ejemplo usando Coroutine
+
+Es prácticamente igual a IEnumerator solo que en vez de declarar un IEnumerator cr se declara una Coroutine cr y se guarda directamente el valor de StartCoroutine.
+
+Ejemplo StopAllCoroutines:
+
+5.8 Encadenar co-rutinas
+Las co-rutinas pueden esperar la finalización de otra co-rutina o pueden ejecutarse en paralelo tanto de forma  síncrona como de forma asíncrona.
+Esperando la finalización de otra:
+-yield return StartCoroutine(IEnumerator)
+Al terminar la co-rutina llamara a la siguiente co-rutina a ejecutarse.
+-Coroutine b=startCoroutine(IEnumerator);
+Yield return b;
+
+Inicio de una co-rutina mediante otra co-rutina:
+
+Básicamente se lanza una co-rutina desde dentro de otra co-rutina, y la primera no termina hasta que termina la segunda.
+
+Lanzamiento en paralelo:
+
+Se guarda una referencia a la co-rutina que se lanza en paralelo para que la primera espere el tiempo de ejecución de la segunda.
+
+Ejecutar co-rutinas en paralelo no es lo mismo que ejecutar varios hilos a la vez, se siguen lanzando unas después de otras pero lo hacen dentro del mismo frame.
+
+
+5.9 Ejemplos de co-rutinas
+Cambio de material:
+
+
+Camera shake:
+
+
+Video de cameraShake y CambioColor añadidos en carpeta VideoUnity(abrir con volúmen bajo,hay un pitido que no fui capaz de eliminar)
+
 
 
 
