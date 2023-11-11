@@ -1070,14 +1070,18 @@ Hay varias maneras de detener una co-rutina:
 Ejemplo usando el string:
 
 Ejemplo usando el IEnumerator:
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/19ca73af-15bd-4e5f-9272-6410140a96ad)
 
-En este caso haber ía que declarar el IEnumerator Cr  darle el valor de la co-rutina que se esta ejecutando y usarlo para detenerla.
+En este caso habría que declarar el IEnumerator Cr, darle el valor de la co-rutina que se esta ejecutando y usarlo para detenerla.
 
-Ejemplo usando Coroutine
+Ejemplo usando Coroutine:
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/f9917db7-f422-4be3-b060-4ea0dc3ba95e)
 
 Es prácticamente igual a IEnumerator solo que en vez de declarar un IEnumerator cr se declara una Coroutine cr y se guarda directamente el valor de StartCoroutine.
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/4ff7df08-3b54-4bc2-8dc6-ab345d12968f)
 
 Ejemplo StopAllCoroutines:
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/258c7849-230b-4a36-9319-e15e407ea6de)
 
 ### 5.8 Encadenar co-rutinas
 Las co-rutinas pueden esperar la finalización de otra co-rutina o pueden ejecutarse en paralelo tanto de forma  síncrona como de forma asíncrona.
@@ -1088,10 +1092,12 @@ Al terminar la co-rutina llamara a la siguiente co-rutina a ejecutarse.
 Yield return b;
 
 Inicio de una co-rutina mediante otra co-rutina:
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/7fb93d7e-0aff-46aa-8fd4-fdbbbfd400f2)
 
 Básicamente se lanza una co-rutina desde dentro de otra co-rutina, y la primera no termina hasta que termina la segunda.
 
 Lanzamiento en paralelo:
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/77ed6d61-3b84-4809-80f1-1dafe67a88f7)
 
 Se guarda una referencia a la co-rutina que se lanza en paralelo para que la primera espere el tiempo de ejecución de la segunda.
 
@@ -1100,10 +1106,13 @@ Ejecutar co-rutinas en paralelo no es lo mismo que ejecutar varios hilos a la ve
 
 ### 5.9 Ejemplos de co-rutinas
 Cambio de material:
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/41983abd-c09d-4045-9a8c-95b5ff59ddd9)
 
 
 Camera shake:
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/97ae9fb4-3d63-4cc9-b3a7-2b7f393012eb)
 
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/de4d364b-5b31-424e-a93d-e104450810b3)
 
 Video de cameraShake y CambioColor añadidos en carpeta VideoUnity(abrir con volúmen bajo,hay un pitido que no fui capaz de eliminar)
 
