@@ -1160,258 +1160,250 @@ Video de cameraShake y CambioColor añadidos en carpeta VideoUnity(abrir con vol
 
 
 # 6.Matemáticas para  videojuegos con Unity
-ESTA PARTE ES SOBRE TODO TEÓRICA
+ESTA PARTE ES SOBRE TODO TEÓRICA<br>
 ## 1 Sistemas de coordenadas.
 ### 1.1 Coordenadas cartesianas.
-También conocidas como coordenadas rectangulares son usadas para la representación gráfica  de una relación matemática:
--Determinan la posición en el espacio.
-Las coordenadas cartesianas:
--Están compuestas por ejes ortogonales.
--Se cruzan en el origen.
- 1 solo eje:
--Línea  (espacio unidimensional)
-2 Ejes
--Plano (dimensión horizontal y vertical) 2D.
-3 Ejes
--Espacio(horizontal vertical y profundidad) 3D.
-
-Tiene una aplicación muy amplia y constante:
--Posiciones.
--Posiciones  relativas.
--Velocidades.
--Fuerza.
-También hay otros tipos de coordenadas:
--Polares (plano 2D).
--Coordenadas UV(Texturas).
--Viewport(Pantalla).
+También conocidas como coordenadas rectangulares son usadas para la representación gráfica  de una relación matemática:<br>
+-Determinan la posición en el espacio.<br>
+Las coordenadas cartesianas:<br>
+-Están compuestas por ejes ortogonales.<br>
+-Se cruzan en el origen.<br>
+ 1 solo eje:<br>
+-Línea(espacio unidimensional)<br>
+2 Ejes:<br>
+-Plano(dimensión horizontal y vertical) 2D.<br>
+3 Ejes:<br>
+-Espacio(horizontal vertical y profundidad) 3D.<br>
+Tiene una aplicación muy amplia y constante:<br>
+-Posiciones.<br>
+-Posiciones relativas.<br>
+-Velocidades.<br>
+-Fuerza.<br>
+También hay otros tipos de coordenadas:<br>
+-Polares (plano 2D).<br>
+-Coordenadas UV(Texturas).<br>
+-Viewport(Pantalla).<br>
 
 ### 1.2 Pivote,coordenadas globales y locales
-Pivote:
-Es el origen del sistema de referencia y sobre él se aplican las transformaciones.
-1D es el punto  0.
-2D es el punto  (0,0).
-3D es el punto (0,0,0).
-Coordenadas globales:
-Sistema de referencia absoluto, está asociado a “el mundo” de nuestro juego.
-Todos los objetos de nuestro mundo comparten el mismo punto de origen.
-Coordenadas locales:
-Está  asociado a un objeto local, o propio.
-Cada objeto  tiene su sistema de coordenadas locales propio.
+Pivote:<br>
+Es el origen del sistema de referencia y sobre él se aplican las transformaciones.<br>
+1D es el punto  0.<br>
+2D es el punto  (0,0).<br>
+3D es el punto (0,0,0).<br>
+Coordenadas globales:<br>
+Sistema de referencia absoluto, está asociado a “el mundo” de nuestro juego.<br>
+Todos los objetos de nuestro mundo comparten el mismo punto de origen.<br>
+Coordenadas locales:<br>
+Está  asociado a un objeto local, o propio.<br>
+Cada objeto  tiene su sistema de coordenadas locales propio.<br>
 
 ### 1.3 Jerarquía de transformaciones
-En Unity cada objeto tiene su propio sistema de jerarquía.
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/c5bf76db-7d00-4bac-874d-e9470349982a)
+En Unity cada objeto tiene su propio sistema de jerarquía.<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/c5bf76db-7d00-4bac-874d-e9470349982a)<br>
 
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/13ad218b-1d01-477c-83d1-d68e94b72829)
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/466f62d0-6200-4432-a9b6-c07d57009f5f)
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/13ad218b-1d01-477c-83d1-d68e94b72829)<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/466f62d0-6200-4432-a9b6-c07d57009f5f)<br>
 
-Como se puede ver  en la primera imagen de los cubos, al no estar dentro de una jerarquía, el cubo azul y el cubo rojo tendrían  una posición global y una local coincidentes, pero en el momento que el Cubo azul pasa a ser un hijo del cubo rojo, la Posición local pasaría a ser referente al padre y no al global, porque dejaría de ser un hijo del “mundo” por asi decirlo y ser hijo del cubo rojo.
-Es decir:
--En una jerarquía las transformaciones de espacio local se van acumulando.
--Hay una jerarquía de objetos de la escena.
--Las representaciones son en coordenadas locales respecto al padre(todos los objetos son hijos del mundo).
--Haciendo referencia a lo anterior, los padres que no tienen padre están emparentados con el mundo, por lo que sus coordenadas locales y globales son las mismas.
--Los hijos heredan las transformaciones de los padres.
+Como se puede ver  en la primera imagen de los cubos, al no estar dentro de una jerarquía, el cubo azul y el cubo rojo tendrían  una posición global y una local coincidentes, pero en el momento que el Cubo azul pasa a ser un hijo del cubo rojo, la Posición local pasaría a ser referente al padre y no al global, porque dejaría de ser un hijo del “mundo” por asi decirlo y ser hijo del cubo rojo.<br>
+Es decir:<br>
+-En una jerarquía las transformaciones de espacio local se van acumulando.<br>
+-Hay una jerarquía de objetos de la escena.<br>
+-Las representaciones son en coordenadas locales respecto al padre(todos los objetos son hijos del mundo).<br>
+-Haciendo referencia a lo anterior, los padres que no tienen padre están emparentados con el mundo, por lo que sus coordenadas locales y globales son las mismas.<br>
+-Los hijos heredan las transformaciones de los padres.<br>
 
 ## 2 Vectores.
 ### 2.1 Puntos,vectores y representaciones.
-Un punto es la localización en el espacio.
-Un vector  es  el desplazamiento en el espacio.
-En Unity están representados por:
--Vector2:  Coordenadas X Y.
--Vector3:  Coordenadas X Y Z
--Vector4: No es un Vector de 4 dimensiones, simplemente se usa para añadir semántica porque con la cuarta coordenada podemos saber si nos referimos a posición o vector:
--Si w==0 ->  Dirección.
--Si w!=0-> Posición.
+Un punto es la localización en el espacio.<br>
+Un vector  es  el desplazamiento en el espacio.<br>
+En Unity están representados por:<br>
+-Vector2:  Coordenadas X Y.<br>
+-Vector3:  Coordenadas X Y Z.<br>
+-Vector4: No es un Vector de 4 dimensiones, simplemente se usa para añadir semántica porque con la cuarta coordenada podemos saber si nos referimos a posición o vector:<br>
+-Si w==0 ->  Dirección.<br>
+-Si w!=0-> Posición.<br>
 ### 2.2 Aritmética de vectores.
-Operar con vectores es fundamental en el  panorama  de los videojuegos:
--Gráficos.
--Física.
--Lógica
-.Aritmética de vectores:Suma
--Se suman los componentes de los vectores.
--Geométricamente corresponde a colocar un vector en el extremo  del otro.
--Operación conmutativa.
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/8acbd769-c903-4097-bb5b-a07328c75117)
+Operar con vectores es fundamental en el  panorama  de los videojuegos:<br>
+-Gráficos.<br>
+-Física.<br>
+-Lógica<br>
+Aritmética de vectores:Suma.<br>
+-Se suman los componentes de los vectores.<br>
+-Geométricamente corresponde a colocar un vector en el extremo  del otro.<br>
+-Operación conmutativa.<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/8acbd769-c903-4097-bb5b-a07328c75117)<br>
 
-Aritmética de vectores: Resta
--Obtener distancias y direcciónes.
--Resta de cada componente de  los vectores.
--No conmutativo (a-b no es lo mismo que b-a).
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/ea9e5ca5-056f-4d8c-afc5-94f927b0ef25)
+Aritmética de vectores: Resta.<br>
+-Obtener distancias y direcciónes.<br>
+-Resta de cada componente de  los vectores.<br>
+-No conmutativo (a-b no es lo mismo que b-a).<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/ea9e5ca5-056f-4d8c-afc5-94f927b0ef25)<br>
 
-Aritmética de vectores: Multiplicación y División:
--Incrementa o decrementa la longitud de un vector según el escalar(valor) que nosotros le demos:
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/27eb490c-c7a9-4ca3-90c0-c66662c5fa9f)
+Aritmética de vectores: Multiplicación y División:<br>
+-Incrementa o decrementa la longitud de un vector según el escalar(valor) que nosotros le demos:<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/27eb490c-c7a9-4ca3-90c0-c66662c5fa9f)<br>
 
-### 2.3 Magnitud o longitud de un vector
--Es la longitud de un vector.
--Se realiza mediante  el teorema de pitágoras
--Se usa la función SqrtMagnitude ya que está optimizado porque obtener  la magnitud es una operación costosa debido al uso de la raíz cuadrada.
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/411381ec-2003-4ceb-87fd-f118c6e259de)
+### 2.3 Magnitud o longitud de un vector<br>
+-Es la longitud de un vector.<br>
+-Se realiza mediante  el teorema de pitágoras.<br>
+-Se usa la función SqrtMagnitude ya que está optimizado porque obtener  la magnitud es una operación costosa debido al uso de la raíz cuadrada.<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/411381ec-2003-4ceb-87fd-f118c6e259de)<br>
 
-Normalización de un vector:
--Consiste en dividir un vector por su magnitud, para obtener un vector de distancia 1 con la misma dirección y sentido.
+Normalización de un vector:<br>
+-Consiste en dividir un vector por su magnitud, para obtener un vector de distancia 1 con la misma dirección y sentido.<br>
 ### 2.4 Producto escalar
-Devuelve un valor escalar.
-Indica la relación entre los vectores normalizados:
--1 Misma dirección  y sentido.
--0:Perpendiculares.
-- -1: Sentido opuesto.
-Ejemplo:
-Calcular la velocidad de un vehículo relativa a su posición
-La función se llama Dot();
+Devuelve un valor escalar.<br>
+Indica la relación entre los vectores normalizados:<br>
+-1 Misma dirección  y sentido.<br>
+-0 Perpendiculares.<br>
+- -1 Sentido opuesto.<br>
+Ejemplo:<br>
+Calcular la velocidad de un vehículo relativa a su posición<br>
+La función se llama Dot();<br>
 
 ### 2.5 Producto vectorial
-Devuelve un valor  vectorial.
-En Unity se usa la regla de la mano izquierda.
-Su longitud indica el  área de un polígono.
-Se utiliza la función cross.
+Devuelve un valor vectorial.<br>
+En Unity se usa la regla de la mano izquierda.<br>
+Su longitud indica el área de un polígono.<br>
+Se utiliza la función cross.<br>
 ### 2.6 Vector normal
 
--Es un vector perpendicular a una superficie.
-Calculable a partir de 3  puntos usando el producto escalar.
-Usos:
--Iluminación.
--Mecánicas de juego:
--Billar.
--Rebotes.
--Determinar direcciónes.
+-Es un vector perpendicular a una superficie.<br>
+Calculable a partir de 3 puntos usando el producto escalar.<br>
+Usos:<br>
+-Iluminación.<br>
+-Mecánicas de juego:<br>
+	-Billar.<br>
+	-Rebotes.<br>
+	-Determinar direcciónes.<br>
 
 ## 3 Trigonometría.
 ### 3.1 Seno y coseno.
-Seno:
-Con el seno podemos saber la relación  entre un cateto opuesto  al  ángulo y la hipotenusa del triángulo.
-También podemos identificarlo como la proyección del punto sobre el eje vertical.
-Coseno:
-Con el coseno podemos saber la relación que hay entre  el cateto contiguo al ángulo y la hipotenusa del triángulo.
-Se puede identificar  el coseno como la proyección del punto correspondiente  al ángulo con el eje horizontal.
+Seno:<br>
+Con el seno podemos saber la relación  entre un cateto opuesto  al  ángulo y la hipotenusa del triángulo.<br>
+También podemos identificarlo como la proyección del punto sobre el eje vertical.<br>
+Coseno:<br>
+Con el coseno podemos saber la relación que hay entre  el cateto contiguo al ángulo y la hipotenusa del triángulo.<br>
+Se puede identificar  el coseno como la proyección del punto correspondiente  al ángulo con el eje horizontal.<br>
 
-### 3.2 Tangente y arcotangente.
-La tangente es la relación que hay entre  cateto opuesto y  adyacente.
-La arcotangente(la inversa de la tangente) se utiliza más en el desarrollo de videojuegos ya que permite obtener el ángulo que forma un vector con el eje horizontal.
-La mayoría  de las librerías matemáticas incluyen atan2 que es un método utilizado para evitar errores derivados del cambio de signo o  dividir por 0 y asi poder obtener el angulo correcto.
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/afb5ccce-b87c-4e4c-ae9f-5e14b60a490a)
+### 3.2 Tangente y arcotangente.<br>
+La tangente es la relación que hay entre  cateto opuesto y  adyacente.<br>
+La arcotangente(la inversa de la tangente) se utiliza más en el desarrollo de videojuegos ya que permite obtener el ángulo que forma un vector con el eje horizontal.<br>
+La mayoría  de las librerías matemáticas incluyen atan2 que es un método utilizado para evitar errores derivados del cambio de signo o  dividir por 0 y asi poder obtener el angulo correcto.<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/afb5ccce-b87c-4e4c-ae9f-5e14b60a490a)<br>
 
-Uso de seno y coseno en animación
-Seno
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/fca35911-da3a-41b7-8381-9121c9819f1a)
-
-
-Coseno
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/ff39268d-0da3-4cc3-9a14-ccf94a91aa51)
-
-
-
-Ambos
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/a35a9a1d-3a87-48ab-992b-55e047de584d)
-Video todos
+Uso de seno y coseno en animación:<br>
+Seno:<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/fca35911-da3a-41b7-8381-9121c9819f1a)<br>
+Coseno:<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/ff39268d-0da3-4cc3-9a14-ccf94a91aa51)<br>
+Ambos:<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/a35a9a1d-3a87-48ab-992b-55e047de584d)<br>
+Video todos<br>
 ## 4 Interpolación lineal.
 ### 4.1 Definición de interpolación lineal.
-Interpolar es obtener valores a partir de valores ya conocidos.
-Hay varios métodos con distintos grados de precisión
--Por vecino más cercano(la menos precisa de todas).
--Lineal.
--Polinómica.
--Spline.
+Interpolar es obtener valores a partir de valores ya conocidos.<br>
+Hay varios métodos con distintos grados de precisión<br>
+-Por vecino más cercano(la menos precisa de todas).<br>
+-Lineal.<br>
+-Polinómica.<br>
+-Spline.<br>
 
-Algunos casos de interpolación son: 
--Realizar desplazamientos suaves entre varios puntos.
--Realizar  degradados de color.
--Cambios de transparencia.
--Rellenar barras de progreso.
+Algunos casos de interpolación son: <br>
+-Realizar desplazamientos suaves entre varios puntos.<br>
+-Realizar  degradados de color.<br>
+-Cambios de transparencia.<br>
+-Rellenar barras de progreso.<br>
 
-También existe la extrapolación que se utiliza sobre todo en juegos online.
-La extrapolación  en vez de obtener valores entre  los extremos del intervalo los obtiene de fuera.
+También existe la extrapolación que se utiliza sobre todo en juegos online.<br>
+La extrapolación  en vez de obtener valores entre  los extremos del intervalo los obtiene de fuera.<br>
 ### 4.2 LERP.
--Abreviatura de Linear Interpolate  (interpolación lineal).
--Sirve para obtener valores entre dos valores extremos que se encuentran en un rango conocido usando una aproximación lineal.
-C = A + (B-A)*t => A - A*t + B*t => A*(1-t) + B*t
--A y B son los valores extremos.
--t es el porcentaje de posición que se quiere averiguar(normalizado entre 0 y 1 (0 es el 0% y 1 el 100%).
-  LERP:
-  ![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/16087c23-7f0c-4fcc-a2ea-d635390ec78a)
+-Abreviatura de Linear Interpolate  (interpolación lineal).<br>
+-Sirve para obtener valores entre dos valores extremos que se encuentran en un rango conocido usando una aproximación lineal.<br>
+C = A + (B-A)*t => A - A*t + B*t => A*(1-t) + B*t<br>
+-A y B son los valores extremos.<br>
+-t es el porcentaje de posición que se quiere averiguar(normalizado entre 0 y 1 (0 es el 0% y 1 el 100%).<br>
+  LERP:<br>
+  ![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/16087c23-7f0c-4fcc-a2ea-d635390ec78a)<br>
 
-Video LERP
+Video LERP<br>
 ### 4.3 Distintos tipos de interpolación.
-Variando la forma en la que evoluciona t se pueden obtener distintos tipos de interpolaciones.
-https://easings.net/
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/e5cd21d5-577c-4c54-86fe-69ebc13fa65e)
+Variando la forma en la que evoluciona t se pueden obtener distintos tipos de interpolaciones.<br>
+https://easings.net/<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/e5cd21d5-577c-4c54-86fe-69ebc13fa65e)<br>
 
 
 ## 5 Cuaterniones.
 ### 5.1 Los cuaterniones en Unity.
--Son un instrumento matemático.
-	-Principalmente rotaciones.
--Extensión de números complejos.
--4 Dimensiones
-	-1 Real.
-	-3 Imaginarias.
-Tienen una serie de ventajas  y desventajas:
-Ventajas:
--Rápidos de procesar.
--Faciles de interpolar
-–Evitan problemas como el Gimbal Lock
-Desventajas:
--Complejos de entender.
-Gimbal Lock:
-Es una pérdida de un grado de libertad y se produce cuando dos ejes se alinean.
-![Gimbal_3_axes_rotation](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/c870623b-0a9d-4b42-b0a8-0435e70e8711)
-![Gimbal_Lock_Plane](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/109041e5-ca41-4a58-af16-2af6922dae06)
+-Son un instrumento matemático.<br>
+	-Principalmente rotaciones.<br>
+-Extensión de números complejos.<br>
+-4 Dimensiones<br>
+	-1 Real.<br>
+	-3 Imaginarias.<br>
+Tienen una serie de ventajas  y desventajas:<br>
+Ventajas:<br>
+-Rápidos de procesar.<br>
+-Faciles de interpolar.<br>
+–Evitan problemas como el Gimbal Lock.<br>
+Desventajas:<br>
+-Complejos de entender.<br>
+Gimbal Lock:<br>
+Es una pérdida de un grado de libertad y se produce cuando dos ejes se alinean.<br>
+![Gimbal_3_axes_rotation](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/c870623b-0a9d-4b42-b0a8-0435e70e8711)<br>
+![Gimbal_Lock_Plane](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/109041e5-ca41-4a58-af16-2af6922dae06)<br>
 ### 5.2 Clase Quaternion
-Unity ofrece la clase Quaternion para poder trabajar con cuaterniones, dentro de esta clase se puede encontrar una serie de propiedades para manipular cuaterniones.
-La  propiedad mas importante es la  que al ser  aplicada a otro cuaternion no lo modifica.
-Quaternion.identity.
-Se puede instanciar directamente un Quaternion usando su constructor
-Quaternion q = new Quaternion().
-Pero lo más común es utilizar los métodos que permiten crearlos a partir de informacion.
--Quaternion.Euler(Vector3): Crea un cuaternión a partir de los ángulos de Vector3.
--Quaternion.FromToRotation(Vector3 from, Vector3 to): Crea un cuaternión para rotar desde  ángulo origen a ángulo destino.
--Quaternion.Angle(Quaternion a, Quaternion b): Devuelve el ángulo entre los cuaterniones a y b.
--Quaternion.Dot(Quaternion a, Quaternion b): Producto escalar entre los cuaterniones a y b.
--Quaternion.Lerp(Quaternion a, Quaternion b, float t): Realiza una interpolación lineal entre los cuaterniones a y b con el porcentaje t.
--Quaternion.Slerp(Quaternion a, Quaternion b, float t): Realiza una interpolación lineal esférica entre los cuaterniones a y b con el porcentaje t.
--Quaternion.LookRotation(Vector3 direction, Vector3 up): Devuelve una rotación que apunta en la dirección especificada y tiene como vector hacia arriba el especificado por el parámetro up.
--Quaternion.RotateTowards(Quaternion from, Quaternion to, float maxDelta): Devuelve un cuaternión que rota desde el cuaternión from hacia el cuaternión to a una velocidad máxima de maxDelta grados.
-
-
+Unity ofrece la clase Quaternion para poder trabajar con cuaterniones, dentro de esta clase se puede encontrar una serie de propiedades para manipular cuaterniones.<br>
+La  propiedad mas importante es la  que al ser  aplicada a otro cuaternion no lo modifica:<br>
+Quaternion.identity.<br>
+Se puede instanciar directamente un Quaternion usando su constructor:<br>
+Quaternion q = new Quaternion().<br>
+Pero lo más común es utilizar los métodos que permiten crearlos a partir de informacion.<br>
+-Quaternion.Euler(Vector3): Crea un cuaternión a partir de los ángulos de Vector3.<br>
+-Quaternion.FromToRotation(Vector3 from, Vector3 to): Crea un cuaternión para rotar desde  ángulo origen a ángulo destino.<br>
+-Quaternion.Angle(Quaternion a, Quaternion b): Devuelve el ángulo entre los cuaterniones a y b.<br>
+-Quaternion.Dot(Quaternion a, Quaternion b): Producto escalar entre los cuaterniones a y b.<br>
+-Quaternion.Lerp(Quaternion a, Quaternion b, float t): Realiza una interpolación lineal entre los cuaterniones a y b con el porcentaje t.<br>
+-Quaternion.Slerp(Quaternion a, Quaternion b, float t): Realiza una interpolación lineal esférica entre los cuaterniones a y b con el porcentaje t.<br>
+-Quaternion.LookRotation(Vector3 direction, Vector3 up): Devuelve una rotación que apunta en la dirección especificada y tiene como vector hacia arriba el especificado por el parámetro up.<br>
+-Quaternion.RotateTowards(Quaternion from, Quaternion to, float maxDelta): Devuelve un cuaternión que rota desde el cuaternión from hacia el cuaternión to a una velocidad máxima de maxDelta grados.<br>
 ## 6 Clase Mathf.
 ### 6.1 Mathf.
-Es una clase estática con métodos matemáticos.
-Propiedades estáticas:
--Grados y Radianes.
--Pi.
--Epsilon.(Mínimo valor representable)
--Infinito.
-Algunos de los métodos mas usados:
--Abs.
--Sin,Cos,Tan,Atan2.
--Clamp/Clamp01.(acotar números entre rangos, Clamp01 entre 0 y 1).
--Lerp/LerpAngle.
--Max/Min.
--MoveTowards/MoveTowardsAngle.(Avanzar de un valor a otro a una velocidad dada)
--PingPong.(rebota un valor  entre 0 y un número dado
--Sign.
--sqrt.
-![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/8ad14e0a-90fd-472b-837c-e148629ff9cf)
+Es una clase estática con métodos matemáticos.<br>
+Propiedades estáticas:<br>
+-Grados y Radianes.<br>
+-Pi.<br>
+-Epsilon.(Mínimo valor representable)<br>
+-Infinito.<br>
+Algunos de los métodos mas usados:<br>
+-Abs.<br>
+-Sin,Cos,Tan,Atan2.<br>
+-Clamp/Clamp01.(acotar números entre rangos, Clamp01 entre 0 y 1).<br>
+-Lerp/LerpAngle.<br>
+-Max/Min.<br>
+-MoveTowards/MoveTowardsAngle.(Avanzar de un valor a otro a una velocidad dada)<br>
+-PingPong.(rebota un valor  entre 0 y un número dado<br>
+-Sign.<br>
+-sqrt.<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/8ad14e0a-90fd-472b-837c-e148629ff9cf)<br>
 
-VideoPingPong:
+VideoPingPong:<br>
 
 ### 6.2  Random
-No confundir con System.Random
--UnityEngine.System  -> Estatico.
--System.Random -> Instanciado.
-System.Random es mejor en el caso de necesitar varios generadores de números aleatorios, ya que el de Unity es compartido por todos los elementos del juego debido a ser una clase estática  pero al uso son similares, aunque el random de Unity permite guardar el estado..
+No confundir con System.Random<br>
+-UnityEngine.System  -> Estatico.<br>
+-System.Random -> Instanciado.<br>
+System.Random es mejor en el caso de necesitar varios generadores de números aleatorios, ya que el de Unity es compartido por todos los elementos del juego debido a ser una clase estática  pero al uso son similares, aunque el random de Unity permite guardar el estado.<br>
 
-Se puede usar en  métodos y propiedades para aleatoriedades:
--Números.
--Puntos.
--Vectores.
+Se puede usar en  métodos y propiedades para aleatoriedades:<br>
+-Números.<br>
+-Puntos.<br>
+-Vectores.<br>
 -Rotaciones.
-Random.State-> Permite  guardar estados.
+Random.State-> Permite  guardar estados.<br>
 
-***** CLASE DE MATES DE 4 DE LA ESO SOCORRO *****
-***** Diría que esta parte del curso hubiese estado mejor antes del curso de Unity en sí porque ya irías con  algunos conceptos más claros *****
+***** CLASE DE MATES DE 4 DE LA ESO SOCORRO *****<br>
+***** Diría que esta parte del curso hubiese estado mejor antes del curso de Unity en sí porque ya irías con  algunos conceptos más claros *****<br>
 
 
 
