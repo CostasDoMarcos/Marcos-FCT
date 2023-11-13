@@ -1200,8 +1200,10 @@ Cada objeto  tiene su sistema de coordenadas locales propio.
 
 ### 1.3 Jerarquía de transformaciones
 En Unity cada objeto tiene su propio sistema de jerarquía.
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/c5bf76db-7d00-4bac-874d-e9470349982a)
 
-
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/13ad218b-1d01-477c-83d1-d68e94b72829)
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/466f62d0-6200-4432-a9b6-c07d57009f5f)
 
 Como se puede ver  en la primera imagen de los cubos, al no estar dentro de una jerarquía, el cubo azul y el cubo rojo tendrían  una posición global y una local coincidentes, pero en el momento que el Cubo azul pasa a ser un hijo del cubo rojo, la Posición local pasaría a ser referente al padre y no al global, porque dejaría de ser un hijo del “mundo” por asi decirlo y ser hijo del cubo rojo.
 Es decir:
@@ -1230,22 +1232,26 @@ Operar con vectores es fundamental en el  panorama  de los videojuegos:
 -Se suman los componentes de los vectores.
 -Geométricamente corresponde a colocar un vector en el extremo  del otro.
 -Operación conmutativa.
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/8acbd769-c903-4097-bb5b-a07328c75117)
 
 Aritmética de vectores: Resta
 -Obtener distancias y direcciónes.
 -Resta de cada componente de  los vectores.
 -No conmutativo (a-b no es lo mismo que b-a).
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/ea9e5ca5-056f-4d8c-afc5-94f927b0ef25)
 
 Aritmética de vectores: Multiplicación y División:
 -Incrementa o decrementa la longitud de un vector según el escalar(valor) que nosotros le demos:
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/27eb490c-c7a9-4ca3-90c0-c66662c5fa9f)
 
 ### 2.3 Magnitud o longitud de un vector
 -Es la longitud de un vector.
 -Se realiza mediante  el teorema de pitágoras
 -Se usa la función SqrtMagnitude ya que está optimizado porque obtener  la magnitud es una operación costosa debido al uso de la raíz cuadrada.
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/411381ec-2003-4ceb-87fd-f118c6e259de)
 
 Normalización de un vector:
--Consiste  en dividir un vector por su magnitud, para obtener un vector de distancia 1 con la misma dirección y sentido.
+-Consiste en dividir un vector por su magnitud, para obtener un vector de distancia 1 con la misma dirección y sentido.
 ### 2.4 Producto escalar
 Devuelve un valor escalar.
 Indica la relación entre los vectores normalizados:
@@ -1285,14 +1291,20 @@ Se puede identificar  el coseno como la proyección del punto correspondiente  a
 La tangente es la relación que hay entre  cateto opuesto y  adyacente.
 La arcotangente(la inversa de la tangente) se utiliza más en el desarrollo de videojuegos ya que permite obtener el ángulo que forma un vector con el eje horizontal.
 La mayoría  de las librerías matemáticas incluyen atan2 que es un método utilizado para evitar errores derivados del cambio de signo o  dividir por 0 y asi poder obtener el angulo correcto.
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/afb5ccce-b87c-4e4c-ae9f-5e14b60a490a)
 
 Uso de seno y coseno en animación
 Seno
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/fca35911-da3a-41b7-8381-9121c9819f1a)
+
 
 Coseno
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/ff39268d-0da3-4cc3-9a14-ccf94a91aa51)
+
+
 
 Ambos
-
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/a35a9a1d-3a87-48ab-992b-55e047de584d)
 Video todos
 ## 4 Interpolación lineal.
 ### 4.1 Definición de interpolación lineal.
@@ -1311,21 +1323,20 @@ Algunos casos de interpolación son:
 
 También existe la extrapolación que se utiliza sobre todo en juegos online.
 La extrapolación  en vez de obtener valores entre  los extremos del intervalo los obtiene de fuera.
-
-
 ### 4.2 LERP.
-
 -Abreviatura de Linear Interpolate  (interpolación lineal).
 -Sirve para obtener valores entre dos valores extremos que se encuentran en un rango conocido usando una aproximación lineal.
 C = A + (B-A)*t => A - A*t + B*t => A*(1-t) + B*t
-
 -A y B son los valores extremos.
--t es el porcentaje de posición que se quiere averiguar(normalizado entre 0 y 1 (0 es el 0% y                 1 el 100%).
+-t es el porcentaje de posición que se quiere averiguar(normalizado entre 0 y 1 (0 es el 0% y 1 el 100%).
   LERP:
+  ![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/16087c23-7f0c-4fcc-a2ea-d635390ec78a)
+
 Video LERP
 ### 4.3 Distintos tipos de interpolación.
 Variando la forma en la que evoluciona t se pueden obtener distintos tipos de interpolaciones.
 https://easings.net/
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/e5cd21d5-577c-4c54-86fe-69ebc13fa65e)
 
 
 ## 5 Cuaterniones.
@@ -1345,8 +1356,8 @@ Desventajas:
 -Complejos de entender.
 Gimbal Lock:
 Es una pérdida de un grado de libertad y se produce cuando dos ejes se alinean.
-
-
+![Gimbal_3_axes_rotation](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/c870623b-0a9d-4b42-b0a8-0435e70e8711)
+![Gimbal_Lock_Plane](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/109041e5-ca41-4a58-af16-2af6922dae06)
 ### 5.2 Clase Quaternion
 Unity ofrece la clase Quaternion para poder trabajar con cuaterniones, dentro de esta clase se puede encontrar una serie de propiedades para manipular cuaterniones.
 La  propiedad mas importante es la  que al ser  aplicada a otro cuaternion no lo modifica.
@@ -1382,6 +1393,7 @@ Algunos de los métodos mas usados:
 -PingPong.(rebota un valor  entre 0 y un número dado
 -Sign.
 -sqrt.
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/8ad14e0a-90fd-472b-837c-e148629ff9cf)
 
 VideoPingPong:
 
