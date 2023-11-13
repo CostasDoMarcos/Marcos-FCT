@@ -1405,6 +1405,8 @@ Random.State-> Permite  guardar estados.<br>
 ***** CLASE DE MATES DE 4 DE LA ESO SOCORRO *****<br>
 ***** Diría que esta parte del curso hubiese estado mejor antes del curso de Unity en sí porque ya irías con  algunos conceptos más claros *****<br>
 
+Pregunta mia, se pueden enlazar los videos de la carpeta con el momento del readme que lo quiero poner para no poner Video LERP, y tener que ir a la carpeta de arriba del todo a ver el  video del LERP?
+
 
 
 
