@@ -1309,6 +1309,10 @@ Coseno:<br>
 Ambos:<br>
 ![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/a35a9a1d-3a87-48ab-992b-55e047de584d)<br>
 Video todos<br>
+
+https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/eb70cc4c-e537-4fd6-b55a-5415da1aa101<br>
+
+
 ## 4 Interpolación lineal.
 ### 4.1 Definición de interpolación lineal.
 Interpolar es obtener valores a partir de valores ya conocidos.<br>
@@ -1336,6 +1340,10 @@ C = A + (B-A)*t => A - A*t + B*t => A*(1-t) + B*t<br>
   ![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/16087c23-7f0c-4fcc-a2ea-d635390ec78a)<br>
 
 Video LERP<br>
+
+https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/5265f399-56f8-469e-92f5-63fe69bfa0ff<br>
+
+
 ### 4.3 Distintos tipos de interpolación.
 Variando la forma en la que evoluciona t se pueden obtener distintos tipos de interpolaciones.<br>
 https://easings.net/<br>
@@ -1398,6 +1406,10 @@ Algunos de los métodos mas usados:<br>
 
 VideoPingPong:<br>
 
+
+https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/1c42dadf-6ed1-42a5-83f1-a1526ceb92bd<br>
+
+
 ### 6.2  Random
 No confundir con System.Random<br>
 -UnityEngine.System  -> Estatico.<br>
@@ -1414,7 +1426,7 @@ Random.State-> Permite  guardar estados.<br>
 ***** CLASE DE MATES DE 4 DE LA ESO SOCORRO *****<br>
 ***** Diría que esta parte del curso hubiese estado mejor antes del curso de Unity en sí porque ya irías con  algunos conceptos más claros *****<br>
 
-Pregunta mia, se pueden enlazar los videos de la carpeta con el momento del readme que lo quiero poner para no poner Video LERP, y tener que ir a la carpeta de arriba del todo a ver el  video del LERP?
+
 
 
 
