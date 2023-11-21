@@ -1428,65 +1428,12 @@ Random.State-> Permite  guardar estados.<br>
 
 # 7.C # Básico
 ## 1 El lenguaje
+//El señor tiene la pantalla de C# en blanco, socorro<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/a135f8b7-7b45-45c5-b5e8-b041dfedffa2)
+
 ### 1.1 Tipos de datos
 Estos son los tipos de  datos básicos de C#:
-
-Tipo
-Tamaño
-Rango
-Significado
-byte
-8 bit
-0 a 255
-Entero sin signo
-sbyte
-8 bit
--128 a 127
-Entero con signo
-short
-16 bit
--32768 a 32767
-Entero corto con signo
-ushort
-16 bit
-0 a 65535
-Entero corto sin signo
-int
-32 bit
--2147483648 a 2147483647
-Entero medio con signo
-uint
-32 bit
-0 a 4.294.967.295
-Entero medio sin signo
-long
-64 bit
--9.223.372.036.854.775.808 a 9.223.372.036.854.775.807
-Entero largo con signo
-ulong
-64 bit
-0 a 18.446.744.073.709.551.615
-Entero largo sin signo
-float
-32 bit
-±1.401298E−45 a ±3.402823E+38
-Coma flotante corto
-double
-64 bit
-±4.94065645841246E−324 a ±1.79769313486232E+308
-Coma flotante largo
-decimal
-128 bit
-−7.9228162514264337593543950335 a +7.9228162514264337593543950335
-Coma flotante monetario
-char
-16 bit
-‘\u0000’ a ‘\uFFFF’
-Carácter unicode
-bool
-8 bit
-true o false
-Verdadero o falso
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/33657a45-4cc7-4cab-b53c-965deac992f6)<br>
 
 -Una variable tiene que empezar con una letra o guion<br>
 -No puede tener espacios<br>
@@ -1531,6 +1478,9 @@ Puede estar formada por varios ficheros.<br>
 Nos permite crear un contrato que posteriormente implementarán nuestras clases, estos no van a tener contenido.<br>
 -Struct:<br>
 Es un tipo de valor que normalmente se usa para encapsular pequeños grupos de variables relacionadas, creando un nuevo tipo de dato.<br>
+// un par de memes de programador por aqui, te permito robarlos, ya que yo  los he robado primero
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/5c3a05be-ae9c-42f1-b495-ddd285dbd44f)
+
 ### 1.4 Herencia
 Una de las características más importantes de la programación orientada a objetos es la de poder realizar herencia entre clases:<br>
 
@@ -1684,7 +1634,8 @@ Performance:<br>
 La reflexión es muy potente para realizar diferentes tareas, pero tiene un problema, su costra en tiempo de ejecución es mayor que acceder directamente, asi que tampoco conviene abusar de él.<br>
 
 //Lo que más me llamaba de este curso eran los system.reflection y los system.linq que parecen bastante cómodos a la hora de programar <br>
-
+//No tengo el titulo porque tengo que esperar hasta mañana, efectivamente me ataco una co-rutina y dejo a mi personaje sin HP y me quito los puntos de inteligencia.<br>
+![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/6ee139a9-abf7-4e2b-bfd4-7e77bed4e048)<br>
 
 
 
