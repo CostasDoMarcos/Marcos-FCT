@@ -1432,7 +1432,7 @@ Random.State-> Permite  guardar estados.<br>
 ![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/a135f8b7-7b45-45c5-b5e8-b041dfedffa2)
 
 ### 1.1 Tipos de datos
-Estos son los tipos de  datos básicos de C#:
+Estos son los tipos de  datos básicos de C#:<br>
 ![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/33657a45-4cc7-4cab-b53c-965deac992f6)<br>
 
 -Una variable tiene que empezar con una letra o guion<br>
