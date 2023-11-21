@@ -1426,6 +1426,265 @@ Random.State-> Permite  guardar estados.<br>
 ***** CLASE DE MATES DE 4 DE LA ESO SOCORRO *****<br>
 ***** Diría que esta parte del curso hubiese estado mejor antes del curso de Unity en sí porque ya irías con  algunos conceptos más claros *****<br>
 
+# 7.C # Básico
+## 1 El lenguaje
+### 1.1 Tipos de datos
+Estos son los tipos de  datos básicos de C#:
+
+Tipo
+Tamaño
+Rango
+Significado
+byte
+8 bit
+0 a 255
+Entero sin signo
+sbyte
+8 bit
+-128 a 127
+Entero con signo
+short
+16 bit
+-32768 a 32767
+Entero corto con signo
+ushort
+16 bit
+0 a 65535
+Entero corto sin signo
+int
+32 bit
+-2147483648 a 2147483647
+Entero medio con signo
+uint
+32 bit
+0 a 4.294.967.295
+Entero medio sin signo
+long
+64 bit
+-9.223.372.036.854.775.808 a 9.223.372.036.854.775.807
+Entero largo con signo
+ulong
+64 bit
+0 a 18.446.744.073.709.551.615
+Entero largo sin signo
+float
+32 bit
+±1.401298E−45 a ±3.402823E+38
+Coma flotante corto
+double
+64 bit
+±4.94065645841246E−324 a ±1.79769313486232E+308
+Coma flotante largo
+decimal
+128 bit
+−7.9228162514264337593543950335 a +7.9228162514264337593543950335
+Coma flotante monetario
+char
+16 bit
+‘\u0000’ a ‘\uFFFF’
+Carácter unicode
+bool
+8 bit
+true o false
+Verdadero o falso
+
+-Una variable tiene que empezar con una letra o guion<br>
+-No puede tener espacios<br>
+-No se pueden usar palabras reservadas para nombrarlas<br>
+-En C# son case sensitive<br>
+### 1.2 El lenguaje
+Operadores:<br>
+Los más comunes son :<br>
+-  = Asignación<br>
+- += Incremento y asignación<br>
+- -= Decremento y asignación<br>
+- == Igual<br>
+- != Distinto<br>
+- > Mayor qué<br>
+- >= Mayor o igual que<br>
+- < Menor que<br>
+- <= Menor o igual que<br>
+- && Y (And)<br>
+- || O (Or)1.3<br>
+Estructuras condicionales:<br>
+En C# se utilizan los ifs else ifs o if else<br>
+Siempre devuelven un valor booleano<br>
+int number = 5;<br>
+if(number == 5) {<br>
+}<br>
+
+Estructuras de control  (Bucles)<br>
+-For:Se ejecuta un número de veces.<br>
+-While: Se ejecuta hasta que la condición sea distinta del  valor dado.<br>
+-For each: Sirve para recorrer colecciones.<br>
+### 1.3 Clases,  Estructuras e interfaces
+C# es un  lenguaje orientado a objetos:<br>
+-Clase<br>
+Para definir una clase dentro de C# se usa la palabra reservada class dentro podemos tener distintas propiedades, métodos.<br>
+Para definir una  clase en C# se usa la palabra class, dentro  podemos  tener distintas  propiedades ,  variables,métodos…<br>
+Tenemos varias palabras reservadas para definir una clase.<br>
+-abstract:<br>
+No permite crear instancias de esa clase.<br>
+-partial:<br>
+Puede estar formada por varios ficheros.<br>
+-Interfaz:<br>
+Nos permite crear un contrato que posteriormente implementarán nuestras clases, estos no van a tener contenido.<br>
+-Struct:<br>
+Es un tipo de valor que normalmente se usa para encapsular pequeños grupos de variables relacionadas, creando un nuevo tipo de dato.<br>
+### 1.4 Herencia
+Una de las características más importantes de la programación orientada a objetos es la de poder realizar herencia entre clases:<br>
+
+Al trabajar con herencia tenemos que tener constancia de una serie de palabras reservadas a la hora de nombrar las clases de nuestro programa:<br>
+
+public:<br>
+Indica que la clase,propiedad o método es publico en todo nuestro proyecto.<br>
+protected:<br>
+Solo es visible  para sí misma  y sus hijos.<br>
+private:<br>
+Solo se puede usar desde la propia clase.<br>
+virtual:<br>
+Marcar una propiedad o método con virtual, nos indicará que esa entidad de nuestra clase, estará preparada para la sobrecarga.<br>
+override:<br>
+Cualquier método o propiedad marcado con Override significa que estará listo para  la sobrecarga.<br>
+
+### 1.5 System.object
+Es la clase base en C#, todos los objetos heredan de Object.<br>
+Object tiene 3 métodos que  se pueden sobrecargar:<br>
+-ToString.Permite devolver un string que hace referencia al tipo de dato o clase que se esta utilizando.<br>
+-Equals.sirve para comparar entre  objetos para saber si son iguales o no.<br>
+-GetHashCode. Sirve para obtener el identificador del objeto que se le pasa.<br>
+
+## 2 Particularidades C#
+### 2.1.Genéricos: Uso básico
+Public class PlayList<T><br>
+{}<br>
+T-> Indica que se va a usar un elemento genérico,básicamente es como un comodín.<br>
+Engloba prácticamente cualquier tipo de dato.<br>
+Se puede añadir todos los genéricos que queramos desde 1 a n.<br>
+### 2.2.Colecciones:Lista,pila y cola
+Lista:<br>
+-Es un listado que nos permite guardar los elementos que necesitemos, se pueden añadir objetos nuevos con el método Add y se pueden añadir conjuntos de objetos con  AddRange.<br>
+-Se puede recorrer con un bucle for.<br>
+Pila:<br>
+Una pila es un LIFO ( last in first out) el último que entra es el primero que sale.<br>
+Para  añadir  objetos a una pila se usa Push.<br>
+Para recuperar los elementos se usa Pop.<br>
+Cola:<br>
+Una cola es un  FIFO (First in first out)  el primero que entra es el primero que sale.<br>
+Para añadir objetos a la cola se usa Enqueue y para quitarlos se usa Dequeue.<br>
+### 2.3 Colecciones:Diccionario
+Dictionary  es básicamente un  Hashmap  en C#, funciona añadiendo claves/valor.<br>
+Se recorre con un for each.<br>
+### 2.4 Métodos de  extensión.
+Básicamente sirven para  añadir métodos que no tienen a los tipos existentes sin tener que recompilar o modificar el original.<br>
+Son clases especiales  estáticas pero se  les llama como métodos de instancia.<br>
+### 2.5 System.Linq
+Linq es un conjunto de métodos que se aplican sobre la interfaz IEnumerable y que permiten realizar operaciones sobre las colecciones que implementan Ienumerable.<br>
+La manera más común  de usar las consultas Linq es usando funciones lambda.<br>
+Using System.linq->añade muchos métodos de extensión.<br>
+Algunas de las funciones que se pueden realizar con Linq son:<br>
+
+Where:<br>
+
+Hace una búsqueda en una colección<br>
+var songs =  mediaList.Where(x=>x.Category == category)<br>
+return songs.toList()<br>
+
+Select:<br>
+
+Convierte un listado en otro<br>
+mediaList.Select(x=>x.Title)<br>
+
+SelectMany<br>
+
+Convierte un conjunto de  listados en uno de otro tipo<br>
+var namesOfArtists = mediaList.SelectMany(x =>  x.artists).Select(x => x.Name)<br>
+return  namesOfArtists.ToList();<br>
+
+//  Esto me recuerda a las consultas de Javi<br>
+Any:<br>
+
+Any sirve  para devolver cualquier valor encontrado<br>
+return mediaList.Any(x  =>  x.Title  == title);<br>
+
+First/FirstOrDefault<br>
+
+Es  mejor  usar FirstOrDefault  ya que First  si no encuentra el valor devuelve  una  excepción<br>
+
+mediaList.firstOrDefault( x=> x.Seconds <60);<br>
+
+Last/LastOrDefault:<br>
+
+mediaList.lastOrDefault(x=  x.Seconds <60);
+haría lo  mismo que el firstordefault pero devolvería  la ultima que dure menos de 60 segundos.<br>
+
+Skip<br>
+
+return mediaList.skip(10).take(10).ToList<br>
+
+en este caso el Skip sirve para saltarse 10 elementos y el take  para coger los 10 siguientes<br>
+
+Take:<br>
+
+return mediaList.take(10).ToList<br>
+El take recogerá los 10 primeros valores de la lista.<br>
+Se suelen utilizar en paginados.<br>
+
+Orderby/OrderByDescending<br>
+
+return mediaList.OrderBy(x => x.Visits).Take(10).ToList().<br>
+Ordena por el número  de visitas si es un número, si fuese un string ordinaria alfabéticamente<br>
+OrderBy es para  las primeras , OrderbyDescending para las últimas.<br>
+
+GroupBy<br>
+
+mediaList.GroupBy(X => x.Category).ToDictionary(x=>x.Key)<br>
+Groupby ordena por una categoría y el ToDictionary lo convierte a un Diccionario con la  key pasada.<br>
+ToList y ToArray hacen lo mismo solo que uno a listas y el otro a arrays<br>
+//  Si, son las consultas de Javi pero  aplicadas a C# en consola<br>
+### 2.6 Genéricos:Funcionalidades
+Los Constraints son restricciones a los tipos de datos que se pueden  introducir lo que nos permite limitar los tipos de datos.<br>
+public class PlayList<T> where T: Media<br>
+En este caso estaríamos diciendo que el genérico T es de tipo Media.<br>
+### 2.7 Async and await
+IAsyncResult, Thread  y BackgroundWorker estan por asi decirlo deprecated, para procesar la concurrencia en C# se usa el async/await.<br>
+Para programar un Async hay que usar la clase Task.<br>
+
+public Task<byte[]> DownloadAsync(string songName){<br>
+Thread.Sleep(1000);<br>
+return Task.FromResult(new byte[]{});<br>
+}<br>
+private  async static void DownloadSongAsync(){<br>
+DownloadService downloadServe = new DownloadService();<br>
+byte[] futureSong = await downloadServe.DownloadAsync();<br>
+}<br>
+Básicamente haríamos una petición de espera mientras se descarga la canción y podríamos seguir
+codificando sin problemas y el programa  funcionará sin congelarse ni pararse y que el usuario no se enfade.<br>
+
+### 2.8 System.Reflection
+Activator:<br>
+Permite crear instancias del tipo T, esto nos permite crear instancias de distintos objetos sin tener ni idea del mismo.<br>
+static void doDomethingWithMyClass<T>() where T: new(){<br>
+Activator.CreateInstance<T>();<br>
+}<br>
+
+Atributos<br>
+[My(Count  = 10)]<br>
+public class MyAttribute : Attribute<br>
+{<br>
+public string Name{}<br>
+public int Number<br>
+}<br>
+Básicamente sirve para crear nuestros propios atributos y habría que recogerlo usando por ejemplo un GetFirstOrDefault.<br>
+El uso del mismo es inimaginable debido a la variedad  de opciones que tiene.<br>
+Se puede acceder a propiedades,métodos y campos usando los métodos GetProperties,GetMethods y GetFields independientemente de su nivel de acceso.<br>
+Assembly:<br>
+Permite conocer el ensamblado al que pertenece, su nombre y sus diferentes capacidades.<br>
+Performance:<br>
+La reflexión es muy potente para realizar diferentes tareas, pero tiene un problema, su costra en tiempo de ejecución es mayor que acceder directamente, asi que tampoco conviene abusar de él.<br>
+
+//Lo que más me llamaba de este curso eran los system.reflection y los system.linq que parecen bastante cómodos a la hora de programar <br>
+
 
 
 
