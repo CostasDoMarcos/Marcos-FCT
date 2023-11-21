@@ -1429,6 +1429,7 @@ Random.State-> Permite  guardar estados.<br>
 # 7.C # Básico
 ## 1 El lenguaje
 //El señor tiene la pantalla de C# en blanco, socorro<br>
+//Un gran profesor me enseñço una  vez que tener un par de memes por los apuntes  para sacar una sonrisa no estaban nunca mal
 ![image](https://github.com/CostasDoMarcos/Marcos-FCT/assets/55932083/a135f8b7-7b45-45c5-b5e8-b041dfedffa2)
 
 ### 1.1 Tipos de datos
